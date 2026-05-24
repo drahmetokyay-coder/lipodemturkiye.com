@@ -11,7 +11,7 @@ interface QuestionStepProps {
 export function QuestionStep({ question, selectedScore, onAnswer }: QuestionStepProps) {
   return (
     <div>
-      <p className="text-xs font-medium text-teal-600 uppercase tracking-wider mb-2">
+      <p className="text-xs font-medium text-purple-600 uppercase tracking-wider mb-2">
         {question.title}
       </p>
       <h3 className="text-xl md:text-2xl font-bold text-stone-800 mb-8 leading-snug">
@@ -30,8 +30,8 @@ export function QuestionStep({ question, selectedScore, onAnswer }: QuestionStep
                 w-full text-left px-5 py-4 rounded-xl border-2 transition-all duration-200
                 ${
                   isSelected
-                    ? "border-teal-500 bg-teal-50 text-teal-800"
-                    : "border-stone-200 bg-white text-stone-700 hover:border-teal-300 hover:bg-teal-50/50"
+                    ? "border-purple-500 bg-purple-50 text-purple-800"
+                    : "border-stone-200 bg-white text-stone-700 hover:border-purple-300 hover:bg-purple-50/50"
                 }
               `}
             >

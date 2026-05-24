@@ -35,7 +35,7 @@ export default function HakkimizdaPage() {
   return (
     <article>
       {/* HERO */}
-      <section className="bg-gradient-to-br from-teal-50 via-purple-50 to-orange-50 py-12 md:py-16">
+      <section className="bg-gradient-to-br from-purple-50 via-rose-50 to-orange-50 py-12 md:py-16">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-8">
@@ -43,7 +43,7 @@ export default function HakkimizdaPage() {
               <li>
                 <Link
                   href="/"
-                  className="hover:text-teal-600 transition-colors"
+                  className="hover:text-purple-600 transition-colors"
                 >
                   Ana Sayfa
                 </Link>
@@ -71,10 +71,10 @@ export default function HakkimizdaPage() {
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-teal-50 rounded-xl p-8 border border-teal-100">
+            <div className="bg-purple-50 rounded-xl p-8 border border-purple-100">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center">
-                  <Target className="w-5 h-5 text-teal-600" />
+                <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
+                  <Target className="w-5 h-5 text-purple-600" />
                 </div>
                 <h2 className="text-xl font-bold text-stone-800">
                   Misyonumuz
@@ -153,8 +153,8 @@ export default function HakkimizdaPage() {
                 key={item.baslik}
                 className="bg-white rounded-xl p-6 border border-stone-200"
               >
-                <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center mb-4">
-                  <item.icon className="w-5 h-5 text-teal-600" />
+                <div className="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center mb-4">
+                  <item.icon className="w-5 h-5 text-purple-600" />
                 </div>
                 <h3 className="font-semibold text-stone-800 mb-2">
                   {item.baslik}
@@ -186,7 +186,7 @@ export default function HakkimizdaPage() {
             <ul className="space-y-3">
               {kaynaklar.map((kaynak) => (
                 <li key={kaynak} className="flex items-start gap-3">
-                  <BookOpen className="w-5 h-5 text-teal-600 mt-0.5 shrink-0" />
+                  <BookOpen className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
                   <span className="text-stone-700">{kaynak}</span>
                 </li>
               ))}
@@ -198,7 +198,7 @@ export default function HakkimizdaPage() {
       {/* TARAFSIZLIK BEYANI */}
       <section className="py-12 md:py-16 bg-stone-50">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
-          <div className="bg-teal-600 rounded-xl p-8 text-white">
+          <div className="bg-purple-600 rounded-xl p-8 text-white">
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
                 <Shield className="w-6 h-6 text-white" />
@@ -207,7 +207,7 @@ export default function HakkimizdaPage() {
                 <h2 className="text-xl md:text-2xl font-bold mb-3">
                   Tarafsızlık beyanımız
                 </h2>
-                <p className="text-teal-50 leading-relaxed">
+                <p className="text-purple-50 leading-relaxed">
                   Lipödem Türkiye, tamamen bağımsız bir bilgi ve farkındalık
                   platformudur. Hiçbir kliniğin, doktorun veya ticari markanın
                   reklamını yapmıyoruz. İçeriklerimiz sponsorlu değildir.
@@ -233,7 +233,7 @@ export default function HakkimizdaPage() {
                 key={stat.rakam}
                 className="text-center bg-stone-50 rounded-xl p-6 border border-stone-200"
               >
-                <p className="text-2xl md:text-3xl font-extrabold text-teal-600">
+                <p className="text-2xl md:text-3xl font-extrabold text-purple-600">
                   {stat.rakam}
                 </p>
                 <p className="mt-2 text-sm text-stone-600 leading-snug">
@@ -246,7 +246,7 @@ export default function HakkimizdaPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-16 bg-gradient-to-br from-teal-50 via-purple-50 to-orange-50">
+      <section className="py-12 md:py-16 bg-gradient-to-br from-purple-50 via-rose-50 to-orange-50">
         <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-stone-800 mb-4">
             Lipödem hakkında bilgilenin
@@ -257,7 +257,7 @@ export default function HakkimizdaPage() {
           </p>
           <Link
             href="/lipodem-nedir"
-            className="inline-flex items-center gap-2 bg-teal-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal-700 transition-colors shadow-lg shadow-teal-600/20"
+            className="inline-flex items-center gap-2 bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-colors shadow-lg shadow-purple-600/20"
           >
             Lipödem Rehberine Git
             <ArrowRight className="w-5 h-5" />

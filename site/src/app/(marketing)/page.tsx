@@ -50,7 +50,7 @@ export default function HomePage() {
               <div className="mt-10 flex flex-col sm:flex-row items-start gap-4 animate-fade-in-up-d2">
                 <Link
                   href="/araclar/semptom-testi"
-                  className="inline-flex items-center justify-center gap-2.5 bg-teal-600 text-white px-7 py-3.5 rounded-lg font-semibold text-base hover:bg-teal-700 transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-purple-600 to-rose-500 text-white px-7 py-3.5 rounded-lg font-semibold text-base hover:from-purple-700 hover:to-rose-600 transition-all duration-300 shadow-sm hover:shadow-md"
                 >
                   Semptom Testini &Ccedil;&ouml;z
                   <ArrowRight className="w-4 h-4" />
@@ -99,7 +99,7 @@ export default function HomePage() {
       {/* ──────────────────────────────────────────
           SECTION 2 - EMPATHY BAR
          ────────────────────────────────────────── */}
-      <section className="bg-teal-600 py-6">
+      <section className="bg-gradient-to-r from-purple-600 via-rose-500 to-orange-400 py-6">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
           <p className="text-white text-sm md:text-base font-medium leading-relaxed">
             Her 9 kadından 1&apos;ini etkileyen lip&ouml;dem, doktorların yarısı tarafından bile tanınmıyor.
@@ -143,8 +143,8 @@ export default function HomePage() {
             ].map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 100}>
                 <div className="bg-white border border-stone-100 rounded-xl p-6 shadow-soft card-hover">
-                  <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center mb-4">
-                    <item.icon className="w-5 h-5 text-teal-600" />
+                  <div className="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center mb-4">
+                    <item.icon className="w-5 h-5 text-purple-600" />
                   </div>
                   <h3 className="text-base font-semibold text-stone-800">{item.title}</h3>
                   <p className="mt-1.5 text-sm text-stone-400 leading-relaxed">{item.desc}</p>
@@ -201,7 +201,7 @@ export default function HomePage() {
             ].map((item, i) => (
               <ScrollReveal key={item.num} delay={i * 100}>
                 <div className="flex items-start gap-6 md:gap-10">
-                  <span className="font-serif text-5xl md:text-6xl font-bold text-teal-100 shrink-0 leading-none select-none">
+                  <span className="font-serif text-5xl md:text-6xl font-bold text-purple-200 shrink-0 leading-none select-none">
                     {item.num}
                   </span>
                   <div>
@@ -244,23 +244,23 @@ export default function HomePage() {
               <div className="grid grid-cols-1 md:grid-cols-2">
                 <div className="p-8 md:p-10 flex flex-col justify-center">
                   <div className="inline-flex items-center gap-2 mb-4">
-                    <span className="px-3 py-1 rounded-full bg-teal-50 text-teal-700 text-xs font-semibold">
+                    <span className="px-3 py-1 rounded-full bg-purple-50 text-purple-700 text-xs font-semibold">
                       2 dakika &middot; 12 soru
                     </span>
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-stone-800 group-hover:text-teal-700 transition-colors">
+                  <h3 className="text-xl md:text-2xl font-bold text-stone-800 group-hover:text-purple-700 transition-colors">
                     Semptom Testi
                   </h3>
                   <p className="mt-3 text-stone-400 text-sm md:text-base leading-relaxed">
                     12 soruluk bilimsel test ile lip&ouml;dem risk seviyenizi &ouml;ğrenin. &Uuml;cretsiz, kayıt gerekmez.
                   </p>
-                  <span className="mt-5 inline-flex items-center text-teal-600 font-semibold text-sm group-hover:gap-2.5 gap-1.5 transition-all">
+                  <span className="mt-5 inline-flex items-center text-purple-600 font-semibold text-sm group-hover:gap-2.5 gap-1.5 transition-all">
                     Teste Başla <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>
-                <div className="bg-teal-50 flex items-center justify-center p-10 md:p-12">
+                <div className="bg-purple-50 flex items-center justify-center p-10 md:p-12">
                   <div className="w-24 h-24 rounded-2xl bg-white shadow-soft flex items-center justify-center">
-                    <ClipboardCheck className="w-12 h-12 text-teal-600" />
+                    <ClipboardCheck className="w-12 h-12 text-purple-600" />
                   </div>
                 </div>
               </div>
@@ -297,10 +297,10 @@ export default function HomePage() {
                   href={tool.href}
                   className="group block rounded-xl bg-white border border-stone-100 p-6 shadow-soft card-hover"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-stone-50 flex items-center justify-center mb-4 group-hover:bg-teal-50 transition-colors">
-                    <tool.icon className="w-5 h-5 text-stone-400 group-hover:text-teal-600 transition-colors" />
+                  <div className="w-10 h-10 rounded-lg bg-stone-50 flex items-center justify-center mb-4 group-hover:bg-purple-50 transition-colors">
+                    <tool.icon className="w-5 h-5 text-stone-400 group-hover:text-purple-600 transition-colors" />
                   </div>
-                  <h3 className="text-base font-semibold text-stone-800 group-hover:text-teal-700 transition-colors">
+                  <h3 className="text-base font-semibold text-stone-800 group-hover:text-purple-700 transition-colors">
                     {tool.title}
                   </h3>
                   <p className="mt-1.5 text-stone-400 text-sm">
@@ -336,7 +336,7 @@ export default function HomePage() {
                 title: "Tanı ve Farkındalık",
                 desc: "Lipödem nasıl anlaşılır, evreleri nelerdir?",
                 href: "/lipodem-nedir",
-                accent: "bg-teal-500",
+                accent: "bg-purple-500",
                 delay: 0,
               },
               {
@@ -344,7 +344,7 @@ export default function HomePage() {
                 title: "Tedavi Seçenekleri",
                 desc: "Konservatif tedaviden cerrahiye tüm yol haritası.",
                 href: "/lipodem-tedavisi",
-                accent: "bg-purple-500",
+                accent: "bg-rose-500",
                 delay: 100,
               },
               {
@@ -352,7 +352,7 @@ export default function HomePage() {
                 title: "Beslenme Rehberi",
                 desc: "Anti-inflamatuar beslenme ve pratik tarifler.",
                 href: "/lipodem-beslenme",
-                accent: "bg-amber-500",
+                accent: "bg-orange-500",
                 delay: 200,
               },
               {
@@ -360,7 +360,7 @@ export default function HomePage() {
                 title: "Egzersiz Programı",
                 desc: "Lipödeme uygun hareket ve spor rehberi.",
                 href: "/lipodem-egzersiz",
-                accent: "bg-rose-500",
+                accent: "bg-pink-500",
                 delay: 300,
               },
               {
@@ -368,7 +368,7 @@ export default function HomePage() {
                 title: "Ruh Sağlığı",
                 desc: "Psikolojik destek ve başa çıkma stratejileri.",
                 href: "/lipodem-ruh-sagligi",
-                accent: "bg-blue-500",
+                accent: "bg-violet-500",
                 delay: 400,
               },
               {
@@ -376,7 +376,7 @@ export default function HomePage() {
                 title: "T&uuml;rkiye Rehberi",
                 desc: "Şehir bazlı klinikler ve SGK bilgisi.",
                 href: "/lipodem-turkiye-rehberi",
-                accent: "bg-emerald-500",
+                accent: "bg-fuchsia-500",
                 delay: 500,
               },
             ].map((item) => (
@@ -391,13 +391,13 @@ export default function HomePage() {
                   <div className="w-10 h-10 rounded-lg bg-stone-50 flex items-center justify-center mb-4">
                     <item.icon className="w-5 h-5 text-stone-500" />
                   </div>
-                  <h3 className="text-base font-semibold text-stone-800 group-hover:text-teal-700 transition-colors">
+                  <h3 className="text-base font-semibold text-stone-800 group-hover:text-purple-700 transition-colors">
                     {item.title}
                   </h3>
                   <p className="mt-1.5 text-stone-400 text-sm leading-relaxed">
                     {item.desc}
                   </p>
-                  <span className="mt-4 inline-flex items-center text-teal-600 text-sm font-medium group-hover:gap-2 gap-1 transition-all">
+                  <span className="mt-4 inline-flex items-center text-purple-600 text-sm font-medium group-hover:gap-2 gap-1 transition-all">
                     Keşfet <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Link>
@@ -481,8 +481,8 @@ export default function HomePage() {
             ].map((item) => (
               <ScrollReveal key={item.title} delay={item.delay}>
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded-full bg-teal-50 flex items-center justify-center mb-4">
-                    <item.icon className="w-6 h-6 text-teal-600" />
+                  <div className="w-14 h-14 rounded-full bg-purple-50 flex items-center justify-center mb-4">
+                    <item.icon className="w-6 h-6 text-purple-600" />
                   </div>
                   <p className="text-sm font-semibold text-stone-800">
                     {item.title}
@@ -500,7 +500,7 @@ export default function HomePage() {
       {/* ──────────────────────────────────────────
           SECTION 9 - CTA BANT
          ────────────────────────────────────────── */}
-      <section className="bg-teal-700 py-16 md:py-20">
+      <section className="brand-gradient py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
           <ScrollReveal>
             <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
@@ -509,12 +509,12 @@ export default function HomePage() {
             <div className="mt-8">
               <Link
                 href="/araclar/semptom-testi"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg font-semibold text-white border-2 border-white/80 hover:bg-white hover:text-teal-700 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg font-semibold text-white border-2 border-white/80 hover:bg-white hover:text-purple-700 transition-all duration-300"
               >
                 Semptom Testini &Ccedil;&ouml;z
               </Link>
             </div>
-            <p className="mt-5 text-teal-200/80 text-sm">
+            <p className="mt-5 text-purple-100/80 text-sm">
               &Uuml;cretsiz, 2 dakika, kayıt gerekmez
             </p>
           </ScrollReveal>
@@ -543,12 +543,12 @@ export default function HomePage() {
                 <input
                   type="email"
                   placeholder="E-posta adresiniz"
-                  className="flex-1 px-5 py-3.5 rounded-lg border border-stone-200 bg-white text-stone-700 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-teal-500/40 focus:border-teal-500 transition-all"
+                  className="flex-1 px-5 py-3.5 rounded-lg border border-stone-200 bg-white text-stone-700 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-purple-500/40 focus:border-purple-500 transition-all"
                   required
                 />
                 <button
                   type="submit"
-                  className="bg-teal-600 text-white px-6 py-3.5 rounded-lg font-semibold hover:bg-teal-700 transition-colors whitespace-nowrap shadow-sm"
+                  className="cta-gradient text-white px-6 py-3.5 rounded-lg font-semibold transition-colors whitespace-nowrap shadow-sm"
                 >
                   Abone Ol
                 </button>
@@ -568,7 +568,7 @@ export default function HomePage() {
       <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white/90 backdrop-blur-lg px-4 py-3 border-t border-stone-100 shadow-soft-lg">
         <Link
           href="/araclar/semptom-testi"
-          className="flex items-center justify-center gap-2 w-full bg-teal-600 text-white py-3 rounded-lg font-semibold text-sm shadow-sm"
+          className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-purple-600 to-rose-500 text-white py-3 rounded-lg font-semibold text-sm shadow-sm"
         >
           <ClipboardCheck className="w-4 h-4" />
           Semptom Testini &Ccedil;&ouml;z

@@ -12,7 +12,7 @@ const cerezler = [
   {
     kategori: "Zorunlu çerezler",
     icon: Shield,
-    renk: "bg-teal-50 border-teal-100 text-teal-600",
+    renk: "bg-purple-50 border-purple-100 text-purple-600",
     aciklama:
       "Platformun temel işlevlerinin çalışması için gereklidir. Bu çerezler olmadan site düzgün çalışamaz. Devre dışı bırakılamazlar.",
     ornekler: [
@@ -63,14 +63,14 @@ export default function CerezPolitikasiPage() {
   return (
     <article>
       {/* HERO */}
-      <section className="bg-gradient-to-br from-teal-50 via-purple-50 to-orange-50 py-12 md:py-16">
+      <section className="bg-gradient-to-br from-purple-50 via-rose-50 to-orange-50 py-12 md:py-16">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center gap-1.5 text-sm text-stone-500">
               <li>
                 <Link
                   href="/"
-                  className="hover:text-teal-600 transition-colors"
+                  className="hover:text-purple-600 transition-colors"
                 >
                   Ana Sayfa
                 </Link>
@@ -94,7 +94,7 @@ export default function CerezPolitikasiPage() {
       {/* İÇERİK */}
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
-          <div className="prose prose-stone prose-headings:text-stone-800 prose-a:text-teal-600 max-w-none">
+          <div className="prose prose-stone prose-headings:text-stone-800 prose-a:text-purple-600 max-w-none">
             <h2 className="text-xl md:text-2xl font-bold mt-0">
               Çerez nedir?
             </h2>
@@ -212,7 +212,7 @@ export default function CerezPolitikasiPage() {
                         href="https://support.google.com/chrome/answer/95647"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-teal-600 hover:text-teal-700"
+                        className="text-purple-600 hover:text-purple-700"
                       >
                         Google Chrome
                       </a>
@@ -222,7 +222,7 @@ export default function CerezPolitikasiPage() {
                         href="https://support.mozilla.org/tr/kb/cerezleri-silme"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-teal-600 hover:text-teal-700"
+                        className="text-purple-600 hover:text-purple-700"
                       >
                         Mozilla Firefox
                       </a>
@@ -232,7 +232,7 @@ export default function CerezPolitikasiPage() {
                         href="https://support.apple.com/tr-tr/guide/safari/sfri11471"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-teal-600 hover:text-teal-700"
+                        className="text-purple-600 hover:text-purple-700"
                       >
                         Safari
                       </a>
@@ -242,7 +242,7 @@ export default function CerezPolitikasiPage() {
                         href="https://support.microsoft.com/tr-tr/windows/microsoft-edge-de-cerezleri-silme-63947406-40ac-c3b8-57b9-2a946a29ae09"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-teal-600 hover:text-teal-700"
+                        className="text-purple-600 hover:text-purple-700"
                       >
                         Microsoft Edge
                       </a>
@@ -254,7 +254,7 @@ export default function CerezPolitikasiPage() {
           </div>
 
           {/* İLETİŞİM */}
-          <div className="mt-8 prose prose-stone prose-headings:text-stone-800 prose-a:text-teal-600 max-w-none">
+          <div className="mt-8 prose prose-stone prose-headings:text-stone-800 prose-a:text-purple-600 max-w-none">
             <h2 className="text-xl md:text-2xl font-bold">İletişim</h2>
             <p>
               Çerez politikamız hakkında sorularınız için{" "}

@@ -44,15 +44,15 @@ export default function SemptomTestiPage() {
     <>
       <JsonLd data={jsonLd} />
 
-      <section className="bg-gradient-to-b from-teal-50 to-white py-12 md:py-16">
+      <section className="bg-gradient-to-b from-purple-50 to-white py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-10">
             <nav className="text-sm text-stone-500 mb-4">
-              <a href="/" className="hover:text-teal-600">
+              <a href="/" className="hover:text-purple-600">
                 Ana Sayfa
               </a>
               <span className="mx-2">/</span>
-              <a href="/araclar" className="hover:text-teal-600">
+              <a href="/araclar" className="hover:text-purple-600">
                 Araçlar
               </a>
               <span className="mx-2">/</span>

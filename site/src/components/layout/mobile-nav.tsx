@@ -75,7 +75,7 @@ export default function MobileNav() {
                   onClick={() => setIsOpen(false)}
                   className={cn(
                     "block py-3.5 text-lg font-medium text-stone-700 border-b border-stone-100",
-                    "hover:text-teal-600 transition-colors"
+                    "hover:text-purple-600 transition-colors"
                   )}
                 >
                   {item.label}
@@ -89,7 +89,7 @@ export default function MobileNav() {
                 onClick={() => setIsOpen(false)}
                 className={cn(
                   "flex items-center justify-center w-full py-3.5 rounded-lg",
-                  "bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base",
+                  "bg-gradient-to-r from-purple-600 to-rose-500 hover:from-purple-700 hover:to-rose-600 text-white font-semibold text-base",
                   "transition-colors"
                 )}
               >

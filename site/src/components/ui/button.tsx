@@ -4,13 +4,13 @@ import { Spinner } from "./spinner";
 
 const variants = {
   primary:
-    "bg-teal-600 text-white hover:bg-teal-700 active:bg-teal-800 shadow-sm",
+    "bg-purple-600 text-white hover:bg-purple-700 active:bg-purple-800 shadow-sm",
   secondary:
     "bg-purple-600 text-white hover:bg-purple-700 active:bg-purple-800 shadow-sm",
   ghost:
     "bg-transparent text-stone-700 hover:bg-stone-100 active:bg-stone-200",
   "cta-gradient":
-    "bg-gradient-to-r from-teal-600 to-emerald-500 text-white hover:from-teal-700 hover:to-emerald-600 shadow-md hover:shadow-lg",
+    "bg-gradient-to-r from-purple-600 to-rose-500 text-white hover:from-purple-700 hover:to-rose-600 shadow-md hover:shadow-lg",
   premium:
     "bg-gradient-to-r from-purple-600 to-purple-800 text-white hover:from-purple-700 hover:to-purple-900 shadow-md",
   founder:
@@ -52,7 +52,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={cn(
-          "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+          "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
           variants[variant],
           sizes[size],
           className

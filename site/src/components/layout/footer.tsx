@@ -89,7 +89,7 @@ export default function Footer() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-sm text-stone-400 hover:text-teal-600 transition-colors duration-200"
+                        className="text-sm text-stone-400 hover:text-purple-600 transition-colors duration-200"
                       >
                         {link.label}
                       </Link>
@@ -111,15 +111,15 @@ export default function Footer() {
 
             {/* Hukuki linkler */}
             <div className="flex items-center gap-4 text-sm text-stone-400">
-              <Link href="/gizlilik-politikasi" className="hover:text-teal-600 transition-colors duration-200">
+              <Link href="/gizlilik-politikasi" className="hover:text-purple-600 transition-colors duration-200">
                 Gizlilik Politikası
               </Link>
               <span className="text-stone-300">|</span>
-              <Link href="/kullanim-sartlari" className="hover:text-teal-600 transition-colors duration-200">
+              <Link href="/kullanim-sartlari" className="hover:text-purple-600 transition-colors duration-200">
                 Kullanım Şartları
               </Link>
               <span className="text-stone-300">|</span>
-              <Link href="/cerez-politikasi" className="hover:text-teal-600 transition-colors duration-200">
+              <Link href="/cerez-politikasi" className="hover:text-purple-600 transition-colors duration-200">
                 &Ccedil;erez Politikası
               </Link>
             </div>
@@ -133,7 +133,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="w-10 h-10 flex items-center justify-center rounded-full text-stone-400 hover:text-teal-600 hover:bg-teal-50 transition-all duration-200"
+                  className="w-10 h-10 flex items-center justify-center rounded-full text-stone-400 hover:text-purple-600 hover:bg-purple-50 transition-all duration-200"
                 >
                   <social.icon className="w-5 h-5" />
                 </a>

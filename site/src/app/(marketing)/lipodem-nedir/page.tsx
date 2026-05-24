@@ -133,7 +133,7 @@ export default function LipodemNedirPage() {
   return (
     <article>
       {/* HERO / GİRİŞ */}
-      <section className="bg-gradient-to-br from-teal-50 via-purple-50 to-orange-50 py-12 md:py-16">
+      <section className="bg-gradient-to-br from-purple-50 via-rose-50 to-orange-50 py-12 md:py-16">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-8">
@@ -141,7 +141,7 @@ export default function LipodemNedirPage() {
               <li>
                 <Link
                   href="/"
-                  className="hover:text-teal-600 transition-colors"
+                  className="hover:text-purple-600 transition-colors"
                 >
                   Ana Sayfa
                 </Link>
@@ -174,7 +174,7 @@ export default function LipodemNedirPage() {
           <div className="mt-8">
             <Link
               href="/araclar/semptom-testi"
-              className="inline-flex items-center gap-2 bg-teal-600 text-white px-7 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
+              className="inline-flex items-center gap-2 bg-purple-600 text-white px-7 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
             >
               Semptom Testini Başlat
               <ArrowRight className="w-5 h-5" />
@@ -205,7 +205,7 @@ export default function LipodemNedirPage() {
             </h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-teal-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
                 <span className="text-stone-700">
                   <strong>Yağ hücreleri büyür:</strong> Adipositler (yağ
                   hücreleri) hem büyüklük hem de sayı olarak anormal artış
@@ -213,7 +213,7 @@ export default function LipodemNedirPage() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-teal-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
                 <span className="text-stone-700">
                   <strong>Kronik iltihap:</strong> Yağ dokusunda sürekli,
                   düşük düzeyli bir inflamasyon süreci aktiftir ve bu sürecin
@@ -221,7 +221,7 @@ export default function LipodemNedirPage() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-teal-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
                 <span className="text-stone-700">
                   <strong>Küçük kan damarları:</strong> Kapiller geçirgenlik
                   artar, bu da dokular arası boşluklara sıvı sızmasına ve kolay
@@ -229,7 +229,7 @@ export default function LipodemNedirPage() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-teal-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
                 <span className="text-stone-700">
                   <strong>Lenf akışı:</strong> Lenf sistemi zamanla
                   etkilenebilir, özellikle ileri evrelerde lenf drenajı bozulur
@@ -237,7 +237,7 @@ export default function LipodemNedirPage() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-teal-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
                 <span className="text-stone-700">
                   <strong>Fibrozis:</strong> Zamanla yağ dokusu içinde sert,
                   fibrotik dokular oluşur ve dokunulabilir nodüller meydana
@@ -264,7 +264,7 @@ export default function LipodemNedirPage() {
           <ol className="space-y-4">
             {belirtiler.map((belirti, i) => (
               <li key={i} className="flex items-start gap-4">
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-teal-100 text-teal-700 font-bold text-sm shrink-0">
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-purple-100 text-purple-700 font-bold text-sm shrink-0">
                   {i + 1}
                 </span>
                 <p className="text-stone-700 leading-relaxed pt-1">{belirti}</p>
@@ -275,7 +275,7 @@ export default function LipodemNedirPage() {
           <div className="mt-8">
             <Link
               href="/araclar/semptom-testi"
-              className="inline-flex items-center gap-2 text-teal-600 font-semibold hover:text-teal-700 transition-colors"
+              className="inline-flex items-center gap-2 text-purple-600 font-semibold hover:text-purple-700 transition-colors"
             >
               Bu belirtiler size tanıdık mı geldi? Semptom testini çözün
               <ArrowRight className="w-5 h-5" />
@@ -323,7 +323,7 @@ export default function LipodemNedirPage() {
           <div className="mt-8">
             <Link
               href="/araclar/evre-degerlendirme"
-              className="inline-flex items-center gap-2 bg-teal-600 text-white px-7 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
+              className="inline-flex items-center gap-2 bg-purple-600 text-white px-7 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
             >
               Evre Değerlendirme Aracını Deneyin
               <ArrowRight className="w-5 h-5" />
@@ -351,7 +351,7 @@ export default function LipodemNedirPage() {
                   <th className="px-4 py-3 text-left font-semibold text-stone-700 border-b border-stone-200">
                     Özellik
                   </th>
-                  <th className="px-4 py-3 text-left font-semibold text-teal-700 border-b border-stone-200">
+                  <th className="px-4 py-3 text-left font-semibold text-purple-700 border-b border-stone-200">
                     Lipödem
                   </th>
                   <th className="px-4 py-3 text-left font-semibold text-stone-700 border-b border-stone-200">
@@ -425,7 +425,7 @@ export default function LipodemNedirPage() {
       </section>
 
       {/* SON CTA */}
-      <section className="py-12 md:py-16 bg-gradient-to-br from-teal-50 via-purple-50 to-orange-50">
+      <section className="py-12 md:py-16 bg-gradient-to-br from-purple-50 via-rose-50 to-orange-50">
         <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-stone-800 mb-4">
             2 dakikada kendinizi değerlendirin
@@ -437,7 +437,7 @@ export default function LipodemNedirPage() {
           </p>
           <Link
             href="/araclar/semptom-testi"
-            className="inline-flex items-center gap-2 bg-teal-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal-700 transition-colors shadow-lg shadow-teal-600/20"
+            className="inline-flex items-center gap-2 bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-colors shadow-lg shadow-purple-600/20"
           >
             Ücretsiz Semptom Testini Başlat
             <ArrowRight className="w-5 h-5" />

@@ -12,14 +12,14 @@ export default function KullanimSartlariPage() {
   return (
     <article>
       {/* HERO */}
-      <section className="bg-gradient-to-br from-teal-50 via-purple-50 to-orange-50 py-12 md:py-16">
+      <section className="bg-gradient-to-br from-purple-50 via-rose-50 to-orange-50 py-12 md:py-16">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center gap-1.5 text-sm text-stone-500">
               <li>
                 <Link
                   href="/"
-                  className="hover:text-teal-600 transition-colors"
+                  className="hover:text-purple-600 transition-colors"
                 >
                   Ana Sayfa
                 </Link>
@@ -42,7 +42,7 @@ export default function KullanimSartlariPage() {
 
       {/* İÇERİK */}
       <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 md:px-6 prose prose-stone prose-headings:text-stone-800 prose-a:text-teal-600 max-w-none">
+        <div className="max-w-4xl mx-auto px-4 md:px-6 prose prose-stone prose-headings:text-stone-800 prose-a:text-purple-600 max-w-none">
           {/* TIBBI İÇERİK DISCLAIMER */}
           <div className="bg-amber-50 rounded-xl p-6 border border-amber-200 mb-10 not-prose">
             <div className="flex items-start gap-3">

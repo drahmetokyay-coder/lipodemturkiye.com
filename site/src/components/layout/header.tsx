@@ -31,7 +31,7 @@ export default function Header() {
               viewBox="0 0 28 28"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="text-teal-600 group-hover:text-teal-500 transition-colors"
+              className="text-purple-700 group-hover:text-purple-500 transition-colors"
               aria-hidden="true"
             >
               <path
@@ -51,7 +51,7 @@ export default function Header() {
                 strokeLinejoin="round"
               />
             </svg>
-            <span className="font-serif text-xl font-semibold text-stone-800 group-hover:text-teal-700 transition-colors tracking-tight">
+            <span className="font-serif text-xl font-semibold text-stone-800 group-hover:text-purple-700 transition-colors tracking-tight">
               Lip&ouml;dem T&uuml;rkiye
             </span>
           </Link>
@@ -64,7 +64,7 @@ export default function Header() {
                 href={item.href}
                 className={cn(
                   "px-4 py-2 rounded-lg text-sm font-medium",
-                  "text-stone-600 hover:text-teal-600",
+                  "text-stone-600 hover:text-purple-600",
                   "transition-colors duration-200"
                 )}
               >
@@ -79,8 +79,8 @@ export default function Header() {
               href="/araclar/semptom-testi"
               className={cn(
                 "inline-flex items-center gap-2 px-5 py-2.5 rounded-lg",
-                "bg-teal-600 text-white text-sm font-semibold",
-                "hover:bg-teal-700 active:bg-teal-800",
+                "bg-gradient-to-r from-purple-600 to-rose-500 text-white text-sm font-semibold",
+                "hover:from-purple-700 hover:to-rose-600 active:from-purple-800 active:to-rose-700",
                 "shadow-sm hover:shadow-md",
                 "transition-all duration-200"
               )}

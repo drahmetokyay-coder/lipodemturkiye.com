@@ -12,13 +12,13 @@ export function ProgressBar({ current, total }: ProgressBarProps) {
         <span className="text-sm font-medium text-stone-600">
           İlerleme
         </span>
-        <span className="text-sm font-semibold text-teal-600">
+        <span className="text-sm font-semibold text-purple-600">
           %{percentage}
         </span>
       </div>
       <div className="w-full h-2.5 bg-stone-100 rounded-full overflow-hidden">
         <div
-          className="h-full bg-teal-500 rounded-full transition-all duration-500 ease-out"
+          className="h-full bg-purple-500 rounded-full transition-all duration-500 ease-out"
           style={{ width: `${percentage}%` }}
         />
       </div>

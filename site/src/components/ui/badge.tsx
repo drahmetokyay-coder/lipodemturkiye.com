@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 const variants = {
   default: "bg-stone-100 text-stone-700",
-  teal: "bg-teal-50 text-teal-700 border border-teal-200",
+  teal: "bg-purple-50 text-purple-700 border border-purple-200",
   purple: "bg-purple-50 text-purple-700 border border-purple-200",
   amber: "bg-amber-50 text-amber-700 border border-amber-200",
   green: "bg-emerald-50 text-emerald-700 border border-emerald-200",
@@ -12,7 +12,7 @@ const variants = {
   stage2: "bg-amber-100 text-amber-800",
   stage3: "bg-orange-100 text-orange-800",
   stage4: "bg-red-100 text-red-800",
-  free: "bg-teal-100 text-teal-800",
+  free: "bg-purple-100 text-purple-800",
   founder: "bg-gradient-to-r from-amber-100 to-amber-200 text-amber-900",
 } as const;
 
