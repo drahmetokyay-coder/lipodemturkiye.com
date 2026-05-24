@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { cities } from "@/data/cities";
 
 const BASE_URL = "https://lipodemturkiye.com";
 
@@ -17,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/araclar/semptom-testi`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/hakkimizda`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/iletisim`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${BASE_URL}/araclar/evre-degerlendirme`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/premium`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/lipodem-kongresi-2026`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE_URL}/gizlilik-politikasi`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE_URL}/kullanim-sartlari`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
@@ -24,5 +27,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/tibbi-sorumluluk-reddi`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
   ];
 
-  return mainPages;
+  // Klinikler ana sayfasi
+  const clinicMainPage: MetadataRoute.Sitemap = [
+    { url: `${BASE_URL}/klinikler`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+  ];
+
+  // 81 il sehir sayfalari
+  const cityPages: MetadataRoute.Sitemap = cities.map((city) => ({
+    url: `${BASE_URL}/klinikler/${city.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: city.hasClinics ? 0.8 : 0.6,
+  }));
+
+  return [...mainPages, ...clinicMainPage, ...cityPages];
 }
