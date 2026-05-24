@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 function InstagramIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
@@ -73,14 +74,13 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-teal-900 to-teal-950 text-teal-100">
+    <footer className="bg-[#0a1f1b] text-emerald-100/50">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        {/* Main footer content */}
         <div className="py-12 md:py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {Object.values(footerLinks).map((section) => (
               <div key={section.title}>
-                <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+                <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-4">
                   {section.title}
                 </h3>
                 <ul className="space-y-3">
@@ -88,7 +88,7 @@ export default function Footer() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-sm text-teal-300 hover:text-white transition-colors"
+                        className="text-sm text-emerald-100/30 hover:text-emerald-400 transition-colors"
                       >
                         {link.label}
                       </Link>
@@ -100,28 +100,24 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="border-t border-teal-800 py-8">
+        <div className="border-t border-white/5 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            {/* Copyright */}
-            <div className="text-sm text-teal-400">
+            <div className="text-sm text-emerald-100/20">
               &copy; {new Date().getFullYear()} Lip&ouml;dem T&uuml;rkiye. T&uuml;m hakları saklıdır.
             </div>
 
-            {/* Legal links */}
-            <div className="flex items-center gap-4 text-sm text-teal-400">
-              <Link href="/gizlilik-politikasi" className="hover:text-white transition-colors">
+            <div className="flex items-center gap-4 text-sm text-emerald-100/20">
+              <Link href="/gizlilik-politikasi" className="hover:text-emerald-400 transition-colors">
                 Gizlilik Politikası
               </Link>
-              <Link href="/kullanim-sartlari" className="hover:text-white transition-colors">
+              <Link href="/kullanim-sartlari" className="hover:text-emerald-400 transition-colors">
                 Kullanım Şartları
               </Link>
-              <Link href="/cerez-politikasi" className="hover:text-white transition-colors">
+              <Link href="/cerez-politikasi" className="hover:text-emerald-400 transition-colors">
                 &Ccedil;erez Politikası
               </Link>
             </div>
 
-            {/* Social icons */}
             <div className="flex items-center gap-3">
               {socialLinks.map((social) => (
                 <a
@@ -130,7 +126,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="w-9 h-9 flex items-center justify-center rounded-full text-teal-400 hover:text-white hover:bg-teal-800 transition-colors"
+                  className="w-9 h-9 flex items-center justify-center rounded-full text-emerald-100/20 hover:text-emerald-400 hover:bg-white/5 transition-colors"
                 >
                   <social.icon className="w-5 h-5" />
                 </a>
@@ -138,8 +134,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Medical disclaimer */}
-          <p className="mt-6 text-xs text-teal-500 text-center">
+          <p className="mt-6 text-xs text-emerald-100/15 text-center">
             Bu site tıbbi tavsiye yerine ge&ccedil;mez. İ&ccedil;eriklerimiz bilgilendirme
             ama&ccedil;lıdır. Tanı ve tedavi i&ccedil;in mutlaka bir sağlık profesyoneline
             başvurunuz.
