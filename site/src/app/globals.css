@@ -2,7 +2,10 @@
 
 @theme inline {
   --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
 
+  /* Primary - Teal */
   --color-primary-50: #F0FDFA;
   --color-primary-100: #CCFBF1;
   --color-primary-200: #99F6E4;
@@ -15,6 +18,7 @@
   --color-primary-900: #134E4A;
   --color-primary-950: #042F2E;
 
+  /* Secondary - Purple */
   --color-secondary-50: #FAF5FF;
   --color-secondary-100: #F3E8FF;
   --color-secondary-200: #E9D5FF;
@@ -24,6 +28,7 @@
   --color-secondary-600: #9333EA;
   --color-secondary-700: #7E22CE;
 
+  /* Accent - Green */
   --color-accent-50: #F0FDF4;
   --color-accent-100: #DCFCE7;
   --color-accent-200: #BBF7D0;
@@ -32,6 +37,7 @@
   --color-accent-500: #22C55E;
   --color-accent-600: #16A34A;
 
+  /* Warm - Amber */
   --color-warm-50: #FFFBEB;
   --color-warm-100: #FEF3C7;
   --color-warm-200: #FDE68A;
@@ -39,12 +45,33 @@
   --color-warm-500: #F59E0B;
   --color-warm-600: #D97706;
 
+  /* Blush - Satin pembe tonlari */
+  --color-blush-50: #FFF1F2;
+  --color-blush-100: #FFE4E6;
+  --color-blush-200: #FECDD3;
+  --color-blush-300: #FDA4AF;
+  --color-blush-400: #FB7185;
+  --color-blush-500: #F43F5E;
+
+  /* Cream - Sicak notr tonlar */
+  --color-cream-50: #FFF7ED;
+  --color-cream-100: #FFEDD5;
+  --color-cream-200: #FED7AA;
+  --color-cream-300: #FDBA74;
+
+  /* Rose Muted - Yumusak gul tonu */
+  --color-rose-muted: #E8B4B8;
+  --color-rose-muted-light: #F2D0D3;
+  --color-rose-muted-dark: #C9898F;
+
+  /* Dark surfaces */
   --color-surface-dark: #163832;
   --color-surface-darker: #0f2b26;
   --color-surface-darkest: #0a1f1b;
   --color-surface-card: #1e4a40;
   --color-surface-card-hover: #245c4f;
 
+  /* Animations - Mevcut */
   --animate-blob: blob 10s infinite ease-in-out;
   --animate-blob-delayed: blob 10s infinite ease-in-out 3s;
   --animate-float: float 4s infinite ease-in-out;
@@ -55,7 +82,18 @@
   --animate-fade-in-up-d2: fade-in-up 0.8s ease-out 0.3s both;
   --animate-fade-in-up-d3: fade-in-up 0.8s ease-out 0.45s both;
   --animate-pulse-slow: pulse 4s infinite ease-in-out;
+
+  /* Animations - Yeni */
+  --animate-slide-in-left: slide-in-left 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-slide-in-right: slide-in-right 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-scale-in: scale-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-bounce-subtle: bounce-subtle 2s infinite;
+  --animate-shimmer: shimmer 2.5s infinite linear;
 }
+
+/* ============================================
+   Mevcut Keyframes
+   ============================================ */
 
 @keyframes blob {
   0%, 100% { transform: translate(0, 0) scale(1); }
@@ -78,9 +116,129 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ============================================
+   Yeni Keyframes
+   ============================================ */
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ============================================
+   Global Base Styles
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-feature-settings: "kern" 1, "liga" 1;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection rengi */
+::selection {
+  background-color: #99F6E4;
+  color: #134E4A;
+}
+
+::-moz-selection {
+  background-color: #99F6E4;
+  color: #134E4A;
+}
+
+/* Focus ring standardizasyonu */
+*:focus-visible {
+  outline: 2px solid #14B8A6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+/* Glassmorphism */
+.glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(22, 56, 50, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Gradient mesh arka plan */
+.gradient-mesh {
+  background-color: #F0FDFA;
+  background-image:
+    radial-gradient(at 0% 0%, #CCFBF1 0px, transparent 50%),
+    radial-gradient(at 80% 0%, #FFF1F2 0px, transparent 50%),
+    radial-gradient(at 100% 50%, #FFF7ED 0px, transparent 50%),
+    radial-gradient(at 0% 100%, #E9D5FF 0px, transparent 50%),
+    radial-gradient(at 80% 100%, #CCFBF1 0px, transparent 50%);
+}
+
+.gradient-mesh-dark {
+  background-color: #0a1f1b;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(15, 118, 110, 0.15) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(232, 180, 184, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 50%, rgba(255, 247, 237, 0.05) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(147, 51, 234, 0.08) 0px, transparent 50%);
+}
+
+/* Shimmer gradient efekti */
+.shimmer-bg {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+}
+
+/* Text gradient */
+.text-gradient {
+  background: linear-gradient(135deg, #0D9488, #14B8A6, #0F766E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-warm {
+  background: linear-gradient(135deg, #E8B4B8, #F43F5E, #D97706);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

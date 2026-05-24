@@ -1,81 +1,113 @@
 import Link from "next/link";
-import { NAV_ITEMS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import MobileNav from "./mobile-nav";
+import MobileNav from "@/components/layout/mobile-nav";
+
+const navLinks = [
+  { label: "Lipödem Nedir", href: "/lipodem-nedir" },
+  { label: "Tedavi", href: "/lipodem-tedavisi" },
+  { label: "Araçlar", href: "/araclar/semptom-testi" },
+  { label: "Hakkımızda", href: "/hakkimizda" },
+];
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-[#163832]/90 backdrop-blur-lg border-b border-white/5">
+    <header
+      className={cn(
+        "sticky top-0 z-50",
+        "bg-white/80 backdrop-blur-xl",
+        "border-b border-stone-200/60",
+        "transition-all duration-300"
+      )}
+    >
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link
-            href="/"
-            className="font-bold text-xl text-white hover:text-emerald-300 transition-colors"
-          >
-            Lip&ouml;dem T&uuml;rkiye
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2 group">
+            {/* Yaprak/kalp ikonu */}
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="text-teal-600 group-hover:text-teal-500 transition-colors"
+              aria-hidden="true"
+            >
+              <path
+                d="M14 26C14 26 4 20 4 12C4 6 8 2 14 2C20 2 24 6 24 12C24 20 14 26 14 26Z"
+                fill="currentColor"
+                fillOpacity="0.15"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M14 8V18M14 8C11 10 9 13 9 16M14 8C17 10 19 13 19 16"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <span className="font-display text-xl font-semibold text-stone-800 group-hover:text-teal-700 transition-colors">
+              Lip&ouml;dem T&uuml;rkiye
+            </span>
           </Link>
 
+          {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
-            {NAV_ITEMS.map((item) => (
-              <div key={item.href} className="relative group">
-                <Link
-                  href={item.href}
-                  className={cn(
-                    "px-3 py-2 rounded-md text-sm font-medium text-emerald-100/60",
-                    "hover:text-white hover:bg-white/5 transition-colors"
-                  )}
-                >
-                  {item.label}
-                </Link>
-
-                {"children" in item && item.children && (
-                  <div
-                    className={cn(
-                      "absolute left-0 top-full pt-1 opacity-0 invisible",
-                      "group-hover:opacity-100 group-hover:visible transition-all duration-200"
-                    )}
-                  >
-                    <div className="bg-[#1e4a40] rounded-lg shadow-xl border border-white/10 py-2 min-w-[200px] backdrop-blur-xl">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className={cn(
-                            "block px-4 py-2 text-sm text-emerald-100/60",
-                            "hover:text-white hover:bg-white/5 transition-colors"
-                          )}
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
+            {navLinks.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "px-4 py-2 rounded-lg text-sm font-medium",
+                  "text-stone-600 hover:text-teal-700 hover:bg-teal-50/60",
+                  "transition-colors duration-200"
                 )}
-              </div>
+              >
+                {item.label}
+              </Link>
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-2">
+          {/* Desktop CTA */}
+          <div className="hidden lg:flex items-center">
             <Link
-              href="/giris"
+              href="/araclar/semptom-testi"
               className={cn(
-                "px-4 py-2 text-sm font-medium text-emerald-100/60 rounded-md",
-                "hover:text-white hover:bg-white/5 transition-colors"
+                "inline-flex items-center gap-2 px-5 py-2.5 rounded-full",
+                "bg-teal-600 text-white text-sm font-semibold",
+                "hover:bg-teal-700 active:bg-teal-800",
+                "shadow-sm hover:shadow-md",
+                "transition-all duration-200"
               )}
             >
-              Giriş
-            </Link>
-            <Link
-              href="/premium"
-              className={cn(
-                "px-4 py-2 text-sm font-medium rounded-full",
-                "bg-emerald-500 text-[#0a1f1b] hover:bg-emerald-400 transition-colors"
-              )}
-            >
-              Premium
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M8 1V15M8 1L4 5M8 1L12 5"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="rotate-90 origin-center"
+                />
+                <circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M5 8H11M8 5V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+              Semptom Testi
             </Link>
           </div>
 
+          {/* Mobile Nav */}
           <MobileNav />
         </div>
       </div>

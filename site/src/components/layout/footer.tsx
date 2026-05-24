@@ -74,13 +74,46 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a1f1b] text-emerald-100/50">
+    <footer className="bg-gradient-to-b from-[#0f2b26] to-[#0a1f1b] text-emerald-100/60">
+      {/* Ust CTA Bolumu */}
+      <div className="border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-20">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-white mb-4">
+              Lip&ouml;dem yolculuğunuzda bug&uuml;n başlayın
+            </h2>
+            <p className="text-emerald-100/40 text-lg mb-8 max-w-lg mx-auto">
+              Bilimsel bilgi, kişisel ara&ccedil;lar ve topluluk desteğiyle
+              lip&ouml;dem yolculuğunuzda yalnız değilsiniz.
+            </p>
+            <Link
+              href="/araclar/semptom-testi"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-teal-500 text-[#0a1f1b] font-bold text-base hover:bg-teal-400 shadow-lg shadow-teal-500/20 hover:shadow-teal-400/30 transition-all duration-300"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M7 10H13M10 7V13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+              &Uuml;cretsiz Semptom Testi Başlat
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Link Grid */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="py-12 md:py-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
             {Object.values(footerLinks).map((section) => (
               <div key={section.title}>
-                <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-4">
+                <h3 className="text-sm font-semibold text-white/90 uppercase tracking-wider mb-4">
                   {section.title}
                 </h3>
                 <ul className="space-y-3">
@@ -88,7 +121,7 @@ export default function Footer() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-sm text-emerald-100/30 hover:text-emerald-400 transition-colors"
+                        className="text-sm text-emerald-100/40 hover:text-teal-400 transition-colors duration-200"
                       >
                         {link.label}
                       </Link>
@@ -100,24 +133,30 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Alt kisim: copyright + hukuki + sosyal + disclaimer */}
         <div className="border-t border-white/5 py-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="text-sm text-emerald-100/20">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            {/* Copyright */}
+            <div className="text-sm text-emerald-100/25">
               &copy; {new Date().getFullYear()} Lip&ouml;dem T&uuml;rkiye. T&uuml;m hakları saklıdır.
             </div>
 
-            <div className="flex items-center gap-4 text-sm text-emerald-100/20">
-              <Link href="/gizlilik-politikasi" className="hover:text-emerald-400 transition-colors">
+            {/* Hukuki linkler */}
+            <div className="flex items-center gap-4 text-sm text-emerald-100/25">
+              <Link href="/gizlilik-politikasi" className="hover:text-teal-400 transition-colors duration-200">
                 Gizlilik Politikası
               </Link>
-              <Link href="/kullanim-sartlari" className="hover:text-emerald-400 transition-colors">
+              <span className="text-emerald-100/10">|</span>
+              <Link href="/kullanim-sartlari" className="hover:text-teal-400 transition-colors duration-200">
                 Kullanım Şartları
               </Link>
-              <Link href="/cerez-politikasi" className="hover:text-emerald-400 transition-colors">
+              <span className="text-emerald-100/10">|</span>
+              <Link href="/cerez-politikasi" className="hover:text-teal-400 transition-colors duration-200">
                 &Ccedil;erez Politikası
               </Link>
             </div>
 
+            {/* Sosyal ikonlar */}
             <div className="flex items-center gap-3">
               {socialLinks.map((social) => (
                 <a
@@ -126,7 +165,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="w-9 h-9 flex items-center justify-center rounded-full text-emerald-100/20 hover:text-emerald-400 hover:bg-white/5 transition-colors"
+                  className="w-10 h-10 flex items-center justify-center rounded-full text-emerald-100/25 hover:text-teal-400 hover:bg-white/5 transition-all duration-200"
                 >
                   <social.icon className="w-5 h-5" />
                 </a>
@@ -134,10 +173,11 @@ export default function Footer() {
             </div>
           </div>
 
-          <p className="mt-6 text-xs text-emerald-100/15 text-center">
+          {/* Tibbi disclaimer */}
+          <p className="mt-8 text-xs text-emerald-100/15 text-center max-w-2xl mx-auto leading-relaxed">
             Bu site tıbbi tavsiye yerine ge&ccedil;mez. İ&ccedil;eriklerimiz bilgilendirme
-            ama&ccedil;lıdır. Tanı ve tedavi i&ccedil;in mutlaka bir sağlık profesyoneline
-            başvurunuz.
+            ama&ccedil;lıdır. Tanı ve tedavi i&ccedil;in mutlaka bir sağlık
+            profesyoneline başvurunuz.
           </p>
         </div>
       </div>
