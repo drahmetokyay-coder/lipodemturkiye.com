@@ -5,6 +5,7 @@ import MobileNav from "@/components/layout/mobile-nav";
 const navLinks = [
   { label: "Lipödem Nedir", href: "/lipodem-nedir" },
   { label: "Tedavi", href: "/lipodem-tedavisi" },
+  { label: "Beslenme", href: "/lipodem-beslenme" },
   { label: "Araçlar", href: "/araclar/semptom-testi" },
   { label: "Hakkımızda", href: "/hakkimizda" },
 ];
@@ -14,19 +15,19 @@ export default function Header() {
     <header
       className={cn(
         "sticky top-0 z-50",
-        "bg-white/80 backdrop-blur-xl",
-        "border-b border-stone-200/60",
+        "bg-white/90 backdrop-blur-lg",
+        "border-b border-stone-100",
         "transition-all duration-300"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-2.5 group">
             {/* Yaprak/kalp ikonu */}
             <svg
-              width="28"
-              height="28"
+              width="26"
+              height="26"
               viewBox="0 0 28 28"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +37,7 @@ export default function Header() {
               <path
                 d="M14 26C14 26 4 20 4 12C4 6 8 2 14 2C20 2 24 6 24 12C24 20 14 26 14 26Z"
                 fill="currentColor"
-                fillOpacity="0.15"
+                fillOpacity="0.12"
                 stroke="currentColor"
                 strokeWidth="1.5"
                 strokeLinecap="round"
@@ -50,7 +51,7 @@ export default function Header() {
                 strokeLinejoin="round"
               />
             </svg>
-            <span className="font-display text-xl font-semibold text-stone-800 group-hover:text-teal-700 transition-colors">
+            <span className="font-serif text-xl font-semibold text-stone-800 group-hover:text-teal-700 transition-colors tracking-tight">
               Lip&ouml;dem T&uuml;rkiye
             </span>
           </Link>
@@ -63,7 +64,7 @@ export default function Header() {
                 href={item.href}
                 className={cn(
                   "px-4 py-2 rounded-lg text-sm font-medium",
-                  "text-stone-600 hover:text-teal-700 hover:bg-teal-50/60",
+                  "text-stone-600 hover:text-teal-600",
                   "transition-colors duration-200"
                 )}
               >
@@ -77,32 +78,13 @@ export default function Header() {
             <Link
               href="/araclar/semptom-testi"
               className={cn(
-                "inline-flex items-center gap-2 px-5 py-2.5 rounded-full",
+                "inline-flex items-center gap-2 px-5 py-2.5 rounded-lg",
                 "bg-teal-600 text-white text-sm font-semibold",
                 "hover:bg-teal-700 active:bg-teal-800",
                 "shadow-sm hover:shadow-md",
                 "transition-all duration-200"
               )}
             >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <path
-                  d="M8 1V15M8 1L4 5M8 1L12 5"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="rotate-90 origin-center"
-                />
-                <circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="1.5" />
-                <path d="M5 8H11M8 5V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-              </svg>
               Semptom Testi
             </Link>
           </div>

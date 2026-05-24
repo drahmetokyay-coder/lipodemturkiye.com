@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 
-const YOUTUBE_VIDEO_ID = "dQw4w9WgXcQ"; // Placeholder -- gerçek lipödem tanıtım videosu ile değiştirilecek
+const YOUTUBE_VIDEO_ID = "dQw4w9WgXcQ"; // Placeholder -- gercek lipodem tanitim videosu ile degistirilecek
 
 export function HeroBackgroundVideo() {
   const [isMuted, setIsMuted] = useState(true);
@@ -28,16 +28,13 @@ export function HeroBackgroundVideo() {
         />
       </div>
 
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
-
       {/* Mute/unmute toggle */}
       <button
         onClick={() => setIsMuted(!isMuted)}
-        className="absolute bottom-6 right-6 z-30 w-10 h-10 rounded-full bg-white/15 backdrop-blur-md border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/25 transition-all"
+        className="absolute bottom-6 right-6 z-30 w-10 h-10 rounded-full bg-stone-800/40 backdrop-blur-md border border-stone-300/30 flex items-center justify-center text-stone-500 hover:text-stone-700 hover:bg-stone-200/60 transition-all"
         aria-label={isMuted ? "Sesi aç" : "Sesi kapat"}
       >
-        {isMuted ? <VolumeX className="w-4.5 h-4.5" /> : <Volume2 className="w-4.5 h-4.5" />}
+        {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
       </button>
     </>
   );
