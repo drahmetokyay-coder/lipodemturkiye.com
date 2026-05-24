@@ -1,8 +1,8 @@
 # Lipödem Türkiye -- İlerleme Durumu
 
 **Son güncelleme:** 2026-05-24
-**Aktif faz:** FAZ 2 -- TASARIM & GELİŞTİRME
-**Genel ilerleme:** %26 (9/35)
+**Aktif faz:** FAZ 4 -- DÖNÜŞÜM & BÜYÜME SİSTEMLERİ
+**Genel ilerleme:** %51 (18/35)
 
 ---
 
@@ -26,24 +26,24 @@
 | Adım | Skill | Durum | Tamamlanma | Notlar |
 |------|-------|-------|------------|--------|
 | 2.1 | `/web-design-guidelines` | TAMAMLANDI | 2026-05-24 | 12 bölüm, renk sistemi, 24+ komponent, Tailwind config, a11y |
-| 2.2 | `/react-best-practices` | DEVAM EDİYOR | - | Ajan çalışıyor |
-| 2.3 | `/copywriting` | BEKLEMEDE | - | Sayfa copy'leri |
-| 2.4 | `/image` | BEKLEMEDE | - | Görsel varlıklar |
-| 2.5 | `/schema` | BEKLEMEDE | - | Yapılandırılmış veri |
+| 2.2 | `/react-best-practices` | TAMAMLANDI | 2026-05-24 | 15 bölüm, 1800 satır, SC/CC stratejisi, auth, MDX, CI/CD |
+| 2.3 | `/copywriting` | TAMAMLANDI | 2026-05-24 | 7 sayfa tam copy, 12 semptom testi sorusu, 3 tier pricing, genel öğeler |
+| 2.4 | `/image` | TAMAMLANDI | 2026-05-24 | 9 bölüm, görsel envanter, 7 infografik, 21 özel ikon, OG şablonları, AI rehberi |
+| 2.5 | `/schema` | TAMAMLANDI | 2026-05-24 | 20 bölüm, MedicalCondition+9 Therapy+Clinic+Physician, ICD-10/11, JSON-LD |
 
 ## FAZ 3: İÇERİK ÜRETİMİ
 | Adım | Skill | Durum | Tamamlanma | Notlar |
 |------|-------|-------|------------|--------|
-| 3.1 | `/lipedema-expert` | BEKLEMEDE | - | Klinik içerik kaynağı |
-| 3.2 | `/aeo-optimization` | BEKLEMEDE | - | AI motoru optimizasyonu |
-| 3.3 | `/programmatic-seo` | BEKLEMEDE | - | Şablon sayfalar |
-| 3.4 | `/lead-magnets` | BEKLEMEDE | - | İndirilebilir kaynaklar |
-| 3.5 | `/free-tools` | BEKLEMEDE | - | İnteraktif araçlar |
+| 3.1 | `/lipedema-expert` | TAMAMLANDI | 2026-05-24 | 6 pillar makale (~19K kelime), Türk menüsü, 7 günlük program |
+| 3.2 | `/aeo-optimization` | TAMAMLANDI | 2026-05-24 | 6 makale optimize edildi, ortalama 34→92/100, answer capsule'ler eklendi |
+| 3.3 | `/programmatic-seo` | TAMAMLANDI | 2026-05-24 | 81 il şablon, 10 doktor, 7 karşılaştırma veri seti, 5 hasta hikayesi, sitemap |
+| 3.4 | `/lead-magnets` | TAMAMLANDI | 2026-05-24 | 5 lead magnet (~99KB), tam Türkçe içerik, email dizisi, dağıtım KPI'ları |
+| 3.5 | `/free-tools` | TAMAMLANDI | 2026-05-24 | 5 araç tasarımı, puanlama algoritmaları, 50+ yemek DB, Zustand, analytics |
 
 ## FAZ 4: DÖNÜŞÜM & BÜYÜME SİSTEMLERİ
 | Adım | Skill | Durum | Tamamlanma | Notlar |
 |------|-------|-------|------------|--------|
-| 4.1 | `/cro` | BEKLEMEDE | - | Dönüşüm optimizasyonu |
+| 4.1 | `/cro` | DEVAM EDİYOR | - | Ajan çalışıyor |
 | 4.2 | `/signup` | BEKLEMEDE | - | Kayıt akışı |
 | 4.3 | `/popups` | BEKLEMEDE | - | Email yakalama |
 | 4.4 | `/emails` | BEKLEMEDE | - | Email dizileri |
