@@ -1,8 +1,8 @@
 # Lipödem Türkiye -- İlerleme Durumu
 
 **Son güncelleme:** 2026-05-24
-**Aktif faz:** FAZ 4 -- DÖNÜŞÜM & BÜYÜME SİSTEMLERİ
-**Genel ilerleme:** %51 (18/35)
+**Aktif faz:** FAZ 8 -- KALİTE KONTROL (site deploy sonrası)
+**Genel ilerleme:** %93 (37/40) -- FAZ 0-7 planlama tamamlandı, FAZ 8 deploy bekliyor
 
 ---
 
@@ -43,47 +43,47 @@
 ## FAZ 4: DÖNÜŞÜM & BÜYÜME SİSTEMLERİ
 | Adım | Skill | Durum | Tamamlanma | Notlar |
 |------|-------|-------|------------|--------|
-| 4.1 | `/cro` | DEVAM EDİYOR | - | Ajan çalışıyor |
-| 4.2 | `/signup` | BEKLEMEDE | - | Kayıt akışı |
-| 4.3 | `/popups` | BEKLEMEDE | - | Email yakalama |
-| 4.4 | `/emails` | BEKLEMEDE | - | Email dizileri |
-| 4.5 | `/onboarding` | BEKLEMEDE | - | Kullanıcı aktivasyonu |
+| 4.1 | `/cro` | TAMAMLANDI | 2026-05-24 | 10 bölüm, 30+ CTA, 10 A/B test, funnel haritası, mobil CRO |
+| 4.2 | `/signup` | TAMAMLANDI | 2026-05-24 | One-Tap + magic link, 14 gün deneme, iyzico, KVKK, 30+ event |
+| 4.3 | `/popups` | TAMAMLANDI | 2026-05-24 | 7 popup türü, 32 analytics event, frekans kuralları, A/B varyantlar |
+| 4.4 | `/emails` | TAMAMLANDI | 2026-05-24 | 8 dizi, 30+ email tam copy, segmentasyon, ESP altyapı, domain ısınma |
+| 4.5 | `/onboarding` | TAMAMLANDI | 2026-05-24 | 13 bölüm, segment bazlı akış, checklist sistemi, premium wizard, 38 analytics event |
 
 ## FAZ 5: SEO & KEŞFEDİLEBİLİRLİK
 | Adım | Skill | Durum | Tamamlanma | Notlar |
 |------|-------|-------|------------|--------|
-| 5.1 | `/seo-audit` | BEKLEMEDE | - | Teknik SEO |
-| 5.2 | `/ai-seo` | BEKLEMEDE | - | AI arama görünürlüğü |
-| 5.3 | `/directory-submissions` | BEKLEMEDE | - | Dizin kayıtları |
-| 5.4 | `/analytics` | BEKLEMEDE | - | Ölçüm altyapısı |
+| 5.1 | `/seo-audit` | TAMAMLANDI | 2026-05-24 | 16 bölüm, pre-launch checklist, CWV hedefleri, URL stratejisi, YMYL/E-E-A-T |
+| 5.2 | `/ai-seo` | TAMAMLANDI | 2026-05-24 | 15 bölüm, llms.txt planı, 20 hedef sorgu, platform stratejisi, 3. parti varlık |
+| 5.3 | `/directory-submissions` | TAMAMLANDI | 2026-05-24 | 10 bölüm, 8 tier ~100 dizin, Türk medya PR, kongre backlink, 6 ay KPI |
+| 5.4 | `/analytics` | TAMAMLANDI | 2026-05-24 | 14 bölüm, ~85 event, GA4+GTM, e-ticaret, 8 dönüşüm, KVKK consent mode |
 
 ## FAZ 6: PAZARLAMA & BÜYÜME
 | Adım | Skill | Durum | Tamamlanma | Notlar |
 |------|-------|-------|------------|--------|
-| 6.1 | `/social` | BEKLEMEDE | - | Sosyal medya |
-| 6.2 | `/claude-youtube` | BEKLEMEDE | - | YouTube stratejisi |
-| 6.3 | `/video` | BEKLEMEDE | - | Video üretimi |
-| 6.4 | `/ads` | BEKLEMEDE | - | Ücretli reklam |
-| 6.5 | `/ad-creative` | BEKLEMEDE | - | Reklam kreatif |
-| 6.6 | `/community-marketing` | BEKLEMEDE | - | Topluluk |
-| 6.7 | `/co-marketing` | BEKLEMEDE | - | Ortaklıklar |
+| 6.1 | `/social` | TAMAMLANDI | 2026-05-24 | 12 bölüm + 3 ek, platform stratejisi, haftalık takvim, 50 hazır fikir, KOL planı, analytics KPI'lar |
+| 6.2 | `/claude-youtube` | TAMAMLANDI | 2026-05-24 | 11 bölüm, 20 video planı, 6 Shorts formatı, thumbnail rehberi, 3 ay takvim |
+| 6.3 | `/video` | TAMAMLANDI | 2026-05-24 | 11 bölüm, 41 egzersiz video, animasyon serisi, hasta hikayesi formatı, batch üretim |
+| 6.4 | `/ads` | TAMAMLANDI | 2026-05-24 | 12 bölüm, Google+Meta+YouTube, sağlık uyumluluk, 18-25K TL/ay bütçe, retargeting |
+| 6.5 | `/ad-creative` | TAMAMLANDI | 2026-05-24 | 13 bölüm, 15 RSA headline, 10 Meta ad, 3 Reels script, 2 YouTube script, A/B matrix |
+| 6.6 | `/community-marketing` | TAMAMLANDI | 2026-05-24 | 11 bölüm, topluluk vizyonu, 4 alt grup yapısı, moderasyon, büyüme stratejisi, WhatsApp/Telegram, Facebook, ambassador, etkinlikler, KPI'lar, kriz yönetimi |
+| 6.7 | `/co-marketing` | TAMAMLANDI | 2026-05-24 | 11 bölüm, 10 kategori, 10 outreach şablonu, klinik CPA modeli, kompresyon marka stratejisi |
 
 ## FAZ 7: OPTİMİZASYON & ÖLÇEKLEME
 | Adım | Skill | Durum | Tamamlanma | Notlar |
 |------|-------|-------|------------|--------|
-| 7.1 | `/ab-testing` | BEKLEMEDE | - | A/B testleri |
-| 7.2 | `/copy-editing` | BEKLEMEDE | - | İçerik düzenleme |
-| 7.3 | `/churn-prevention` | BEKLEMEDE | - | Churn önleme |
-| 7.4 | `/referrals` | BEKLEMEDE | - | Yönlendirme programı |
-| 7.5 | `/marketing-ideas` | BEKLEMEDE | - | Büyüme fikirleri |
-| 7.6 | `/launch` | BEKLEMEDE | - | Lansman |
+| 7.1 | `/ab-testing` | TAMAMLANDI | 2026-05-24 | 9 bölüm, 35 deney backlog, ICE skorlu, 90 gün takvim, PostHog altyapı, email A/B |
+| 7.2 | `/copy-editing` | TAMAMLANDI | 2026-05-24 | 9 bölüm, 46 maddelik checklist, stigma karşıtı dil rehberi, AEO düzenleme, tazeleme takvimi |
+| 7.3 | `/churn-prevention` | TAMAMLANDI | 2026-05-24 | 8 bölüm, risk skoru modeli, iptal akışı + save offer, iyzico dunning, 4 win-back email, pause/downgrade, segment stratejisi, KPI dashboard |
+| 7.4 | `/referrals` | TAMAMLANDI | 2026-05-24 | 10 bölüm, "Birini Daha Aydınlat" programı, WhatsApp viral loop, doktor reçete kartı, K-factor 0.60 hedefi |
+| 7.5 | `/marketing-ideas` | TAMAMLANDI | 2026-05-24 | 10 kategori, 46 fikir ICE skorlu, 90 günlük hafta bazlı plan |
+| 7.6 | `/launch` | TAMAMLANDI | 2026-05-24 | 10 bölüm, kongre entegrasyonu, saat-saat takvim, Product Hunt, kurucu üyelik FOMO, kriz B-planları, metrics dashboard |
 
 ## FAZ 8: KALİTE KONTROL
 | Adım | Skill | Durum | Tamamlanma | Notlar |
 |------|-------|-------|------------|--------|
-| 8.1 | `/webapp-testing` | BEKLEMEDE | - | Akış testleri |
-| 8.2 | `/gstack` | BEKLEMEDE | - | Görsel QA |
-| 8.3 | `/verify` | BEKLEMEDE | - | Deploy doğrulama |
+| 8.1 | `/webapp-testing` | DEPLOY BEKLİYOR | - | Site canlıya alındığında: kayıt, ödeme, araç akışlarının test edilmesi |
+| 8.2 | `/gstack` | DEPLOY BEKLİYOR | - | Site canlıya alındığında: görsel QA, responsive kontrol, screenshot karşılaştırma |
+| 8.3 | `/verify` | DEPLOY BEKLİYOR | - | Site canlıya alındığında: deploy doğrulama, analytics kontrol, SEO kontrol |
 
 ---
 
@@ -104,3 +104,9 @@
 | - | `.claude/skills/aeo-optimization.md` | AEO skill (hazır) |
 | 1.1 | `.agents/content-strategy-output.md` | Kapsamlı içerik stratejisi (12 bölüm) |
 | 1.2 | `.agents/site-architecture-output.md` | Kapsamlı site mimarisi (11 bölüm) |
+| 4.5 | `.agents/onboarding-output.md` | Post-signup onboarding sistemi (13 bölüm) |
+| 5.1 | `.agents/seo-audit-output.md` | Pre-launch teknik SEO audit (16 bölüm) |
+| 5.2 | `.agents/ai-seo-output.md` | AI arama motoru optimizasyonu stratejisi (15 bölüm) |
+| 6.1 | `.agents/social-output.md` | Kapsamlı sosyal medya stratejisi (12 bölüm + 3 ek) |
+| 6.6 | `.agents/community-marketing-output.md` | Topluluk pazarlama stratejisi (11 bölüm + 4 ek) |
+| 7.3 | `.agents/churn-prevention-output.md` | Churn önleme stratejisi (8 bölüm, risk modeli, iptal akışı, dunning, win-back) |
