@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { HeroVideo } from "@/components/marketing/hero-video"
 import {
   ArrowRight,
   Activity,
@@ -23,79 +24,89 @@ export default function HomePage() {
   return (
     <>
       {/* ──────────────────────────────────────────
-          1. HERO — Sıcak, empatik, serif başlık
+          1. HERO — Viral, video odaklı, duygusal
          ────────────────────────────────────────── */}
-      <section className="relative min-h-[calc(100vh-4rem)] overflow-hidden flex items-center" style={{ background: "linear-gradient(135deg, #FFF7ED 0%, #FEF2F2 50%, #FFF1F2 100%)" }}>
-        {/* Organic blob shapes */}
+      <section className="relative min-h-[calc(100vh-4rem)] overflow-hidden flex items-center" style={{ background: "linear-gradient(160deg, #0f2b26 0%, #163832 40%, #1a4a3f 70%, #0f2b26 100%)" }}>
+        {/* Ambient glow effects */}
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-[60%_40%_30%_70%/60%_30%_70%_40%] bg-gradient-to-br from-rose-200/40 to-orange-100/20 animate-blob" />
-          <div className="absolute top-1/4 -left-20 w-[400px] h-[400px] rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-gradient-to-tr from-teal-100/30 to-emerald-50/10 animate-blob-delayed" />
-          <div className="absolute bottom-0 right-1/4 w-[350px] h-[350px] rounded-[50%_50%_40%_60%/40%_60%_50%_50%] bg-gradient-to-b from-purple-100/20 to-pink-50/10 animate-blob" />
-          <div className="absolute top-[15%] right-[35%] w-32 h-32 rounded-full bg-amber-100/30 animate-pulse-slow" />
-          <div className="absolute bottom-[25%] left-[15%] w-20 h-20 rounded-full bg-rose-100/40 animate-float" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-teal-500/10 to-transparent rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-teal-600/8 to-transparent rounded-full blur-3xl" />
+          <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-gradient-to-bl from-rose-500/5 to-transparent rounded-full blur-3xl" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 w-full py-16 md:py-24 lg:py-32">
-          <div className="max-w-3xl mx-auto text-center">
-            {/* Trust badges above headline */}
-            <div className="flex flex-wrap items-center justify-center gap-3 mb-10 animate-fade-in">
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/70 backdrop-blur-sm border border-stone-200/60 text-stone-600 text-xs font-medium shadow-sm">
-                <Shield className="w-3.5 h-3.5 text-teal-600" />
-                Bilimsel kaynaklara dayalı
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/70 backdrop-blur-sm border border-stone-200/60 text-stone-600 text-xs font-medium shadow-sm">
-                <Heart className="w-3.5 h-3.5 text-rose-500" />
-                Bağımsız platform
-              </span>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 w-full py-12 md:py-20 lg:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+            {/* Sol: Metin + CTA */}
+            <div className="text-center lg:text-left order-2 lg:order-1">
+              {/* Viral hook */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 mb-8 animate-fade-in">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500" />
+                </span>
+                <span className="text-sm text-teal-100/80 font-medium">
+                  Her 9 kadından 1&apos;i etkileniyor
+                </span>
+              </div>
+
+              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] tracking-tight animate-fade-in-up">
+                Yıllardır diyet yapıyorsunuz,<br />
+                <span className="bg-gradient-to-r from-teal-300 via-emerald-300 to-teal-400 bg-clip-text text-transparent">
+                  bacaklarınız incelmiyor mu?
+                </span>
+              </h1>
+
+              <p className="mt-6 text-base md:text-lg text-teal-100/60 max-w-lg mx-auto lg:mx-0 leading-relaxed animate-fade-in-up-d1">
+                <strong className="text-white/90">Bu sizin hatanız değil.</strong>{" "}
+                370 milyondan fazla kadını etkileyen lipödemin farkına varmanız
+                için 2 dakika yeterli.
+              </p>
+
+              {/* Dual CTA */}
+              <div className="mt-8 flex flex-col sm:flex-row items-center lg:items-start gap-4 animate-fade-in-up-d2">
+                <Link
+                  href="/araclar/semptom-testi"
+                  className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white text-stone-800 px-8 py-4 rounded-full font-bold text-base md:text-lg hover:bg-teal-50 transition-all duration-300 shadow-2xl shadow-black/20"
+                >
+                  <ClipboardCheck className="w-5 h-5 text-teal-600" />
+                  2 Dakika Semptom Testi
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform text-teal-600" />
+                </Link>
+                <Link
+                  href="/lipodem-nedir"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full font-semibold text-white/80 border border-white/20 hover:bg-white/10 hover:text-white transition-all"
+                >
+                  Lip&ouml;dem Nedir?
+                </Link>
+              </div>
+
+              {/* Social proof stats */}
+              <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-6 animate-fade-in-up-d3">
+                <div className="flex items-center gap-2">
+                  <div className="flex -space-x-2">
+                    {[0,1,2,3].map(i => (
+                      <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-400 to-emerald-500 border-2 border-[#163832] flex items-center justify-center text-[10px] font-bold text-white">
+                        {["A","Z","E","S"][i]}
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-sm text-teal-100/50">
+                    <span className="text-white font-semibold">Binlerce kadın</span> bu platformda
+                  </p>
+                </div>
+              </div>
             </div>
 
-            {/* Main headline — serif */}
-            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-stone-800 leading-[1.05] tracking-tight animate-fade-in-up">
-              Yalnız Değilsiniz
-            </h1>
-
-            <p className="mt-6 md:mt-8 text-lg md:text-xl text-stone-500 max-w-xl mx-auto leading-relaxed animate-fade-in-up-d1">
-              T&uuml;rkiye&apos;nin ilk kapsamlı lip&ouml;dem hasta platformu.
-              Bilimsel bilgi, interaktif ara&ccedil;lar ve topluluk desteği &mdash; hepsi burada.
-            </p>
-
-            {/* Single CTA */}
-            <div className="mt-10 animate-fade-in-up-d2">
-              <Link
-                href="/araclar/semptom-testi"
-                className="group inline-flex items-center justify-center gap-2.5 bg-teal-700 text-white px-8 py-4 rounded-full font-semibold text-base md:text-lg hover:bg-teal-600 transition-all duration-300 shadow-lg shadow-teal-700/20 hover:shadow-xl hover:shadow-teal-700/30"
-              >
-                Semptom Testini &Ccedil;&ouml;z
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-
-            {/* Stat badges */}
-            <div className="mt-14 flex flex-wrap items-center justify-center gap-6 md:gap-10 animate-fade-in-up-d3">
-              <div className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-stone-800 tracking-tight">370M+</p>
-                <p className="text-sm text-stone-400 mt-1">Etkilenen kadın</p>
-              </div>
-              <div className="w-px h-10 bg-stone-200 hidden sm:block" />
-              <div className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-stone-800 tracking-tight">%51</p>
-                <p className="text-sm text-stone-400 mt-1">Doktor farkındalığı</p>
-              </div>
-              <div className="w-px h-10 bg-stone-200 hidden sm:block" />
-              <div className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-stone-800 tracking-tight">10+ yıl</p>
-                <p className="text-sm text-stone-400 mt-1">Tanı gecikmesi</p>
-              </div>
+            {/* Sağ: Video player */}
+            <div className="order-1 lg:order-2 animate-fade-in-up">
+              <HeroVideo />
             </div>
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
-          <div className="w-6 h-10 rounded-full border-2 border-stone-300 flex items-start justify-center p-2">
-            <div className="w-1 h-2.5 bg-stone-400 rounded-full" />
-          </div>
-        </div>
+        {/* Bottom gradient fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
 
       {/* ──────────────────────────────────────────
