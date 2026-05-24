@@ -8,7 +8,6 @@ import {
   BookOpen,
   Shield,
   Users,
-  Award,
   ArrowRight,
 } from "lucide-react";
 
@@ -23,29 +22,6 @@ const istatistikler = [
   { rakam: "%51", aciklama: "Türk doktorlarının lipödem farkındalık oranı" },
   { rakam: "10+ yıl", aciklama: "Ortalama tanı gecikmesi süresi" },
   { rakam: "%11", aciklama: "Dünya genelinde kadınlarda görülme oranı" },
-];
-
-const kurulUyeleri = [
-  {
-    isim: "Prof. Dr. Ayşe Yılmaz",
-    uzmanlik: "Plastik ve Rekonstrüktif Cerrahi",
-    kurum: "İstanbul Üniversitesi Tıp Fakültesi",
-  },
-  {
-    isim: "Doç. Dr. Mehmet Kaya",
-    uzmanlik: "Damar Cerrahisi",
-    kurum: "Ankara Üniversitesi Tıp Fakültesi",
-  },
-  {
-    isim: "Prof. Dr. Zeynep Demir",
-    uzmanlik: "Fiziksel Tıp ve Rehabilitasyon",
-    kurum: "Ege Üniversitesi Tıp Fakültesi",
-  },
-  {
-    isim: "Uzm. Dr. Fatma Çelik",
-    uzmanlik: "Dermatoloji",
-    kurum: "Hacettepe Üniversitesi Tıp Fakültesi",
-  },
 ];
 
 const kaynaklar = [
@@ -266,46 +242,6 @@ export default function HakkimizdaPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* TIBBI DANIŞMA KURULU */}
-      <section className="py-12 md:py-16 bg-stone-50">
-        <div className="max-w-4xl mx-auto px-4 md:px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-stone-800 mb-3">
-            Tıbbi Danışma Kurulu
-          </h2>
-          <p className="text-stone-600 mb-8 leading-relaxed">
-            İçeriklerimiz, alanında uzman hekimlerden oluşan Tıbbi Danışma
-            Kurulumuz tarafından incelenmektedir.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {kurulUyeleri.map((uye) => (
-              <div
-                key={uye.isim}
-                className="bg-white rounded-xl p-6 border border-stone-200"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-teal-50 flex items-center justify-center shrink-0">
-                    <Award className="w-6 h-6 text-teal-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-stone-800">
-                      {uye.isim}
-                    </h3>
-                    <p className="text-sm text-teal-600 font-medium">
-                      {uye.uzmanlik}
-                    </p>
-                    <p className="text-sm text-stone-500 mt-1">{uye.kurum}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="mt-6 text-xs text-stone-400 italic">
-            * Kurul üyeleri bilgilendirme amaçlı gösterilmektedir. Detaylı bilgi
-            için iletişime geçebilirsiniz.
-          </p>
         </div>
       </section>
 
