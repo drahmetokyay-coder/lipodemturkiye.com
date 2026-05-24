@@ -29,8 +29,8 @@ const tools = [
     href: "/araclar/evre-degerlendirme",
     icon: Activity,
     color: "bg-purple-100 text-purple-700",
-    badge: "Yakında",
-    available: false,
+    badge: "Ücretsiz",
+    available: true,
   },
   {
     name: "Klinik Bulucu",

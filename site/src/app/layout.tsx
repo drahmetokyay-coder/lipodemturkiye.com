@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AnalyticsProvider } from "@/components/analytics/analytics-provider";
 import "./globals.css";
 
 // Font loaded via CSS fallback to avoid build-time Google Fonts fetch issues
@@ -33,6 +34,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased bg-stone-50 text-stone-700">
         {children}
+        <AnalyticsProvider />
       </body>
     </html>
   );
