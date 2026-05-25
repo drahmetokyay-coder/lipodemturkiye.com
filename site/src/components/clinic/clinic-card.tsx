@@ -26,7 +26,7 @@ export function ClinicCard({ name, district, treatments, index }: ClinicCardProp
   return (
     <div className="rounded-xl bg-white border border-stone-100 p-6 shadow-soft card-hover relative overflow-hidden">
       {/* Ust degrade cizgi */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-purple-600 to-rose-500" />
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#1A6B5A] to-[#2D8B73]" />
 
       <div className="flex items-start justify-between mb-4">
         <div>
@@ -36,7 +36,7 @@ export function ClinicCard({ name, district, treatments, index }: ClinicCardProp
             {district}
           </div>
         </div>
-        <span className="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium bg-purple-50 text-purple-700 border border-purple-200">
+        <span className="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium bg-[#E8F5F0] text-[#1A6B5A] border border-[#C5E8DC]">
           Dogrulanmamis
         </span>
       </div>
@@ -64,7 +64,7 @@ export function ClinicCard({ name, district, treatments, index }: ClinicCardProp
 
       {/* CTA */}
       <button
-        className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-rose-500 text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:from-purple-700 hover:to-rose-600 transition-all duration-300 shadow-sm hover:shadow-md"
+        className="w-full inline-flex items-center justify-center gap-2 bg-[#1A6B5A] text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-[#15594A] transition-all duration-300 shadow-sm hover:shadow-md"
         aria-label={`${name} ile iletisime gec`}
       >
         Iletisime Gec

@@ -267,11 +267,11 @@ export default function PremiumPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={300}>
-              <div className="bg-white rounded-xl border border-purple-200 p-6 text-center shadow-soft ring-1 ring-purple-100">
-                <p className="text-xs text-purple-600 uppercase tracking-wide font-semibold mb-2">
+              <div className="bg-white rounded-xl border border-[#93D4BE] p-6 text-center shadow-soft ring-1 ring-[#E8F5F0]">
+                <p className="text-xs text-[#1A6B5A] uppercase tracking-wide font-semibold mb-2">
                   Lip&ouml;dem T&uuml;rkiye Premium
                 </p>
-                <p className="text-2xl font-bold text-purple-700">
+                <p className="text-2xl font-bold text-[#15594A]">
                   79 TL/ay&apos;dan
                 </p>
                 <p className="mt-2 text-xs text-stone-400">
@@ -321,9 +321,9 @@ export default function PremiumPage() {
                         79 TL/ay
                       </span>
                     </th>
-                    <th className="py-4 px-4 text-center font-medium w-[20%] text-purple-700">
+                    <th className="py-4 px-4 text-center font-medium w-[20%] text-[#15594A]">
                       Yanınızdayız
-                      <span className="block text-xs font-normal text-purple-500">
+                      <span className="block text-xs font-normal text-[#2D8B73]">
                         149 TL/ay
                       </span>
                     </th>
@@ -358,7 +358,7 @@ export default function PremiumPage() {
                         <td className="py-3 px-4 text-center">
                           <CellValue value={row.basic} />
                         </td>
-                        <td className="py-3 px-4 text-center bg-purple-50/30">
+                        <td className="py-3 px-4 text-center bg-[#E8F5F0]/30">
                           <CellValue value={row.full} />
                         </td>
                       </tr>
@@ -409,8 +409,8 @@ export default function PremiumPage() {
                 </p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-purple-50 flex items-center justify-center mb-3">
-                  <Shield className="w-5 h-5 text-purple-600" />
+                <div className="w-12 h-12 rounded-full bg-[#E8F5F0] flex items-center justify-center mb-3">
+                  <Shield className="w-5 h-5 text-[#1A6B5A]" />
                 </div>
                 <p className="text-sm font-semibold text-stone-800">
                   30 g&uuml;n iade garantisi
@@ -444,13 +444,13 @@ export default function PremiumPage() {
             <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
               Sağlığınız i&ccedil;in ilk adımı atın
             </h2>
-            <p className="mt-4 text-purple-100/80 text-base max-w-lg mx-auto">
+            <p className="mt-4 text-[#E8F5F0]/80 text-base max-w-lg mx-auto">
               14 g&uuml;n &uuml;cretsiz deneyin. Kredi kartı gerekmez, istediğiniz zaman iptal edin.
             </p>
             <div className="mt-8">
               <Link
                 href="#planlar"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg font-semibold text-white border-2 border-white/80 hover:bg-white hover:text-purple-700 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg font-semibold text-white border-2 border-white/80 hover:bg-white hover:text-[#15594A] transition-all duration-300"
               >
                 Planları İncele
                 <ArrowRight className="w-4 h-4" />
@@ -505,7 +505,7 @@ function CellValue({ value }: { value: boolean | string }) {
     );
   }
   return (
-    <span className="text-xs font-medium text-purple-600">{value}</span>
+    <span className="text-xs font-medium text-[#1A6B5A]">{value}</span>
   );
 }
 

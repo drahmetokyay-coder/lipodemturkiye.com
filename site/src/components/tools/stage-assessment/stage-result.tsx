@@ -57,8 +57,8 @@ export function StageResultDisplay({ result, onRestart }: StageResultDisplayProp
           {content.description}
         </p>
 
-        <div className="bg-purple-50 border-l-4 border-purple-500 p-5 rounded-r-lg mb-6">
-          <p className="text-purple-800 font-medium leading-relaxed">
+        <div className="bg-[#E8F5F0] border-l-4 border-[#1A6B5A] p-5 rounded-r-lg mb-6">
+          <p className="text-[#10473B] font-medium leading-relaxed">
             Bu sonucu aldıysanız, bunun kesin bir tanı olmadığını hatırlatmak isteriz.
             Lipödem evreleri yalnızca klinik muayene ile belirlenebilir. Bu araç, durumunuz
             hakkında farkındalık oluşturmanıza ve doktor görüşmenize hazırlanmanıza yardımcı
@@ -73,7 +73,7 @@ export function StageResultDisplay({ result, onRestart }: StageResultDisplayProp
           <ul className="space-y-3">
             {content.recommendations.map((rec, i) => (
               <li key={i} className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-6 h-6 bg-purple-100 text-purple-700 rounded-full flex items-center justify-center text-sm font-semibold mt-0.5">
+                <span className="flex-shrink-0 w-6 h-6 bg-[#E8F5F0] text-[#1A6B5A] rounded-full flex items-center justify-center text-sm font-semibold mt-0.5">
                   {i + 1}
                 </span>
                 <span className="text-stone-600">{rec}</span>
@@ -85,30 +85,30 @@ export function StageResultDisplay({ result, onRestart }: StageResultDisplayProp
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
           <Link
             href="/lipodem-nedir"
-            className="flex items-center gap-3 px-5 py-3.5 rounded-xl border border-stone-200 hover:border-purple-300 hover:bg-purple-50/50 transition-all"
+            className="flex items-center gap-3 px-5 py-3.5 rounded-xl border border-stone-200 hover:border-[#2D8B73] hover:bg-[#E8F5F0]/50 transition-all"
           >
-            <BookOpen className="w-5 h-5 text-purple-600 flex-shrink-0" />
+            <BookOpen className="w-5 h-5 text-[#1A6B5A] flex-shrink-0" />
             <span className="text-stone-700 font-medium">Lipödem Rehberi</span>
           </Link>
           <Link
             href="/lipodem-tedavisi"
-            className="flex items-center gap-3 px-5 py-3.5 rounded-xl border border-stone-200 hover:border-purple-300 hover:bg-purple-50/50 transition-all"
+            className="flex items-center gap-3 px-5 py-3.5 rounded-xl border border-stone-200 hover:border-[#2D8B73] hover:bg-[#E8F5F0]/50 transition-all"
           >
-            <FileText className="w-5 h-5 text-purple-600 flex-shrink-0" />
+            <FileText className="w-5 h-5 text-[#1A6B5A] flex-shrink-0" />
             <span className="text-stone-700 font-medium">Tedavi Seçenekleri</span>
           </Link>
           <Link
             href="/klinikler"
-            className="flex items-center gap-3 px-5 py-3.5 rounded-xl border border-stone-200 hover:border-purple-300 hover:bg-purple-50/50 transition-all"
+            className="flex items-center gap-3 px-5 py-3.5 rounded-xl border border-stone-200 hover:border-[#2D8B73] hover:bg-[#E8F5F0]/50 transition-all"
           >
-            <MapPin className="w-5 h-5 text-purple-600 flex-shrink-0" />
+            <MapPin className="w-5 h-5 text-[#1A6B5A] flex-shrink-0" />
             <span className="text-stone-700 font-medium">Klinik Bulucu</span>
           </Link>
           <button
             onClick={handleShare}
-            className="flex items-center gap-3 px-5 py-3.5 rounded-xl border border-stone-200 hover:border-purple-300 hover:bg-purple-50/50 transition-all"
+            className="flex items-center gap-3 px-5 py-3.5 rounded-xl border border-stone-200 hover:border-[#2D8B73] hover:bg-[#E8F5F0]/50 transition-all"
           >
-            <Share2 className="w-5 h-5 text-purple-600 flex-shrink-0" />
+            <Share2 className="w-5 h-5 text-[#1A6B5A] flex-shrink-0" />
             <span className="text-stone-700 font-medium">Sonucu Paylaş</span>
           </button>
         </div>

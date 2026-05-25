@@ -67,7 +67,7 @@ export default function HikayelerPage() {
   return (
     <article>
       {/* HERO */}
-      <section className="bg-gradient-to-br from-purple-50 via-rose-50 to-orange-50 py-12 md:py-16">
+      <section className="bg-gradient-to-br from-[#E8F5F0] via-rose-50 to-orange-50 py-12 md:py-16">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-8">
@@ -75,7 +75,7 @@ export default function HikayelerPage() {
               <li>
                 <Link
                   href="/"
-                  className="hover:text-purple-600 transition-colors"
+                  className="hover:text-[#1A6B5A] transition-colors"
                 >
                   Ana Sayfa
                 </Link>
@@ -96,7 +96,7 @@ export default function HikayelerPage() {
             yolculuğu ve günlük yaşamdan samimi paylaşımlar.
           </p>
 
-          <div className="mt-6 bg-purple-50 border border-purple-100 rounded-xl p-5">
+          <div className="mt-6 bg-[#E8F5F0] border border-[#E8F5F0] rounded-xl p-5">
             <p className="text-stone-700 leading-relaxed font-serif italic">
               Yalnız değilsiniz. Bu kadınlar sizin gibi bir yolculuktan geçti.
               Her hikaye, aynı yolda yürüyen birine cesaret ve umut vermek için
@@ -118,7 +118,7 @@ export default function HikayelerPage() {
                 >
                   {/* Alıntı */}
                   <div className="relative mb-5">
-                    <Quote className="w-6 h-6 text-purple-200 absolute -top-1 -left-1" />
+                    <Quote className="w-6 h-6 text-[#93D4BE] absolute -top-1 -left-1" />
                     <p className="text-stone-700 leading-relaxed font-serif italic pl-6 text-sm">
                       &ldquo;{hikaye.alinti}&rdquo;
                     </p>
@@ -128,8 +128,8 @@ export default function HikayelerPage() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       {/* Avatar placeholder */}
-                      <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
-                        <span className="text-sm font-bold text-purple-600">
+                      <div className="w-10 h-10 rounded-full bg-[#E8F5F0] flex items-center justify-center">
+                        <span className="text-sm font-bold text-[#1A6B5A]">
                           {hikaye.isim.charAt(0)}
                         </span>
                       </div>
@@ -153,7 +153,7 @@ export default function HikayelerPage() {
 
                   {/* CTA */}
                   <div className="mt-5 pt-4 border-t border-stone-100">
-                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-purple-600 group-hover:text-purple-700 transition-colors">
+                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#1A6B5A] group-hover:text-[#15594A] transition-colors">
                       Hikayeyi Oku
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </span>
@@ -166,7 +166,7 @@ export default function HikayelerPage() {
       </section>
 
       {/* EMPATİ + CTA */}
-      <section className="py-12 md:py-16 bg-gradient-to-br from-purple-50 via-rose-50 to-orange-50">
+      <section className="py-12 md:py-16 bg-gradient-to-br from-[#E8F5F0] via-rose-50 to-orange-50">
         <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-stone-800 mb-4 font-serif">
             Sizin de hikayeniz var
@@ -178,14 +178,14 @@ export default function HikayelerPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/araclar/semptom-testi"
-              className="inline-flex items-center justify-center gap-2 bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-colors shadow-lg shadow-purple-600/20"
+              className="inline-flex items-center justify-center gap-2 bg-[#1A6B5A] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#15594A] transition-colors shadow-lg shadow-[#1A6B5A]/20"
             >
               Semptom Testini Başlat
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link
               href="/iletisim"
-              className="inline-flex items-center justify-center gap-2 bg-white text-purple-600 border-2 border-purple-200 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-50 transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-white text-[#1A6B5A] border-2 border-[#93D4BE] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#E8F5F0] transition-colors"
             >
               Hikayenizi Paylaşın
             </Link>

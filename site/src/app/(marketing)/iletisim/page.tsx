@@ -42,7 +42,7 @@ export default function IletisimPage() {
   return (
     <article>
       {/* HERO */}
-      <section className="bg-gradient-to-br from-purple-50 via-rose-50 to-orange-50 py-12 md:py-16">
+      <section className="bg-gradient-to-br from-[#E8F5F0] via-rose-50 to-orange-50 py-12 md:py-16">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-8">
@@ -50,7 +50,7 @@ export default function IletisimPage() {
               <li>
                 <Link
                   href="/"
-                  className="hover:text-purple-600 transition-colors"
+                  className="hover:text-[#1A6B5A] transition-colors"
                 >
                   Ana Sayfa
                 </Link>
@@ -94,12 +94,12 @@ export default function IletisimPage() {
               {/* Email */}
               <div className="bg-stone-50 rounded-xl p-5 border border-stone-200 mb-5">
                 <div className="flex items-center gap-3 mb-2">
-                  <Mail className="w-5 h-5 text-purple-600" />
+                  <Mail className="w-5 h-5 text-[#1A6B5A]" />
                   <h3 className="font-semibold text-stone-800">E-posta</h3>
                 </div>
                 <a
                   href="mailto:bilgi@lipodemturkiye.com"
-                  className="text-purple-600 hover:text-purple-700 transition-colors font-medium"
+                  className="text-[#1A6B5A] hover:text-[#15594A] transition-colors font-medium"
                 >
                   bilgi@lipodemturkiye.com
                 </a>
@@ -117,9 +117,9 @@ export default function IletisimPage() {
                       href={sm.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 text-stone-600 hover:text-purple-600 transition-colors group"
+                      className="flex items-center gap-3 text-stone-600 hover:text-[#1A6B5A] transition-colors group"
                     >
-                      <sm.icon className="w-5 h-5 text-stone-400 group-hover:text-purple-600 transition-colors" />
+                      <sm.icon className="w-5 h-5 text-stone-400 group-hover:text-[#1A6B5A] transition-colors" />
                       <div>
                         <span className="text-sm font-medium">{sm.isim}</span>
                         <span className="block text-xs text-stone-400">
@@ -132,8 +132,8 @@ export default function IletisimPage() {
               </div>
 
               {/* Yanıt Süresi */}
-              <div className="bg-purple-50 rounded-xl p-5 border border-purple-100">
-                <p className="text-sm text-purple-800 leading-relaxed">
+              <div className="bg-[#E8F5F0] rounded-xl p-5 border border-[#E8F5F0]">
+                <p className="text-sm text-[#10473B] leading-relaxed">
                   Mesajlarınıza genellikle{" "}
                   <strong>1-2 iş günü</strong> içinde dönüş
                   yapıyoruz. Acil tıbbi durumlar için lütfen{" "}
@@ -151,8 +151,8 @@ export default function IletisimPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Klinik/Doktor Kaydı */}
             <div className="bg-white rounded-xl p-8 border border-stone-200">
-              <div className="w-12 h-12 rounded-lg bg-purple-50 flex items-center justify-center mb-5">
-                <Stethoscope className="w-6 h-6 text-purple-600" />
+              <div className="w-12 h-12 rounded-lg bg-[#E8F5F0] flex items-center justify-center mb-5">
+                <Stethoscope className="w-6 h-6 text-[#1A6B5A]" />
               </div>
               <h2 className="text-lg font-bold text-stone-800 mb-3">
                 Klinik veya doktor musunuz?
@@ -163,7 +163,7 @@ export default function IletisimPage() {
               </p>
               <a
                 href="mailto:klinik@lipodemturkiye.com"
-                className="inline-flex items-center gap-2 bg-purple-600 text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-purple-700 transition-colors"
+                className="inline-flex items-center gap-2 bg-[#1A6B5A] text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-[#15594A] transition-colors"
               >
                 Klinik Kaydı İçin Yazın
                 <Mail className="w-4 h-4" />
@@ -172,8 +172,8 @@ export default function IletisimPage() {
 
             {/* Basın ve Medya */}
             <div className="bg-white rounded-xl p-8 border border-stone-200">
-              <div className="w-12 h-12 rounded-lg bg-purple-50 flex items-center justify-center mb-5">
-                <Newspaper className="w-6 h-6 text-purple-600" />
+              <div className="w-12 h-12 rounded-lg bg-[#E8F5F0] flex items-center justify-center mb-5">
+                <Newspaper className="w-6 h-6 text-[#1A6B5A]" />
               </div>
               <h2 className="text-lg font-bold text-stone-800 mb-3">
                 Basın ve medya
@@ -185,7 +185,7 @@ export default function IletisimPage() {
               </p>
               <a
                 href="mailto:basin@lipodemturkiye.com"
-                className="inline-flex items-center gap-2 bg-purple-600 text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-purple-700 transition-colors"
+                className="inline-flex items-center gap-2 bg-[#1A6B5A] text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-[#15594A] transition-colors"
               >
                 Basın İletişimi
                 <Mail className="w-4 h-4" />

@@ -35,7 +35,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left -- text */}
             <div>
-              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.02] tracking-tight text-[#000] animate-fade-in-up uppercase">
+              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.02] tracking-tight text-[#2D3B36] animate-fade-in-up uppercase">
                 Lip&ouml;dem hakkında bilmeniz gereken her şey
               </h1>
 
@@ -54,7 +54,7 @@ export default function HomePage() {
                 </Link>
                 <Link
                   href="/lipodem-nedir"
-                  className="btn-pill inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold text-stone-700 border-2 border-stone-900 hover:bg-stone-900 hover:text-white transition-all duration-300"
+                  className="btn-pill inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold text-[#2D3B36] border-2 border-[#1A6B5A] hover:bg-[#1A6B5A] hover:text-white transition-all duration-300"
                 >
                   Lip&ouml;dem Nedir?
                 </Link>
@@ -68,7 +68,7 @@ export default function HomePage() {
                   { value: "10+", label: "yıl tanı gecikmesi" },
                 ].map((stat) => (
                   <div key={stat.label} className="text-left">
-                    <p className="font-display text-3xl md:text-4xl font-black text-[#000] tracking-tight leading-none">
+                    <p className="font-display text-3xl md:text-4xl font-black text-[#2D3B36] tracking-tight leading-none">
                       {stat.value}
                     </p>
                     <p className="text-xs text-stone-400 mt-1.5 uppercase tracking-wider font-medium">
@@ -96,7 +96,7 @@ export default function HomePage() {
       {/* ──────────────────────────────────────────
           SECTION 2 - EMPATHY BAR
          ────────────────────────────────────────── */}
-      <section className="bg-[#000] py-6">
+      <section className="bg-[#163832] py-6">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
           <p className="text-white text-sm md:text-base font-bold leading-relaxed uppercase tracking-wider">
             Her 9 kadından 1&apos;ini etkileyen lip&ouml;dem, doktorların yarısı tarafından bile tanınmıyor.
@@ -112,7 +112,7 @@ export default function HomePage() {
           {/* Top -- Two column text */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <ScrollReveal>
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#000] leading-tight uppercase tracking-wide">
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#2D3B36] leading-tight uppercase tracking-wide">
                 Lip&ouml;dem nedir?
               </h2>
             </ScrollReveal>
@@ -140,10 +140,10 @@ export default function HomePage() {
             ].map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 100}>
                 <div className="bg-white border border-stone-100 rounded-2xl p-6 shadow-soft card-hover text-center">
-                  <div className="w-12 h-12 rounded-full bg-[#000] flex items-center justify-center mb-4 mx-auto">
+                  <div className="w-12 h-12 rounded-full bg-[#1A6B5A] flex items-center justify-center mb-4 mx-auto">
                     <item.icon className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="font-display text-base font-bold text-[#000] uppercase tracking-wider">{item.title}</h3>
+                  <h3 className="font-display text-base font-bold text-[#2D3B36] uppercase tracking-wider">{item.title}</h3>
                   <p className="mt-2 text-sm text-stone-400 leading-relaxed">{item.desc}</p>
                 </div>
               </ScrollReveal>
@@ -159,7 +159,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-16 md:mb-20">
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#000] uppercase tracking-wide">
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#2D3B36] uppercase tracking-wide">
                 Belirtileri tanıyın
               </h2>
               <p className="mt-4 text-stone-400 text-base md:text-lg max-w-xl mx-auto">
@@ -198,7 +198,7 @@ export default function HomePage() {
             ].map((item, i) => (
               <ScrollReveal key={item.num} delay={i * 100}>
                 <div className="flex items-start gap-6 md:gap-10">
-                  <span className="font-display text-5xl md:text-7xl font-black text-purple-200 shrink-0 leading-none select-none">
+                  <span className="font-display text-5xl md:text-7xl font-black text-[#C5E8DC] shrink-0 leading-none select-none">
                     {item.num}
                   </span>
                   <div>
@@ -223,7 +223,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-14">
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#000] uppercase tracking-wide">
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#2D3B36] uppercase tracking-wide">
                 T&uuml;rkiye Genelinde Tedavi Merkezleri
               </h2>
               <p className="mt-4 text-stone-500 text-base md:text-lg max-w-2xl mx-auto">
@@ -241,11 +241,11 @@ export default function HomePage() {
       {/* ──────────────────────────────────────────
           SECTION 6 - ARACLAR
          ────────────────────────────────────────── */}
-      <section className="bg-stone-50 py-20 md:py-28 lg:py-36">
+      <section className="bg-[#E8EFE8] py-20 md:py-28 lg:py-36">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-14 md:mb-20">
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#000] uppercase tracking-wide">
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#2D3B36] uppercase tracking-wide">
                 Size &ouml;zel ara&ccedil;larımız
               </h2>
               <p className="mt-4 text-stone-400 text-base md:text-lg max-w-xl mx-auto">
@@ -258,7 +258,7 @@ export default function HomePage() {
           <ScrollReveal delay={100}>
             <Link
               href="/araclar/semptom-testi"
-              className="group block rounded-2xl bg-[#000] shadow-soft card-hover overflow-hidden mb-6"
+              className="group block rounded-2xl bg-[#163832] shadow-soft card-hover overflow-hidden mb-6"
             >
               <div className="grid grid-cols-1 md:grid-cols-2">
                 <div className="p-8 md:p-10 flex flex-col justify-center">
@@ -267,13 +267,13 @@ export default function HomePage() {
                       2 dakika &middot; 12 soru
                     </span>
                   </div>
-                  <h3 className="font-display text-2xl md:text-3xl font-extrabold text-white group-hover:text-purple-300 transition-colors uppercase tracking-wide">
+                  <h3 className="font-display text-2xl md:text-3xl font-extrabold text-white group-hover:text-[#C5E8DC] transition-colors uppercase tracking-wide">
                     Semptom Testi
                   </h3>
                   <p className="mt-3 text-stone-300 text-sm md:text-base leading-relaxed">
                     12 soruluk bilimsel test ile lip&ouml;dem risk seviyenizi &ouml;ğrenin. &Uuml;cretsiz, kayıt gerekmez.
                   </p>
-                  <span className="mt-6 inline-flex items-center justify-center gap-2 bg-white text-[#000] px-6 py-3 rounded-full font-bold text-sm group-hover:bg-purple-100 transition-all w-fit">
+                  <span className="mt-6 inline-flex items-center justify-center gap-2 bg-white text-[#2D3B36] px-6 py-3 rounded-full font-bold text-sm group-hover:bg-[#E8F5F0] transition-all w-fit">
                     Teste Başla <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>
@@ -316,10 +316,10 @@ export default function HomePage() {
                   href={tool.href}
                   className="group block rounded-2xl bg-white border border-stone-100 p-6 shadow-soft card-hover text-center"
                 >
-                  <div className="w-12 h-12 rounded-full bg-stone-100 flex items-center justify-center mb-4 mx-auto group-hover:bg-[#000] transition-colors">
+                  <div className="w-12 h-12 rounded-full bg-stone-100 flex items-center justify-center mb-4 mx-auto group-hover:bg-[#1A6B5A] transition-colors">
                     <tool.icon className="w-5 h-5 text-stone-500 group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="font-display text-base font-bold text-[#000] group-hover:text-purple-700 transition-colors uppercase tracking-wider">
+                  <h3 className="font-display text-base font-bold text-[#2D3B36] group-hover:text-[#1A6B5A] transition-colors uppercase tracking-wider">
                     {tool.title}
                   </h3>
                   <p className="mt-2 text-stone-400 text-sm">
@@ -339,7 +339,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-14 md:mb-20">
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#000] uppercase tracking-wide">
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#2D3B36] uppercase tracking-wide">
                 Kapsamlı rehberlerimiz
               </h2>
               <p className="mt-4 text-stone-400 text-base md:text-lg max-w-xl mx-auto">
@@ -355,7 +355,7 @@ export default function HomePage() {
                 title: "Tanı ve Farkındalık",
                 desc: "Lipödem nasıl anlaşılır, evreleri nelerdir?",
                 href: "/lipodem-nedir",
-                accent: "bg-purple-500",
+                accent: "bg-[#1A6B5A]",
                 delay: 0,
               },
               {
@@ -363,7 +363,7 @@ export default function HomePage() {
                 title: "Tedavi Seçenekleri",
                 desc: "Konservatif tedaviden cerrahiye tüm yol haritası.",
                 href: "/lipodem-tedavisi",
-                accent: "bg-rose-500",
+                accent: "bg-[#2D8B73]",
                 delay: 100,
               },
               {
@@ -371,7 +371,7 @@ export default function HomePage() {
                 title: "Beslenme Rehberi",
                 desc: "Anti-inflamatuar beslenme ve pratik tarifler.",
                 href: "/lipodem-beslenme",
-                accent: "bg-orange-500",
+                accent: "bg-[#E8916D]",
                 delay: 200,
               },
               {
@@ -379,7 +379,7 @@ export default function HomePage() {
                 title: "Egzersiz Programı",
                 desc: "Lipödeme uygun hareket ve spor rehberi.",
                 href: "/lipodem-egzersiz",
-                accent: "bg-pink-500",
+                accent: "bg-[#C75B3F]",
                 delay: 300,
               },
               {
@@ -387,7 +387,7 @@ export default function HomePage() {
                 title: "Ruh Sağlığı",
                 desc: "Psikolojik destek ve başa çıkma stratejileri.",
                 href: "/lipodem-ruh-sagligi",
-                accent: "bg-violet-500",
+                accent: "bg-[#1A6B5A]",
                 delay: 400,
               },
               {
@@ -395,7 +395,7 @@ export default function HomePage() {
                 title: "T&uuml;rkiye Rehberi",
                 desc: "Şehir bazlı klinikler ve SGK bilgisi.",
                 href: "/lipodem-turkiye-rehberi",
-                accent: "bg-fuchsia-500",
+                accent: "bg-[#2D8B73]",
                 delay: 500,
               },
             ].map((item) => (
@@ -407,16 +407,16 @@ export default function HomePage() {
                   {/* Top accent line */}
                   <div className={`absolute top-0 left-0 right-0 h-1 ${item.accent}`} />
 
-                  <div className="w-12 h-12 rounded-full bg-stone-100 flex items-center justify-center mb-4 mx-auto group-hover:bg-[#000] transition-colors">
+                  <div className="w-12 h-12 rounded-full bg-stone-100 flex items-center justify-center mb-4 mx-auto group-hover:bg-[#1A6B5A] transition-colors">
                     <item.icon className="w-5 h-5 text-stone-500 group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="font-display text-base font-bold text-[#000] group-hover:text-purple-700 transition-colors uppercase tracking-wider">
+                  <h3 className="font-display text-base font-bold text-[#2D3B36] group-hover:text-[#1A6B5A] transition-colors uppercase tracking-wider">
                     {item.title}
                   </h3>
                   <p className="mt-2 text-stone-400 text-sm leading-relaxed">
                     {item.desc}
                   </p>
-                  <span className="mt-4 inline-flex items-center justify-center gap-1.5 text-[#000] text-sm font-bold group-hover:gap-2.5 transition-all uppercase tracking-wider">
+                  <span className="mt-4 inline-flex items-center justify-center gap-1.5 text-[#2D3B36] text-sm font-bold group-hover:gap-2.5 transition-all uppercase tracking-wider">
                     Keşfet <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Link>
@@ -429,11 +429,11 @@ export default function HomePage() {
       {/* ──────────────────────────────────────────
           SECTION 7 - HASTA HİKAYELERİ
          ────────────────────────────────────────── */}
-      <section className="bg-stone-50 py-20 md:py-28 lg:py-36">
+      <section className="bg-[#E8EFE8] py-20 md:py-28 lg:py-36">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-14 md:mb-20">
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#000] uppercase tracking-wide">
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#2D3B36] uppercase tracking-wide">
                 Yalnız değilsiniz
               </h2>
               <p className="mt-4 text-stone-400 text-base md:text-lg max-w-xl mx-auto">
@@ -472,7 +472,7 @@ export default function HomePage() {
 
                   {/* Attribution */}
                   <div className="mt-8 pt-6 border-t border-stone-100">
-                    <p className="font-display font-bold text-[#000] text-sm uppercase tracking-wider">
+                    <p className="font-display font-bold text-[#2D3B36] text-sm uppercase tracking-wider">
                       {testimonial.name}
                     </p>
                     <p className="text-stone-400 text-sm mt-1">
@@ -500,10 +500,10 @@ export default function HomePage() {
             ].map((item) => (
               <ScrollReveal key={item.title} delay={item.delay}>
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded-full bg-[#000] flex items-center justify-center mb-4">
+                  <div className="w-14 h-14 rounded-full bg-[#1A6B5A] flex items-center justify-center mb-4">
                     <item.icon className="w-6 h-6 text-white" />
                   </div>
-                  <p className="font-display text-sm font-bold text-[#000] uppercase tracking-wider">
+                  <p className="font-display text-sm font-bold text-[#2D3B36] uppercase tracking-wider">
                     {item.title}
                   </p>
                   <p className="text-xs text-stone-400 mt-2 max-w-[180px]">
@@ -519,7 +519,7 @@ export default function HomePage() {
       {/* ──────────────────────────────────────────
           SECTION 9 - CTA BANT
          ────────────────────────────────────────── */}
-      <section className="bg-[#000] py-16 md:py-20">
+      <section className="bg-[#163832] py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
           <ScrollReveal>
             <h2 className="font-display text-2xl md:text-3xl lg:text-5xl font-extrabold text-white leading-tight uppercase tracking-wide">
@@ -528,7 +528,7 @@ export default function HomePage() {
             <div className="mt-8">
               <Link
                 href="/araclar/semptom-testi"
-                className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full font-bold text-[#000] bg-white hover:bg-purple-100 transition-all duration-300 text-base"
+                className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full font-bold text-[#2D3B36] bg-white hover:bg-[#E8F5F0] transition-all duration-300 text-base"
               >
                 Semptom Testini &Ccedil;&ouml;z
                 <ArrowRight className="w-4 h-4" />
@@ -549,7 +549,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
               <div>
-                <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#000] uppercase tracking-wide">
+                <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#2D3B36] uppercase tracking-wide">
                   Haftalık lip&ouml;dem bilgisi, doğrudan e-postanıza
                 </h2>
                 <p className="mt-4 text-stone-400 text-base leading-relaxed">
@@ -563,7 +563,7 @@ export default function HomePage() {
                 <input
                   type="email"
                   placeholder="E-posta adresiniz"
-                  className="flex-1 px-6 py-4 rounded-full border-2 border-stone-200 bg-white text-stone-700 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-purple-500/40 focus:border-purple-500 transition-all"
+                  className="flex-1 px-6 py-4 rounded-full border-2 border-stone-200 bg-white text-stone-700 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#1A6B5A]/40 focus:border-[#1A6B5A] transition-all"
                   required
                 />
                 <button
@@ -588,7 +588,7 @@ export default function HomePage() {
       <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white/90 backdrop-blur-lg px-4 py-3 border-t border-stone-100 shadow-soft-lg">
         <Link
           href="/araclar/semptom-testi"
-          className="flex items-center justify-center gap-2 w-full bg-[#000] text-white py-3.5 rounded-full font-bold text-sm shadow-sm hover:bg-stone-800 transition-colors"
+          className="flex items-center justify-center gap-2 w-full bg-[#1A6B5A] text-white py-3.5 rounded-full font-bold text-sm shadow-sm hover:bg-[#15594A] transition-colors"
         >
           <ClipboardCheck className="w-4 h-4" />
           Semptom Testini &Ccedil;&ouml;z

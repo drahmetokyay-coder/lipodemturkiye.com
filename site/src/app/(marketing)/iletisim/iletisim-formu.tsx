@@ -30,8 +30,8 @@ export default function IletisimFormu() {
 
   if (gonderildi) {
     return (
-      <div className="bg-purple-50 rounded-xl p-8 border border-purple-200 text-center">
-        <CheckCircle2 className="w-12 h-12 text-purple-600 mx-auto mb-4" />
+      <div className="bg-[#E8F5F0] rounded-xl p-8 border border-[#93D4BE] text-center">
+        <CheckCircle2 className="w-12 h-12 text-[#1A6B5A] mx-auto mb-4" />
         <h3 className="text-lg font-bold text-stone-800 mb-2">
           Mesajınız alındı!
         </h3>
@@ -40,7 +40,7 @@ export default function IletisimFormu() {
         </p>
         <button
           onClick={() => setGonderildi(false)}
-          className="mt-6 text-sm text-purple-600 hover:text-purple-700 font-semibold transition-colors"
+          className="mt-6 text-sm text-[#1A6B5A] hover:text-[#15594A] font-semibold transition-colors"
         >
           Yeni mesaj gönder
         </button>
@@ -64,7 +64,7 @@ export default function IletisimFormu() {
           name="ad"
           required
           placeholder="Adınız Soyadınız"
-          className="w-full px-4 py-3 rounded-lg border border-stone-300 text-stone-800 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+          className="w-full px-4 py-3 rounded-lg border border-stone-300 text-stone-800 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#2D8B73] focus:border-transparent transition-all"
         />
       </div>
 
@@ -82,7 +82,7 @@ export default function IletisimFormu() {
           name="email"
           required
           placeholder="ornek@email.com"
-          className="w-full px-4 py-3 rounded-lg border border-stone-300 text-stone-800 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+          className="w-full px-4 py-3 rounded-lg border border-stone-300 text-stone-800 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#2D8B73] focus:border-transparent transition-all"
         />
       </div>
 
@@ -99,7 +99,7 @@ export default function IletisimFormu() {
           name="konu"
           required
           defaultValue=""
-          className="w-full px-4 py-3 rounded-lg border border-stone-300 text-stone-800 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+          className="w-full px-4 py-3 rounded-lg border border-stone-300 text-stone-800 focus:outline-none focus:ring-2 focus:ring-[#2D8B73] focus:border-transparent transition-all"
         >
           <option value="" disabled>
             Konu seçin
@@ -126,14 +126,14 @@ export default function IletisimFormu() {
           required
           rows={5}
           placeholder="Mesajınızı buraya yazın..."
-          className="w-full px-4 py-3 rounded-lg border border-stone-300 text-stone-800 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all resize-y"
+          className="w-full px-4 py-3 rounded-lg border border-stone-300 text-stone-800 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[#2D8B73] focus:border-transparent transition-all resize-y"
         />
       </div>
 
       {/* Gönder */}
       <button
         type="submit"
-        className="inline-flex items-center gap-2 bg-purple-600 text-white px-7 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+        className="inline-flex items-center gap-2 bg-[#1A6B5A] text-white px-7 py-3 rounded-lg font-semibold hover:bg-[#15594A] transition-colors"
       >
         Gönder
         <Send className="w-4 h-4" />

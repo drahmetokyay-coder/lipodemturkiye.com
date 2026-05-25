@@ -9,43 +9,43 @@ const regionData: Record<string, { name: string; clinicCount: number; cities: st
     name: "Marmara",
     clinicCount: 12,
     cities: ["İstanbul", "Bursa", "Kocaeli", "Tekirdağ", "Balıkesir"],
-    color: "#7C3AED",
+    color: "#1A6B5A",
   },
   ege: {
     name: "Ege",
     clinicCount: 5,
     cities: ["İzmir", "Muğla", "Aydın", "Manisa", "Denizli"],
-    color: "#A855F7",
+    color: "#2D8B73",
   },
   akdeniz: {
     name: "Akdeniz",
     clinicCount: 6,
     cities: ["Antalya", "Adana", "Mersin", "Hatay", "Isparta"],
-    color: "#E11D48",
+    color: "#E8916D",
   },
   "ic-anadolu": {
     name: "İç Anadolu",
     clinicCount: 7,
     cities: ["Ankara", "Konya", "Kayseri", "Eskişehir", "Sivas"],
-    color: "#F97316",
+    color: "#C75B3F",
   },
   karadeniz: {
     name: "Karadeniz",
     clinicCount: 1,
     cities: ["Samsun", "Trabzon", "Zonguldak", "Rize", "Ordu"],
-    color: "#06B6D4",
+    color: "#5BBF9E",
   },
   "dogu-anadolu": {
     name: "Doğu Anadolu",
     clinicCount: 0,
     cities: ["Erzurum", "Van", "Malatya", "Elazığ", "Ağrı"],
-    color: "#8B5CF6",
+    color: "#93D4BE",
   },
   "guneydogu-anadolu": {
     name: "Güneydoğu Anadolu",
     clinicCount: 1,
     cities: ["Gaziantep", "Diyarbakır", "Şanlıurfa", "Mardin"],
-    color: "#EC4899",
+    color: "#EFA278",
   },
 };
 
@@ -154,7 +154,7 @@ export function TurkeyMap() {
 
         <div className="flex items-center justify-center gap-6 mt-4">
           <div className="flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full bg-purple-600" />
+            <span className="w-3 h-3 rounded-full bg-[#1A6B5A]" />
             <span className="text-xs text-stone-500">Klinik mevcut</span>
           </div>
           <div className="flex items-center gap-2">
@@ -167,7 +167,7 @@ export function TurkeyMap() {
       {/* Sağ: Bilgi paneli -- sabit yükseklik */}
       <div className="lg:col-span-2">
         <div className="text-center lg:text-left">
-          <p className="font-display text-6xl md:text-7xl font-black text-[#000] tracking-tight leading-none">
+          <p className="font-display text-6xl md:text-7xl font-black text-[#2D3B36] tracking-tight leading-none">
             {totalClinics}
           </p>
           <p className="text-stone-500 font-medium mt-2 uppercase tracking-wider text-sm">
@@ -194,11 +194,11 @@ export function TurkeyMap() {
                   className="w-2.5 h-2.5 rounded-full flex-shrink-0"
                   style={{ backgroundColor: region.clinicCount > 0 ? region.color : "#d6d3d1" }}
                 />
-                <span className={`text-sm ${activeRegion === id ? "font-bold text-[#000]" : "font-medium text-stone-700"}`}>
+                <span className={`text-sm ${activeRegion === id ? "font-bold text-[#2D3B36]" : "font-medium text-stone-700"}`}>
                   {region.name}
                 </span>
               </div>
-              <span className={`text-sm font-bold ${region.clinicCount > 0 ? "text-[#000]" : "text-stone-300"}`}>
+              <span className={`text-sm font-bold ${region.clinicCount > 0 ? "text-[#2D3B36]" : "text-stone-300"}`}>
                 {region.clinicCount > 0 ? region.clinicCount : "—"}
               </span>
             </div>
@@ -212,7 +212,7 @@ export function TurkeyMap() {
               <p className="font-semibold text-stone-800 text-sm">{active.name} Bölgesi</p>
               <p className="text-xs text-stone-500 mt-1">{active.cities.join(", ")}</p>
               <p className="text-xs text-stone-400 mt-1">
-                <span className="font-bold text-[#000]">{active.clinicCount}</span> aktif tedavi merkezi
+                <span className="font-bold text-[#2D3B36]">{active.clinicCount}</span> aktif tedavi merkezi
               </p>
             </div>
           ) : active ? (

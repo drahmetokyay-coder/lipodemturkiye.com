@@ -1,72 +1,72 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Montserrat', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
 
-  /* Primary - Lipödem Awareness Purple */
-  --color-primary-50: #FAF5FF;
-  --color-primary-100: #F3E8FF;
-  --color-primary-200: #E9D5FF;
-  --color-primary-300: #D8B4FE;
-  --color-primary-400: #C084FC;
-  --color-primary-500: #A855F7;
-  --color-primary-600: #9333EA;
-  --color-primary-700: #7C3AED;
-  --color-primary-800: #6B21A8;
-  --color-primary-900: #581C87;
+  /* Primary - Teal/Green (Marka Kiti) */
+  --color-primary-50: #E8F5F0;
+  --color-primary-100: #C5E8DC;
+  --color-primary-200: #93D4BE;
+  --color-primary-300: #5BBF9E;
+  --color-primary-400: #2D8B73;
+  --color-primary-500: #1A6B5A;
+  --color-primary-600: #15594A;
+  --color-primary-700: #10473B;
+  --color-primary-800: #0B352C;
+  --color-primary-900: #06231D;
 
-  /* Secondary - Rose/Pink */
-  --color-secondary-50: #FFF1F2;
-  --color-secondary-100: #FFE4E6;
-  --color-secondary-200: #FECDD3;
-  --color-secondary-300: #FDA4AF;
-  --color-secondary-400: #FB7185;
-  --color-secondary-500: #F43F5E;
-  --color-secondary-600: #E11D48;
-  --color-secondary-700: #BE185D;
+  /* Secondary - Teal Dark */
+  --color-secondary-50: #E8F5F0;
+  --color-secondary-100: #C5E8DC;
+  --color-secondary-200: #93D4BE;
+  --color-secondary-300: #5BBF9E;
+  --color-secondary-400: #2D8B73;
+  --color-secondary-500: #1A6B5A;
+  --color-secondary-600: #15594A;
+  --color-secondary-700: #10473B;
 
-  /* Accent - Orange */
-  --color-accent-50: #FFF7ED;
-  --color-accent-100: #FFEDD5;
-  --color-accent-200: #FED7AA;
-  --color-accent-300: #FDBA74;
-  --color-accent-400: #FB923C;
-  --color-accent-500: #F97316;
-  --color-accent-600: #EA580C;
+  /* Accent - Somon/Terracotta */
+  --color-accent-50: #FDF0E9;
+  --color-accent-100: #FADCC8;
+  --color-accent-200: #F5BFA0;
+  --color-accent-300: #EFA278;
+  --color-accent-400: #E8916D;
+  --color-accent-500: #D47A54;
+  --color-accent-600: #C75B3F;
 
-  /* Warm - Amber */
-  --color-warm-50: #FFFBEB;
-  --color-warm-100: #FEF3C7;
-  --color-warm-200: #FDE68A;
-  --color-warm-400: #FBBF24;
-  --color-warm-500: #F59E0B;
-  --color-warm-600: #D97706;
+  /* Warm - Somon warm tones */
+  --color-warm-50: #FDF0E9;
+  --color-warm-100: #FADCC8;
+  --color-warm-200: #F5BFA0;
+  --color-warm-400: #E8916D;
+  --color-warm-500: #D47A54;
+  --color-warm-600: #C75B3F;
 
-  /* Blush - Satin pembe tonlari */
-  --color-blush-50: #FFF1F2;
-  --color-blush-100: #FFE4E6;
-  --color-blush-200: #FECDD3;
-  --color-blush-300: #FDA4AF;
-  --color-blush-400: #FB7185;
-  --color-blush-500: #F43F5E;
+  /* Blush - Soft somon */
+  --color-blush-50: #FDF0E9;
+  --color-blush-100: #FADCC8;
+  --color-blush-200: #F5BFA0;
+  --color-blush-300: #EFA278;
+  --color-blush-400: #E8916D;
+  --color-blush-500: #D47A54;
 
-  /* Cream - Sicak notr tonlar */
-  --color-cream-50: #FFF7ED;
-  --color-cream-100: #FFEDD5;
-  --color-cream-200: #FED7AA;
-  --color-cream-300: #FDBA74;
+  /* Cream - Sicak krem tonlari */
+  --color-cream-50: #FAF7F2;
+  --color-cream-100: #F5F0E8;
+  --color-cream-200: #EDE6DA;
+  --color-cream-300: #E0D6C8;
 
-  /* Rose Muted - Yumusak gul tonu */
-  --color-rose-muted: #E8B4B8;
-  --color-rose-muted-light: #F2D0D3;
-  --color-rose-muted-dark: #C9898F;
+  /* Sage - Yumusak yesil gri */
+  --color-rose-muted: #E8EFE8;
+  --color-rose-muted-light: #F0F5F0;
+  --color-rose-muted-dark: #C5D8C5;
 
   /* Clean Medical palette */
-  --color-sage: #e8efe8;
-  --color-cream: #faf9f6;
-  --color-charcoal: #1a1a2e;
+  --color-sage: #E8EFE8;
+  --color-cream: #FAF7F2;
+  --color-charcoal: #163832;
 
   /* Animations */
   --animate-blob: blob 10s infinite ease-in-out;
@@ -152,18 +152,18 @@ body {
 
 /* Selection rengi */
 ::selection {
-  background: #E9D5FF;
-  color: #581C87;
+  background: #C5E8DC;
+  color: #06231D;
 }
 
 ::-moz-selection {
-  background: #E9D5FF;
-  color: #581C87;
+  background: #C5E8DC;
+  color: #06231D;
 }
 
 /* Focus ring standardizasyonu */
 *:focus-visible {
-  outline: 2px solid #A855F7;
+  outline: 2px solid #1A6B5A;
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -231,30 +231,30 @@ body {
 
 .btn-pill-primary {
   border-radius: 40px;
-  background: #000;
+  background: #1A6B5A;
   color: #fff;
   font-weight: 700;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-pill-primary:hover {
-  background: #1a1a2e;
+  background: #15594A;
   transform: translateY(-1px);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 24px rgba(26, 107, 90, 0.25);
 }
 
 .btn-pill-gradient {
   border-radius: 40px;
-  background: linear-gradient(135deg, #7C3AED, #DB2777);
+  background: linear-gradient(135deg, #1A6B5A, #2D8B73);
   color: #fff;
   font-weight: 700;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-pill-gradient:hover {
-  background: linear-gradient(135deg, #6B21A8, #BE185D);
+  background: linear-gradient(135deg, #15594A, #1A6B5A);
   transform: translateY(-1px);
-  box-shadow: 0 6px 24px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 6px 24px rgba(26, 107, 90, 0.3);
 }
 
 /* ============================================
@@ -271,34 +271,34 @@ body {
    ============================================ */
 
 .gradient-mesh {
-  background-color: #FAF5FF;
+  background-color: #E8F5F0;
   background-image:
-    radial-gradient(at 0% 0%, #F3E8FF 0px, transparent 50%),
-    radial-gradient(at 80% 0%, #FFF1F2 0px, transparent 50%),
-    radial-gradient(at 100% 50%, #FFF7ED 0px, transparent 50%),
-    radial-gradient(at 0% 100%, #E9D5FF 0px, transparent 50%),
-    radial-gradient(at 80% 100%, #F3E8FF 0px, transparent 50%);
+    radial-gradient(at 0% 0%, #C5E8DC 0px, transparent 50%),
+    radial-gradient(at 80% 0%, #FDF0E9 0px, transparent 50%),
+    radial-gradient(at 100% 50%, #FAF7F2 0px, transparent 50%),
+    radial-gradient(at 0% 100%, #E8EFE8 0px, transparent 50%),
+    radial-gradient(at 80% 100%, #C5E8DC 0px, transparent 50%);
 }
 
 /* Text gradients */
 .text-gradient {
-  background: linear-gradient(135deg, #7C3AED, #E11D48);
+  background: linear-gradient(135deg, #1A6B5A, #E8916D);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Brand gradient: mor → rose → turuncu */
+/* Brand gradient: teal → somon */
 .brand-gradient {
-  background: linear-gradient(135deg, #7C3AED, #E11D48, #F97316);
+  background: linear-gradient(135deg, #1A6B5A, #E8916D);
 }
 
 .brand-gradient-subtle {
-  background: linear-gradient(135deg, #FAF5FF, #FFF1F2, #FFF7ED);
+  background: linear-gradient(135deg, #E8F5F0, #FDF0E9, #FAF7F2);
 }
 
 .brand-gradient-text {
-  background: linear-gradient(135deg, #6B21A8, #BE185D);
+  background: linear-gradient(135deg, #1A6B5A, #2D8B73);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -306,20 +306,20 @@ body {
 
 /* CTA gradient */
 .cta-gradient {
-  background: linear-gradient(135deg, #7C3AED, #DB2777);
+  background: linear-gradient(135deg, #1A6B5A, #2D8B73);
 }
 
 .cta-gradient:hover {
-  background: linear-gradient(135deg, #6B21A8, #BE185D);
+  background: linear-gradient(135deg, #15594A, #1A6B5A);
 }
 
 /* Section arka plan alternatifleri */
 .bg-section-warm {
-  background: linear-gradient(180deg, #FDF2F8, #FAF5FF);
+  background: linear-gradient(180deg, #FAF7F2, #E8EFE8);
 }
 
 .bg-section-cream {
-  background: linear-gradient(180deg, #FFF7ED, #FAFAF9);
+  background: linear-gradient(180deg, #FAF7F2, #FFFFFF);
 }
 
 /* Glass (light only) */

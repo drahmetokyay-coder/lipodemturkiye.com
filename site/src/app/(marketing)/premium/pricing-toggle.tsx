@@ -47,8 +47,8 @@ export function PricingToggle() {
         aria-checked={period === "yearly"}
         aria-label="Aylık veya yıllık ödeme seçimi"
         onClick={() => setPeriod(period === "monthly" ? "yearly" : "monthly")}
-        className={`relative inline-flex h-7 w-[52px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 ${
-          period === "yearly" ? "bg-purple-600" : "bg-stone-200"
+        className={`relative inline-flex h-7 w-[52px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2D8B73] focus-visible:ring-offset-2 ${
+          period === "yearly" ? "bg-[#1A6B5A]" : "bg-stone-200"
         }`}
       >
         <span

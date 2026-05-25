@@ -32,7 +32,7 @@ export function RegionFilter({ cities }: RegionFilterProps) {
           onClick={() => setSelectedRegion(null)}
           className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
             selectedRegion === null
-              ? "bg-purple-600 text-white shadow-sm"
+              ? "bg-[#1A6B5A] text-white shadow-sm"
               : "bg-stone-100 text-stone-600 hover:bg-stone-200"
           }`}
         >
@@ -46,7 +46,7 @@ export function RegionFilter({ cities }: RegionFilterProps) {
               onClick={() => setSelectedRegion(r.value)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                 selectedRegion === r.value
-                  ? "bg-purple-600 text-white shadow-sm"
+                  ? "bg-[#1A6B5A] text-white shadow-sm"
                   : "bg-stone-100 text-stone-600 hover:bg-stone-200"
               }`}
             >
@@ -68,7 +68,7 @@ export function RegionFilter({ cities }: RegionFilterProps) {
             <div
               className={`absolute top-0 left-0 right-0 h-[2px] ${
                 city.hasClinics
-                  ? "bg-gradient-to-r from-purple-600 to-rose-500"
+                  ? "bg-gradient-to-r from-[#1A6B5A] to-[#2D8B73]"
                   : "bg-stone-200"
               }`}
             />
@@ -76,8 +76,8 @@ export function RegionFilter({ cities }: RegionFilterProps) {
             <div className="flex items-start justify-between">
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-1.5">
-                  <MapPin className="w-4 h-4 text-purple-500 shrink-0" />
-                  <h3 className="text-base font-semibold text-stone-800 group-hover:text-purple-700 transition-colors">
+                  <MapPin className="w-4 h-4 text-[#1A6B5A] shrink-0" />
+                  <h3 className="text-base font-semibold text-stone-800 group-hover:text-[#1A6B5A] transition-colors">
                     {city.name}
                   </h3>
                 </div>
@@ -88,7 +88,7 @@ export function RegionFilter({ cities }: RegionFilterProps) {
 
               {/* Klinik sayisi badge */}
               {city.hasClinics ? (
-                <span className="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium bg-purple-50 text-purple-700 border border-purple-200">
+                <span className="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium bg-[#E8F5F0] text-[#1A6B5A] border border-[#C5E8DC]">
                   {city.clinicCount} klinik
                 </span>
               ) : (
@@ -104,7 +104,7 @@ export function RegionFilter({ cities }: RegionFilterProps) {
               </div>
             )}
 
-            <div className="mt-3 ml-6 flex items-center text-purple-600 text-sm font-medium group-hover:gap-2 gap-1 transition-all">
+            <div className="mt-3 ml-6 flex items-center text-[#1A6B5A] text-sm font-medium group-hover:gap-2 gap-1 transition-all">
               Detay{" "}
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
             </div>

@@ -26,7 +26,7 @@ export default function HikayeAKPage() {
   return (
     <article>
       {/* HERO */}
-      <section className="bg-gradient-to-br from-purple-50 via-rose-50 to-orange-50 py-12 md:py-16">
+      <section className="bg-gradient-to-br from-[#E8F5F0] via-rose-50 to-orange-50 py-12 md:py-16">
         <div className="max-w-3xl mx-auto px-4 md:px-6">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-8">
@@ -34,7 +34,7 @@ export default function HikayeAKPage() {
               <li>
                 <Link
                   href="/"
-                  className="hover:text-purple-600 transition-colors"
+                  className="hover:text-[#1A6B5A] transition-colors"
                 >
                   Ana Sayfa
                 </Link>
@@ -45,7 +45,7 @@ export default function HikayeAKPage() {
               <li>
                 <Link
                   href="/hikayeler"
-                  className="hover:text-purple-600 transition-colors"
+                  className="hover:text-[#1A6B5A] transition-colors"
                 >
                   Hasta Hikayeleri
                 </Link>
@@ -68,8 +68,8 @@ export default function HikayeAKPage() {
 
           {/* Anonim bilgiler */}
           <div className="mt-6 flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center">
-              <span className="text-lg font-bold text-purple-600">A</span>
+            <div className="w-12 h-12 rounded-full bg-[#E8F5F0] flex items-center justify-center">
+              <span className="text-lg font-bold text-[#1A6B5A]">A</span>
             </div>
             <div>
               <p className="font-semibold text-stone-800">A.K.</p>
@@ -97,8 +97,8 @@ export default function HikayeAKPage() {
                 Başlangıç: &ldquo;Sadece kilo almıştım, değil mi?&rdquo;
               </h2>
 
-              <div className="relative bg-purple-50 border border-purple-100 rounded-xl p-6 mb-6">
-                <Quote className="w-6 h-6 text-purple-200 absolute top-4 left-4" />
+              <div className="relative bg-[#E8F5F0] border border-[#E8F5F0] rounded-xl p-6 mb-6">
+                <Quote className="w-6 h-6 text-[#93D4BE] absolute top-4 left-4" />
                 <p className="text-stone-700 leading-relaxed font-serif italic pl-6">
                   &ldquo;Lise yıllarında başladı. Arkadaşlarımın hepsi ince
                   bacaklıydı, benimkiler hep kalındı. Annem &apos;bizim aile
@@ -128,8 +128,8 @@ export default function HikayeAKPage() {
                 Tanı süreci: 10 yıl, 7 doktor, 0 doğru tanı
               </h2>
 
-              <div className="relative bg-purple-50 border border-purple-100 rounded-xl p-6 mb-6">
-                <Quote className="w-6 h-6 text-purple-200 absolute top-4 left-4" />
+              <div className="relative bg-[#E8F5F0] border border-[#E8F5F0] rounded-xl p-6 mb-6">
+                <Quote className="w-6 h-6 text-[#93D4BE] absolute top-4 left-4" />
                 <p className="text-stone-700 leading-relaxed font-serif italic pl-6">
                   &ldquo;Her doktora gittiğimde aynı şeyi duydum: &apos;Kilo
                   verin.&apos; Diyetisyenler, endokrinologlar, dahiliyeciler...
@@ -169,8 +169,8 @@ export default function HikayeAKPage() {
                 Tedavi yolculuğu: Doğru tanı, doğru adımlar
               </h2>
 
-              <div className="relative bg-purple-50 border border-purple-100 rounded-xl p-6 mb-6">
-                <Quote className="w-6 h-6 text-purple-200 absolute top-4 left-4" />
+              <div className="relative bg-[#E8F5F0] border border-[#E8F5F0] rounded-xl p-6 mb-6">
+                <Quote className="w-6 h-6 text-[#93D4BE] absolute top-4 left-4" />
                 <p className="text-stone-700 leading-relaxed font-serif italic pl-6">
                   &ldquo;Lipödem tanısını aldığım gün hem ağladım hem rahatladım.
                   Sonunda bir ismi vardı. Sorun ben değildim, iradem değildi.
@@ -207,8 +207,8 @@ export default function HikayeAKPage() {
                 Bugün: Lipödemle yaşamayı öğrenmek
               </h2>
 
-              <div className="relative bg-purple-50 border border-purple-100 rounded-xl p-6 mb-6">
-                <Quote className="w-6 h-6 text-purple-200 absolute top-4 left-4" />
+              <div className="relative bg-[#E8F5F0] border border-[#E8F5F0] rounded-xl p-6 mb-6">
+                <Quote className="w-6 h-6 text-[#93D4BE] absolute top-4 left-4" />
                 <p className="text-stone-700 leading-relaxed font-serif italic pl-6">
                   &ldquo;Lipödem bitmedi, bitmiyor da. Ama artık biliyorum ne
                   olduğunu, nasıl yöneteceğimi. Kendimi suçlamıyorum. Bu benim
@@ -238,7 +238,7 @@ export default function HikayeAKPage() {
       <section className="py-10 md:py-12 bg-stone-50">
         <div className="max-w-3xl mx-auto px-4 md:px-6">
           <ScrollReveal>
-            <div className="bg-purple-600 rounded-xl p-8 text-white">
+            <div className="bg-[#1A6B5A] rounded-xl p-8 text-white">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
                   <Heart className="w-6 h-6 text-white" />
@@ -247,7 +247,7 @@ export default function HikayeAKPage() {
                   <h2 className="text-xl md:text-2xl font-bold mb-3 font-serif">
                     Bu hikaye size tanıdık geldi mi?
                   </h2>
-                  <p className="text-purple-100 leading-relaxed mb-6">
+                  <p className="text-[#E8F5F0] leading-relaxed mb-6">
                     Eğer yıllardır açıklayamadığınız belirtilerle
                     yaşıyorsanız, kendinizi suçluyorsanız veya doğru tanıyı
                     arayorsanız &mdash; yalnız değilsiniz. Bilimsel semptom
@@ -256,7 +256,7 @@ export default function HikayeAKPage() {
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Link
                       href="/araclar/semptom-testi"
-                      className="inline-flex items-center justify-center gap-2 bg-white text-purple-700 px-7 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors"
+                      className="inline-flex items-center justify-center gap-2 bg-white text-[#15594A] px-7 py-3 rounded-lg font-semibold hover:bg-[#E8F5F0] transition-colors"
                     >
                       Semptom Testini Başlat
                       <ArrowRight className="w-5 h-5" />
@@ -293,7 +293,7 @@ export default function HikayeAKPage() {
                 Daha fazla bilgi için{" "}
                 <Link
                   href="/tibbi-sorumluluk-reddi"
-                  className="text-purple-600 hover:text-purple-700 underline"
+                  className="text-[#1A6B5A] hover:text-[#15594A] underline"
                 >
                   tıbbi sorumluluk reddi
                 </Link>{" "}

@@ -192,7 +192,7 @@ export default function LipodemTurkiyeRehberiPage() {
   return (
     <article>
       {/* HERO */}
-      <section className="bg-gradient-to-br from-purple-50 via-rose-50 to-orange-50 py-12 md:py-16">
+      <section className="bg-gradient-to-br from-[#E8F5F0] via-rose-50 to-orange-50 py-12 md:py-16">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-8">
@@ -200,7 +200,7 @@ export default function LipodemTurkiyeRehberiPage() {
               <li>
                 <Link
                   href="/"
-                  className="hover:text-purple-600 transition-colors"
+                  className="hover:text-[#1A6B5A] transition-colors"
                 >
                   Ana Sayfa
                 </Link>
@@ -211,7 +211,7 @@ export default function LipodemTurkiyeRehberiPage() {
               <li>
                 <Link
                   href="/lipodem-nedir"
-                  className="hover:text-purple-600 transition-colors"
+                  className="hover:text-[#1A6B5A] transition-colors"
                 >
                   Lipödem Nedir
                 </Link>
@@ -240,14 +240,14 @@ export default function LipodemTurkiyeRehberiPage() {
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/araclar/semptom-testi"
-              className="inline-flex items-center gap-2 bg-purple-600 text-white px-7 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+              className="inline-flex items-center gap-2 bg-[#1A6B5A] text-white px-7 py-3 rounded-lg font-semibold hover:bg-[#15594A] transition-colors"
             >
               Semptom Testini Başlat
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link
               href="/klinikler"
-              className="inline-flex items-center gap-2 bg-white text-purple-600 border border-purple-200 px-7 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors"
+              className="inline-flex items-center gap-2 bg-white text-[#1A6B5A] border border-[#93D4BE] px-7 py-3 rounded-lg font-semibold hover:bg-[#E8F5F0] transition-colors"
             >
               Klinik Bul
               <ArrowRight className="w-5 h-5" />
@@ -265,7 +265,7 @@ export default function LipodemTurkiyeRehberiPage() {
                 key={stat.aciklama}
                 className="bg-stone-50 rounded-xl p-5 text-center border border-stone-200"
               >
-                <div className="text-2xl md:text-3xl font-extrabold text-purple-600">
+                <div className="text-2xl md:text-3xl font-extrabold text-[#1A6B5A]">
                   {stat.deger}
                 </div>
                 <p className="text-xs md:text-sm text-stone-600 mt-2">
@@ -302,8 +302,8 @@ export default function LipodemTurkiyeRehberiPage() {
                 className="bg-white rounded-xl p-6 border border-stone-200 shadow-sm"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center shrink-0 mt-0.5">
-                    <Activity className="w-5 h-5 text-purple-600" />
+                  <div className="w-10 h-10 rounded-full bg-[#E8F5F0] flex items-center justify-center shrink-0 mt-0.5">
+                    <Activity className="w-5 h-5 text-[#1A6B5A]" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-stone-800 mb-1">
@@ -312,11 +312,11 @@ export default function LipodemTurkiyeRehberiPage() {
                     <p className="text-stone-600 leading-relaxed mb-2">
                       {doktor.neden}
                     </p>
-                    <div className="bg-purple-50 rounded-lg px-3 py-2 text-sm">
-                      <span className="font-semibold text-purple-700">
+                    <div className="bg-[#E8F5F0] rounded-lg px-3 py-2 text-sm">
+                      <span className="font-semibold text-[#15594A]">
                         İpucu:{" "}
                       </span>
-                      <span className="text-purple-600">{doktor.ipucu}</span>
+                      <span className="text-[#1A6B5A]">{doktor.ipucu}</span>
                     </div>
                   </div>
                 </div>
@@ -405,11 +405,11 @@ export default function LipodemTurkiyeRehberiPage() {
                 className="bg-white rounded-xl p-5 border border-stone-200 flex flex-col md:flex-row md:items-center gap-4"
               >
                 <div className="flex items-center gap-3 md:w-1/4">
-                  <MapPin className="w-5 h-5 text-purple-600 shrink-0" />
+                  <MapPin className="w-5 h-5 text-[#1A6B5A] shrink-0" />
                   <h3 className="font-semibold text-stone-800">{il.il}</h3>
                 </div>
                 <div className="md:w-1/4">
-                  <span className="text-purple-600 font-bold">{il.aralik}</span>
+                  <span className="text-[#1A6B5A] font-bold">{il.aralik}</span>
                 </div>
                 <div className="md:w-2/4">
                   <p className="text-stone-600 text-sm">{il.not}</p>
@@ -460,7 +460,7 @@ export default function LipodemTurkiyeRehberiPage() {
                   <th className="px-4 py-3 text-left font-semibold text-stone-700 border-b border-stone-200">
                     Bulunabilirlik
                   </th>
-                  <th className="px-4 py-3 text-left font-semibold text-purple-700 border-b border-stone-200">
+                  <th className="px-4 py-3 text-left font-semibold text-[#15594A] border-b border-stone-200">
                     Fiyat Aralığı
                   </th>
                 </tr>
@@ -524,7 +524,7 @@ export default function LipodemTurkiyeRehberiPage() {
                 key={i}
                 className="flex items-start gap-4 bg-white rounded-xl p-5 border border-stone-200"
               >
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-purple-100 text-purple-700 font-bold text-sm shrink-0">
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#E8F5F0] text-[#15594A] font-bold text-sm shrink-0">
                   {i + 1}
                 </span>
                 <p className="text-stone-700 leading-relaxed pt-1">
@@ -559,15 +559,15 @@ export default function LipodemTurkiyeRehberiPage() {
               <h3 className="font-semibold text-stone-800 mb-3">Nerede Aranır</h3>
               <ul className="space-y-2 text-sm text-stone-600">
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-purple-600 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#1A6B5A] mt-0.5 shrink-0" />
                   <span>Üniversite hastaneleri FTR klinikleri</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-purple-600 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#1A6B5A] mt-0.5 shrink-0" />
                   <span>Özel lenfödem/lipödem klinikleri</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-purple-600 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#1A6B5A] mt-0.5 shrink-0" />
                   <span>Türk Fizyoterapi ve Rehabilitasyon Derneği</span>
                 </li>
               </ul>
@@ -576,15 +576,15 @@ export default function LipodemTurkiyeRehberiPage() {
               <h3 className="font-semibold text-stone-800 mb-3">Nelere Dikkat Edilir</h3>
               <ul className="space-y-2 text-sm text-stone-600">
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-purple-600 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#1A6B5A] mt-0.5 shrink-0" />
                   <span>MLD (Vodder/Leduc) sertifikası</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-purple-600 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#1A6B5A] mt-0.5 shrink-0" />
                   <span>CDT uygulama deneyimi</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-purple-600 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#1A6B5A] mt-0.5 shrink-0" />
                   <span>Kompresyon bandajlama becerisi</span>
                 </li>
               </ul>
@@ -593,15 +593,15 @@ export default function LipodemTurkiyeRehberiPage() {
               <h3 className="font-semibold text-stone-800 mb-3">Seans Bilgileri</h3>
               <ul className="space-y-2 text-sm text-stone-600">
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-purple-600 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#1A6B5A] mt-0.5 shrink-0" />
                   <span>MLD seans süresi: 45-60 dakika</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-purple-600 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#1A6B5A] mt-0.5 shrink-0" />
                   <span>Yoğun faz: Haftada 3-5 seans, 2-4 hafta</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-purple-600 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#1A6B5A] mt-0.5 shrink-0" />
                   <span>Seans ücreti: 500-1.500 TL (özel)</span>
                 </li>
               </ul>
@@ -628,33 +628,33 @@ export default function LipodemTurkiyeRehberiPage() {
             </strong>
           </p>
 
-          <div className="mt-6 bg-purple-50 rounded-xl p-6 border border-purple-200">
-            <h3 className="font-semibold text-purple-800 mb-4">
+          <div className="mt-6 bg-[#E8F5F0] rounded-xl p-6 border border-[#93D4BE]">
+            <h3 className="font-semibold text-[#10473B] mb-4">
               Kongrenin Hedefleri
             </h3>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-purple-700">
+              <li className="flex items-start gap-3 text-[#15594A]">
                 <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0" />
                 <span>
                   Türkiye&apos;deki lipödem uzmanlarını bir araya getirmek ve
                   uzman ağını genişletmek
                 </span>
               </li>
-              <li className="flex items-start gap-3 text-purple-700">
+              <li className="flex items-start gap-3 text-[#15594A]">
                 <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0" />
                 <span>
                   Uluslararası kılavuzlar ışığında Türkiye&apos;ye özgü tedavi
                   protokolleri geliştirmek
                 </span>
               </li>
-              <li className="flex items-start gap-3 text-purple-700">
+              <li className="flex items-start gap-3 text-[#15594A]">
                 <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0" />
                 <span>
                   SGK kapsamının genişletilmesi için bilimsel kanıt tabanı
                   oluşturmak
                 </span>
               </li>
-              <li className="flex items-start gap-3 text-purple-700">
+              <li className="flex items-start gap-3 text-[#15594A]">
                 <CheckCircle2 className="w-5 h-5 mt-0.5 shrink-0" />
                 <span>
                   Hasta dernekleri ve hasta hakları konusunda farkındalık
@@ -702,9 +702,9 @@ export default function LipodemTurkiyeRehberiPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Link
               href="/lipodem-tedavisi"
-              className="group bg-white rounded-xl p-5 border border-stone-200 hover:border-purple-300 hover:bg-purple-50 transition-colors"
+              className="group bg-white rounded-xl p-5 border border-stone-200 hover:border-[#5BBF9E] hover:bg-[#E8F5F0] transition-colors"
             >
-              <h3 className="font-semibold text-stone-800 group-hover:text-purple-700 mb-2">
+              <h3 className="font-semibold text-stone-800 group-hover:text-[#15594A] mb-2">
                 Tedavi Rehberi
               </h3>
               <p className="text-sm text-stone-600">
@@ -714,9 +714,9 @@ export default function LipodemTurkiyeRehberiPage() {
             </Link>
             <Link
               href="/lipodem-beslenme"
-              className="group bg-white rounded-xl p-5 border border-stone-200 hover:border-purple-300 hover:bg-purple-50 transition-colors"
+              className="group bg-white rounded-xl p-5 border border-stone-200 hover:border-[#5BBF9E] hover:bg-[#E8F5F0] transition-colors"
             >
-              <h3 className="font-semibold text-stone-800 group-hover:text-purple-700 mb-2">
+              <h3 className="font-semibold text-stone-800 group-hover:text-[#15594A] mb-2">
                 Beslenme Rehberi
               </h3>
               <p className="text-sm text-stone-600">
@@ -726,9 +726,9 @@ export default function LipodemTurkiyeRehberiPage() {
             </Link>
             <Link
               href="/lipodem-ruh-sagligi"
-              className="group bg-white rounded-xl p-5 border border-stone-200 hover:border-purple-300 hover:bg-purple-50 transition-colors"
+              className="group bg-white rounded-xl p-5 border border-stone-200 hover:border-[#5BBF9E] hover:bg-[#E8F5F0] transition-colors"
             >
-              <h3 className="font-semibold text-stone-800 group-hover:text-purple-700 mb-2">
+              <h3 className="font-semibold text-stone-800 group-hover:text-[#15594A] mb-2">
                 Ruh Sağlığı Rehberi
               </h3>
               <p className="text-sm text-stone-600">
@@ -757,7 +757,7 @@ export default function LipodemTurkiyeRehberiPage() {
       </section>
 
       {/* SON CTA */}
-      <section className="py-12 md:py-16 bg-gradient-to-br from-purple-50 via-rose-50 to-orange-50">
+      <section className="py-12 md:py-16 bg-gradient-to-br from-[#E8F5F0] via-rose-50 to-orange-50">
         <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-stone-800 mb-4">
             Doğru uzmana ilk adımı atın
@@ -770,14 +770,14 @@ export default function LipodemTurkiyeRehberiPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/araclar/semptom-testi"
-              className="inline-flex items-center justify-center gap-2 bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-colors shadow-lg shadow-purple-600/20"
+              className="inline-flex items-center justify-center gap-2 bg-[#1A6B5A] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#15594A] transition-colors shadow-lg shadow-[#1A6B5A]/20"
             >
               Ücretsiz Semptom Testini Başlat
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link
               href="/klinikler"
-              className="inline-flex items-center justify-center gap-2 bg-white text-purple-600 border-2 border-purple-200 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-50 transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-white text-[#1A6B5A] border-2 border-[#93D4BE] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#E8F5F0] transition-colors"
             >
               Klinik / Doktor Bul
               <ArrowRight className="w-5 h-5" />

@@ -4,17 +4,17 @@ import { Spinner } from "./spinner";
 
 const variants = {
   primary:
-    "bg-purple-600 text-white hover:bg-purple-700 active:bg-purple-800 shadow-sm",
+    "bg-[#1A6B5A] text-white hover:bg-[#15594A] active:bg-[#10473B] shadow-sm",
   secondary:
-    "bg-purple-600 text-white hover:bg-purple-700 active:bg-purple-800 shadow-sm",
+    "bg-[#1A6B5A] text-white hover:bg-[#15594A] active:bg-[#10473B] shadow-sm",
   ghost:
     "bg-transparent text-stone-700 hover:bg-stone-100 active:bg-stone-200",
   "cta-gradient":
-    "bg-gradient-to-r from-purple-600 to-rose-500 text-white hover:from-purple-700 hover:to-rose-600 shadow-md hover:shadow-lg",
+    "bg-gradient-to-r from-[#1A6B5A] to-[#2D8B73] text-white hover:from-[#15594A] hover:to-[#1A6B5A] shadow-md hover:shadow-lg",
   premium:
-    "bg-gradient-to-r from-purple-600 to-purple-800 text-white hover:from-purple-700 hover:to-purple-900 shadow-md",
+    "bg-gradient-to-r from-[#1A6B5A] to-[#10473B] text-white hover:from-[#15594A] hover:to-[#0B352C] shadow-md",
   founder:
-    "bg-gradient-to-r from-amber-500 to-amber-600 text-white hover:from-amber-600 hover:to-amber-700 shadow-md",
+    "bg-gradient-to-r from-[#E8916D] to-[#C75B3F] text-white hover:from-[#C75B3F] hover:to-[#A84A33] shadow-md",
   destructive:
     "bg-red-600 text-white hover:bg-red-700 active:bg-red-800 shadow-sm",
 } as const;
@@ -52,7 +52,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={cn(
-          "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+          "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1A6B5A] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
           variants[variant],
           sizes[size],
           className

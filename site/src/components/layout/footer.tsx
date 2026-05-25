@@ -74,14 +74,17 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#000] text-stone-400">
+    <footer className="bg-[#163832] text-stone-400">
       {/* Link Grid */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="py-12 md:py-16">
+          <div className="mb-10">
+            <img src="/logo.png" alt="Lipödem Türkiye" className="h-8 w-auto brightness-0 invert" />
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
             {Object.values(footerLinks).map((section) => (
               <div key={section.title}>
-                <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-4" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-4">
                   {section.title}
                 </h3>
                 <ul className="space-y-3">
@@ -89,7 +92,7 @@ export default function Footer() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-sm text-stone-400 hover:text-white transition-colors duration-200"
+                        className="text-sm text-stone-400 hover:text-[#E8916D] transition-colors duration-200"
                       >
                         {link.label}
                       </Link>
@@ -102,7 +105,7 @@ export default function Footer() {
         </div>
 
         {/* Alt kisim: copyright + hukuki + sosyal + disclaimer */}
-        <div className="border-t border-stone-800 py-8">
+        <div className="border-t border-white/10 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Copyright */}
             <div className="text-sm text-stone-500">
@@ -111,15 +114,15 @@ export default function Footer() {
 
             {/* Hukuki linkler */}
             <div className="flex items-center gap-4 text-sm text-stone-500">
-              <Link href="/gizlilik-politikasi" className="hover:text-white transition-colors duration-200">
+              <Link href="/gizlilik-politikasi" className="hover:text-[#E8916D] transition-colors duration-200">
                 Gizlilik Politikası
               </Link>
-              <span className="text-stone-700">|</span>
-              <Link href="/kullanim-sartlari" className="hover:text-white transition-colors duration-200">
+              <span className="text-white/20">|</span>
+              <Link href="/kullanim-sartlari" className="hover:text-[#E8916D] transition-colors duration-200">
                 Kullanım Şartları
               </Link>
-              <span className="text-stone-700">|</span>
-              <Link href="/cerez-politikasi" className="hover:text-white transition-colors duration-200">
+              <span className="text-white/20">|</span>
+              <Link href="/cerez-politikasi" className="hover:text-[#E8916D] transition-colors duration-200">
                 &Ccedil;erez Politikası
               </Link>
             </div>
@@ -133,7 +136,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="w-10 h-10 flex items-center justify-center rounded-full text-stone-500 hover:text-white hover:bg-stone-800 transition-all duration-200"
+                  className="w-10 h-10 flex items-center justify-center rounded-full text-stone-500 hover:text-[#E8916D] hover:bg-white/10 transition-all duration-200"
                 >
                   <social.icon className="w-5 h-5" />
                 </a>

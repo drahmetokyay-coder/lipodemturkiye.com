@@ -15,7 +15,7 @@ export default function Header() {
     <header
       className={cn(
         "sticky top-0 z-50",
-        "bg-white/90 backdrop-blur-lg",
+        "bg-white/95 backdrop-blur-lg",
         "border-b border-stone-100",
         "transition-all duration-300"
       )}
@@ -24,36 +24,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            {/* Yaprak/kalp ikonu */}
-            <svg
-              width="26"
-              height="26"
-              viewBox="0 0 28 28"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="text-purple-700 group-hover:text-purple-500 transition-colors"
-              aria-hidden="true"
-            >
-              <path
-                d="M14 26C14 26 4 20 4 12C4 6 8 2 14 2C20 2 24 6 24 12C24 20 14 26 14 26Z"
-                fill="currentColor"
-                fillOpacity="0.12"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M14 8V18M14 8C11 10 9 13 9 16M14 8C17 10 19 13 19 16"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <span className="font-display text-xl font-bold text-[#000] group-hover:text-purple-700 transition-colors tracking-tight uppercase">
-              Lip&ouml;dem T&uuml;rkiye
-            </span>
+            <img src="/logo.png" alt="Lipödem Türkiye" className="h-10 md:h-12 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
@@ -64,7 +35,7 @@ export default function Header() {
                 href={item.href}
                 className={cn(
                   "px-4 py-2 rounded-lg text-sm font-semibold",
-                  "text-stone-700 hover:text-[#000]",
+                  "text-[#2D3B36] hover:text-[#1A6B5A]",
                   "transition-colors duration-200 uppercase tracking-wide"
                 )}
               >
@@ -78,9 +49,9 @@ export default function Header() {
             <Link
               href="/araclar/semptom-testi"
               className={cn(
-                "inline-flex items-center gap-2 px-6 py-2.5 rounded-full",
-                "bg-[#000] text-white text-sm font-bold",
-                "hover:bg-stone-800",
+                "inline-flex items-center gap-2 px-6 py-2.5 rounded-lg",
+                "bg-[#1A6B5A] text-white text-sm font-bold",
+                "hover:bg-[#15594A]",
                 "shadow-sm hover:shadow-md",
                 "transition-all duration-200 uppercase tracking-wide"
               )}

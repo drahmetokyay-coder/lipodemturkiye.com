@@ -68,7 +68,7 @@ export default function LipodemKongresi2026Page() {
   return (
     <article>
       {/* HERO */}
-      <section className="bg-gradient-to-br from-purple-50 via-rose-50 to-orange-50 py-12 md:py-20">
+      <section className="bg-gradient-to-br from-[#E8F5F0] via-rose-50 to-orange-50 py-12 md:py-20">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-8">
@@ -76,7 +76,7 @@ export default function LipodemKongresi2026Page() {
               <li>
                 <Link
                   href="/"
-                  className="hover:text-purple-600 transition-colors"
+                  className="hover:text-[#1A6B5A] transition-colors"
                 >
                   Ana Sayfa
                 </Link>
@@ -91,9 +91,9 @@ export default function LipodemKongresi2026Page() {
           </nav>
 
           {/* Etkinlik Rozeti */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-600/10 border border-purple-200 mb-6">
-            <Calendar className="w-4 h-4 text-purple-600" />
-            <span className="text-sm font-semibold text-purple-700">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1A6B5A]/10 border border-[#93D4BE] mb-6">
+            <Calendar className="w-4 h-4 text-[#1A6B5A]" />
+            <span className="text-sm font-semibold text-[#15594A]">
               6-7 Haziran 2026 | Ankara
             </span>
           </div>
@@ -111,7 +111,7 @@ export default function LipodemKongresi2026Page() {
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <a
               href="mailto:kongre@lipodemturkiye.com"
-              className="inline-flex items-center justify-center gap-2 bg-purple-600 text-white px-7 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#1A6B5A] text-white px-7 py-3 rounded-lg font-semibold hover:bg-[#15594A] transition-colors"
             >
               Kongre Hakkında Bilgi Alın
               <ArrowRight className="w-5 h-5" />
@@ -135,7 +135,7 @@ export default function LipodemKongresi2026Page() {
                 key={detay.baslik}
                 className="bg-stone-50 rounded-xl p-5 border border-stone-200 text-center"
               >
-                <detay.icon className="w-6 h-6 text-purple-600 mx-auto mb-3" />
+                <detay.icon className="w-6 h-6 text-[#1A6B5A] mx-auto mb-3" />
                 <p className="text-xs text-stone-500 uppercase tracking-wider font-medium mb-1">
                   {detay.baslik}
                 </p>
@@ -178,7 +178,7 @@ export default function LipodemKongresi2026Page() {
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
           <div className="flex items-center gap-3 mb-6">
-            <Mic2 className="w-6 h-6 text-purple-600" />
+            <Mic2 className="w-6 h-6 text-[#1A6B5A]" />
             <h2 className="text-2xl md:text-3xl font-bold text-stone-800">
               Kongre konuları
             </h2>
@@ -189,7 +189,7 @@ export default function LipodemKongresi2026Page() {
                 key={konu}
                 className="flex items-start gap-3 bg-stone-50 rounded-lg p-4 border border-stone-200"
               >
-                <BookOpen className="w-5 h-5 text-purple-600 shrink-0 mt-0.5" />
+                <BookOpen className="w-5 h-5 text-[#1A6B5A] shrink-0 mt-0.5" />
                 <span className="text-stone-700 text-sm leading-relaxed">
                   {konu}
                 </span>
@@ -209,7 +209,7 @@ export default function LipodemKongresi2026Page() {
             <ul className="space-y-4">
               {katilimciFaydalari.map((fayda) => (
                 <li key={fayda} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-purple-600 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-[#1A6B5A] shrink-0 mt-0.5" />
                   <span className="text-stone-700 leading-relaxed">
                     {fayda}
                   </span>
@@ -223,7 +223,7 @@ export default function LipodemKongresi2026Page() {
       {/* KONGRE KATILIMCISI MISINIZ? */}
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
-          <div className="bg-gradient-to-br from-purple-700 to-purple-800 rounded-xl p-8 md:p-10 text-white">
+          <div className="bg-gradient-to-br from-[#15594A] to-[#10473B] rounded-xl p-8 md:p-10 text-white">
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-lg bg-white/20 flex items-center justify-center shrink-0">
                 <Heart className="w-6 h-6 text-white" />
@@ -232,7 +232,7 @@ export default function LipodemKongresi2026Page() {
                 <h2 className="text-xl md:text-2xl font-bold mb-3">
                   Kongre katılımcısı mısınız?
                 </h2>
-                <p className="text-purple-100 leading-relaxed mb-6">
+                <p className="text-[#E8F5F0] leading-relaxed mb-6">
                   Kongre katılımcılarına özel Lipödem Türkiye premium
                   içeriklerine erişim, klinik rehber ve interaktif
                   araçlarımıza ücretsiz erişim sağlıyoruz. Ayrıca kongre
@@ -242,7 +242,7 @@ export default function LipodemKongresi2026Page() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     href="/araclar/semptom-testi"
-                    className="inline-flex items-center justify-center gap-2 bg-white text-purple-700 px-6 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors"
+                    className="inline-flex items-center justify-center gap-2 bg-white text-[#15594A] px-6 py-3 rounded-lg font-semibold hover:bg-[#E8F5F0] transition-colors"
                   >
                     Semptom Testini Deneyin
                     <ArrowRight className="w-4 h-4" />
@@ -283,7 +283,7 @@ export default function LipodemKongresi2026Page() {
                 key={item.metin}
                 className="flex flex-col items-center text-center bg-white rounded-xl p-5 border border-stone-200"
               >
-                <item.ikon className="w-6 h-6 text-purple-600 mb-2" />
+                <item.ikon className="w-6 h-6 text-[#1A6B5A] mb-2" />
                 <span className="text-sm font-semibold text-stone-700">
                   {item.metin}
                 </span>
@@ -294,7 +294,7 @@ export default function LipodemKongresi2026Page() {
       </section>
 
       {/* İLETİŞİM CTA */}
-      <section className="py-12 md:py-16 bg-gradient-to-br from-purple-50 via-rose-50 to-orange-50">
+      <section className="py-12 md:py-16 bg-gradient-to-br from-[#E8F5F0] via-rose-50 to-orange-50">
         <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-stone-800 mb-4">
             Kongre hakkında bilgi almak ister misiniz?
@@ -305,7 +305,7 @@ export default function LipodemKongresi2026Page() {
           </p>
           <a
             href="mailto:kongre@lipodemturkiye.com"
-            className="inline-flex items-center gap-2 bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-colors shadow-lg shadow-purple-600/20"
+            className="inline-flex items-center gap-2 bg-[#1A6B5A] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#15594A] transition-colors shadow-lg shadow-[#1A6B5A]/20"
           >
             <Mail className="w-5 h-5" />
             kongre@lipodemturkiye.com

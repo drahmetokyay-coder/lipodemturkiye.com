@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const kategoriBadgeRenk: Record<string, string> = {
   Beslenme: "bg-green-50 text-green-700 border-green-200",
   "Araştırma": "bg-blue-50 text-blue-700 border-blue-200",
-  Tedavi: "bg-purple-50 text-purple-700 border-purple-200",
+  Tedavi: "bg-[#E8F5F0] text-[#15594A] border-[#93D4BE]",
   Genel: "bg-stone-100 text-stone-700 border-stone-200",
 };
 
@@ -68,7 +68,7 @@ export default function BlogPage() {
   return (
     <article>
       {/* HERO */}
-      <section className="bg-gradient-to-br from-purple-50 via-rose-50 to-orange-50 py-12 md:py-16">
+      <section className="bg-gradient-to-br from-[#E8F5F0] via-rose-50 to-orange-50 py-12 md:py-16">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-8">
@@ -76,7 +76,7 @@ export default function BlogPage() {
               <li>
                 <Link
                   href="/"
-                  className="hover:text-purple-600 transition-colors"
+                  className="hover:text-[#1A6B5A] transition-colors"
                 >
                   Ana Sayfa
                 </Link>
@@ -125,7 +125,7 @@ export default function BlogPage() {
                   </div>
 
                   {/* Başlık */}
-                  <h2 className="text-lg font-bold text-stone-800 leading-snug mb-3 group-hover:text-purple-600 transition-colors font-serif">
+                  <h2 className="text-lg font-bold text-stone-800 leading-snug mb-3 group-hover:text-[#1A6B5A] transition-colors font-serif">
                     {yazi.baslik}
                   </h2>
 
@@ -135,7 +135,7 @@ export default function BlogPage() {
                   </p>
 
                   {/* CTA */}
-                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-purple-600 group-hover:text-purple-700 transition-colors">
+                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#1A6B5A] group-hover:text-[#15594A] transition-colors">
                     Devam Et
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </span>
@@ -147,7 +147,7 @@ export default function BlogPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 md:py-16 bg-gradient-to-br from-purple-50 via-rose-50 to-orange-50">
+      <section className="py-12 md:py-16 bg-gradient-to-br from-[#E8F5F0] via-rose-50 to-orange-50">
         <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-stone-800 mb-4 font-serif">
             Lipödeminizi anlamak ilk adım
@@ -158,7 +158,7 @@ export default function BlogPage() {
           </p>
           <Link
             href="/araclar/semptom-testi"
-            className="inline-flex items-center gap-2 bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-colors shadow-lg shadow-purple-600/20"
+            className="inline-flex items-center gap-2 bg-[#1A6B5A] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#15594A] transition-colors shadow-lg shadow-[#1A6B5A]/20"
           >
             Ücretsiz Semptom Testini Başlat
             <ArrowRight className="w-5 h-5" />

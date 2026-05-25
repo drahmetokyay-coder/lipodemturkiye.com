@@ -20,14 +20,14 @@ export default function TibbiSorumlulukReddiPage() {
   return (
     <article>
       {/* HERO */}
-      <section className="bg-gradient-to-br from-purple-50 via-rose-50 to-orange-50 py-12 md:py-16">
+      <section className="bg-gradient-to-br from-[#E8F5F0] via-rose-50 to-orange-50 py-12 md:py-16">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center gap-1.5 text-sm text-stone-500">
               <li>
                 <Link
                   href="/"
-                  className="hover:text-purple-600 transition-colors"
+                  className="hover:text-[#1A6B5A] transition-colors"
                 >
                   Ana Sayfa
                 </Link>
@@ -105,7 +105,7 @@ export default function TibbiSorumlulukReddiPage() {
           </div>
 
           {/* DETAYLI AÇIKLAMA */}
-          <div className="prose prose-stone prose-headings:text-stone-800 prose-a:text-purple-600 max-w-none">
+          <div className="prose prose-stone prose-headings:text-stone-800 prose-a:text-[#1A6B5A] max-w-none">
             <h2 className="text-xl md:text-2xl font-bold">
               1. Genel bilgilendirme beyanı
             </h2>
@@ -201,8 +201,8 @@ export default function TibbiSorumlulukReddiPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div className="bg-white rounded-xl p-6 border border-stone-200">
-              <div className="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center mb-4">
-                <BookOpen className="w-5 h-5 text-purple-600" />
+              <div className="w-10 h-10 rounded-lg bg-[#E8F5F0] flex items-center justify-center mb-4">
+                <BookOpen className="w-5 h-5 text-[#1A6B5A]" />
               </div>
               <h3 className="font-semibold text-stone-800 mb-2">
                 Kaynak tabanlı içerik
@@ -215,8 +215,8 @@ export default function TibbiSorumlulukReddiPage() {
             </div>
 
             <div className="bg-white rounded-xl p-6 border border-stone-200">
-              <div className="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center mb-4">
-                <Shield className="w-5 h-5 text-purple-600" />
+              <div className="w-10 h-10 rounded-lg bg-[#E8F5F0] flex items-center justify-center mb-4">
+                <Shield className="w-5 h-5 text-[#1A6B5A]" />
               </div>
               <h3 className="font-semibold text-stone-800 mb-2">
                 Uzman incelemesi
@@ -229,8 +229,8 @@ export default function TibbiSorumlulukReddiPage() {
             </div>
 
             <div className="bg-white rounded-xl p-6 border border-stone-200">
-              <div className="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center mb-4">
-                <AlertTriangle className="w-5 h-5 text-purple-600" />
+              <div className="w-10 h-10 rounded-lg bg-[#E8F5F0] flex items-center justify-center mb-4">
+                <AlertTriangle className="w-5 h-5 text-[#1A6B5A]" />
               </div>
               <h3 className="font-semibold text-stone-800 mb-2">
                 Belirsizlik beyanı
@@ -243,8 +243,8 @@ export default function TibbiSorumlulukReddiPage() {
             </div>
 
             <div className="bg-white rounded-xl p-6 border border-stone-200">
-              <div className="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center mb-4">
-                <Heart className="w-5 h-5 text-purple-600" />
+              <div className="w-10 h-10 rounded-lg bg-[#E8F5F0] flex items-center justify-center mb-4">
+                <Heart className="w-5 h-5 text-[#1A6B5A]" />
               </div>
               <h3 className="font-semibold text-stone-800 mb-2">
                 Düzenli güncelleme

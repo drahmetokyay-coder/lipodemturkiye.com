@@ -62,7 +62,7 @@ export default function KliniklerPage() {
             <div className="mt-10 grid grid-cols-3 gap-4 max-w-xl mx-auto">
               <div className="text-center p-4 bg-stone-50 rounded-xl">
                 <div className="flex items-center justify-center gap-1.5 mb-1">
-                  <MapPin className="w-4 h-4 text-purple-600" />
+                  <MapPin className="w-4 h-4 text-[#1A6B5A]" />
                 </div>
                 <p className="text-xl md:text-2xl font-bold text-stone-800">
                   81
@@ -71,7 +71,7 @@ export default function KliniklerPage() {
               </div>
               <div className="text-center p-4 bg-stone-50 rounded-xl">
                 <div className="flex items-center justify-center gap-1.5 mb-1">
-                  <Building2 className="w-4 h-4 text-purple-600" />
+                  <Building2 className="w-4 h-4 text-[#1A6B5A]" />
                 </div>
                 <p className="text-xl md:text-2xl font-bold text-stone-800">
                   {totalClinics}
@@ -80,7 +80,7 @@ export default function KliniklerPage() {
               </div>
               <div className="text-center p-4 bg-stone-50 rounded-xl">
                 <div className="flex items-center justify-center gap-1.5 mb-1">
-                  <Users className="w-4 h-4 text-purple-600" />
+                  <Users className="w-4 h-4 text-[#1A6B5A]" />
                 </div>
                 <p className="text-xl md:text-2xl font-bold text-stone-800">
                   {totalDoctors}
@@ -97,7 +97,7 @@ export default function KliniklerPage() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <ScrollReveal>
             <div className="mb-8 flex items-center gap-2">
-              <Search className="w-5 h-5 text-purple-600" />
+              <Search className="w-5 h-5 text-[#1A6B5A]" />
               <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#1a1a2e]">
                 Bolgeye Gore Filtrele
               </h2>
@@ -141,7 +141,7 @@ export default function KliniklerPage() {
             ].map((step, i) => (
               <ScrollReveal key={step.num} delay={i * 150}>
                 <div className="text-center">
-                  <span className="font-serif text-4xl md:text-5xl font-bold text-purple-200 select-none">
+                  <span className="font-serif text-4xl md:text-5xl font-bold text-[#93D4BE] select-none">
                     {step.num}
                   </span>
                   <h3 className="mt-3 text-lg font-semibold text-stone-800">
@@ -164,14 +164,14 @@ export default function KliniklerPage() {
             <h2 className="font-serif text-2xl md:text-3xl font-bold text-white leading-tight">
               Lipodem olup olmadiginizi merak mi ediyorsunuz?
             </h2>
-            <p className="mt-3 text-purple-100/80 text-sm md:text-base max-w-lg mx-auto">
+            <p className="mt-3 text-[#E8F5F0]/80 text-sm md:text-base max-w-lg mx-auto">
               2 dakikalik ucretsiz semptom testimizi cozun, risk seviyenizi
               ogrenin.
             </p>
             <div className="mt-6">
               <Link
                 href="/araclar/semptom-testi"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg font-semibold text-white border-2 border-white/80 hover:bg-white hover:text-purple-700 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg font-semibold text-white border-2 border-white/80 hover:bg-white hover:text-[#15594A] transition-all duration-300"
               >
                 Semptom Testini Coz
                 <ArrowRight className="w-4 h-4" />

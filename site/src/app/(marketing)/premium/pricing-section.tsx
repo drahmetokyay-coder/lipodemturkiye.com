@@ -82,17 +82,17 @@ function PricingCards() {
       </div>
 
       {/* ── PLAN 2: Temel Premium "Adım At" ── */}
-      <div className="relative rounded-2xl border-2 border-purple-200 bg-white p-7 md:p-8 flex flex-col h-full shadow-soft ring-1 ring-purple-100">
+      <div className="relative rounded-2xl border-2 border-[#93D4BE] bg-white p-7 md:p-8 flex flex-col h-full shadow-soft ring-1 ring-[#E8F5F0]">
         {/* Badge */}
         <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-          <span className="inline-flex items-center gap-1 bg-purple-600 text-white text-xs font-semibold px-4 py-1.5 rounded-full shadow-sm">
+          <span className="inline-flex items-center gap-1 bg-[#1A6B5A] text-white text-xs font-semibold px-4 py-1.5 rounded-full shadow-sm">
             <Star className="w-3 h-3" />
             En Pop&uuml;ler
           </span>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-purple-700">
+          <h3 className="text-lg font-semibold text-[#15594A]">
             Adım At
           </h3>
           <p className="mt-1 text-sm text-stone-400">Temel Premium</p>
@@ -125,8 +125,8 @@ function PricingCards() {
           )}
         </div>
 
-        <div className="mt-6 rounded-lg bg-purple-50 px-4 py-2.5 text-center">
-          <p className="text-xs font-medium text-purple-700">
+        <div className="mt-6 rounded-lg bg-[#E8F5F0] px-4 py-2.5 text-center">
+          <p className="text-xs font-medium text-[#15594A]">
             14 g&uuml;n &uuml;cretsiz deneme -- kredi kartı gerekmez
           </p>
         </div>
@@ -146,7 +146,7 @@ function PricingCards() {
               "Email desteği (48 saat)",
             ].map((f) => (
               <li key={f} className="flex items-start gap-2.5 text-sm text-stone-600">
-                <Check className="w-4 h-4 text-purple-500 mt-0.5 shrink-0" />
+                <Check className="w-4 h-4 text-[#2D8B73] mt-0.5 shrink-0" />
                 {f}
               </li>
             ))}
@@ -222,7 +222,7 @@ function PricingCards() {
               "Öncelikli destek (24 saat)",
             ].map((f) => (
               <li key={f} className="flex items-start gap-2.5 text-sm text-stone-600">
-                <Check className="w-4 h-4 text-purple-500 mt-0.5 shrink-0" />
+                <Check className="w-4 h-4 text-[#2D8B73] mt-0.5 shrink-0" />
                 {f}
               </li>
             ))}
@@ -232,7 +232,7 @@ function PricingCards() {
         <div className="mt-8">
           <Link
             href="/kayit?plan=tam"
-            className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-purple-600 text-white font-semibold text-sm hover:bg-purple-700 shadow-sm hover:shadow-md transition-all duration-200"
+            className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-[#1A6B5A] text-white font-semibold text-sm hover:bg-[#15594A] shadow-sm hover:shadow-md transition-all duration-200"
           >
             14 G&uuml;n &Uuml;cretsiz Dene
             <ArrowRight className="w-4 h-4" />

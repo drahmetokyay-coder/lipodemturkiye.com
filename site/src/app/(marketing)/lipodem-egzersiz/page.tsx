@@ -36,7 +36,7 @@ const egzersizTurleri = [
   {
     tur: "Yürüyüş",
     etkiDuzeyi: "Çok Etkili",
-    etkiRenk: "bg-purple-100 text-purple-700",
+    etkiRenk: "bg-[#E8F5F0] text-[#15594A]",
     aciklama:
       "En erişilebilir ve en güvenli lipödem egzersizidir. Baldır kaslarının kasılması lenf pompası görevi görerek lenf akışını hızlandırır. Kompresyon ile birlikte yapılması etkinliği artırır.",
     oneriler: [
@@ -52,7 +52,7 @@ const egzersizTurleri = [
   {
     tur: "Yoga ve Pilates",
     etkiDuzeyi: "Etkili",
-    etkiRenk: "bg-purple-100 text-purple-700",
+    etkiRenk: "bg-[#E8F5F0] text-[#15594A]",
     aciklama:
       "Esnekliği artırır, stres hormonlarını azaltır ve derin nefes teknikleriyle lenf akışını destekler. Pilates özellikle core (gövde) kaslarını güçlendirerek postürü iyileştirir.",
     oneriler: [
@@ -190,7 +190,7 @@ export default function LipodemEgzersizPage() {
   return (
     <article>
       {/* HERO */}
-      <section className="bg-gradient-to-br from-purple-50 via-rose-50 to-orange-50 py-12 md:py-16">
+      <section className="bg-gradient-to-br from-[#E8F5F0] via-rose-50 to-orange-50 py-12 md:py-16">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-8">
@@ -198,7 +198,7 @@ export default function LipodemEgzersizPage() {
               <li>
                 <Link
                   href="/"
-                  className="hover:text-purple-600 transition-colors"
+                  className="hover:text-[#1A6B5A] transition-colors"
                 >
                   Ana Sayfa
                 </Link>
@@ -209,7 +209,7 @@ export default function LipodemEgzersizPage() {
               <li>
                 <Link
                   href="/lipodem-nedir"
-                  className="hover:text-purple-600 transition-colors"
+                  className="hover:text-[#1A6B5A] transition-colors"
                 >
                   Lipödem Nedir
                 </Link>
@@ -238,7 +238,7 @@ export default function LipodemEgzersizPage() {
           <div className="mt-8">
             <Link
               href="/araclar/semptom-testi"
-              className="inline-flex items-center gap-2 bg-purple-600 text-white px-7 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+              className="inline-flex items-center gap-2 bg-[#1A6B5A] text-white px-7 py-3 rounded-lg font-semibold hover:bg-[#15594A] transition-colors"
             >
               Semptom Testini Başlat
               <ArrowRight className="w-5 h-5" />
@@ -256,7 +256,7 @@ export default function LipodemEgzersizPage() {
                 key={stat.aciklama}
                 className="bg-stone-50 rounded-xl p-5 text-center border border-stone-200"
               >
-                <div className="text-2xl md:text-3xl font-extrabold text-purple-600">
+                <div className="text-2xl md:text-3xl font-extrabold text-[#1A6B5A]">
                   {stat.deger}
                 </div>
                 <p className="text-xs md:text-sm text-stone-600 mt-2">
@@ -292,42 +292,42 @@ export default function LipodemEgzersizPage() {
             </h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-[#1A6B5A] mt-0.5 shrink-0" />
                 <span className="text-stone-700">
                   <strong>Lenf akışını hızlandırır:</strong> Kas kasılmaları lenf
                   pompası görevi görerek lenf sıvısının dolaşımını sağlar.
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-[#1A6B5A] mt-0.5 shrink-0" />
                 <span className="text-stone-700">
                   <strong>Ödemi azaltır:</strong> Düzenli hareket, bacaklarda
                   biriken fazla sıvının drene edilmesine yardımcı olur.
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-[#1A6B5A] mt-0.5 shrink-0" />
                 <span className="text-stone-700">
                   <strong>İnflamasyonu azaltır:</strong> Orta yoğunluklu egzersiz
                   anti-inflamatuar sitokinlerin salınımını artırır.
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-[#1A6B5A] mt-0.5 shrink-0" />
                 <span className="text-stone-700">
                   <strong>Ağrı algısını düşürür:</strong> Endorfin ve serotonin
                   salınımı doğal ağrı kesici görevi görür.
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-[#1A6B5A] mt-0.5 shrink-0" />
                 <span className="text-stone-700">
                   <strong>Kas kütlesini korur:</strong> Güçlü kaslar
                   metabolizmayı destekler ve hareketliliği sağlar.
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-[#1A6B5A] mt-0.5 shrink-0" />
                 <span className="text-stone-700">
                   <strong>Ruh sağlığını iyileştirir:</strong> Depresyon ve
                   anksiyete belirtilerini azaltır, özgüveni artırır.
@@ -362,7 +362,7 @@ export default function LipodemEgzersizPage() {
               >
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-3">
-                    <Dumbbell className="w-6 h-6 text-purple-600" />
+                    <Dumbbell className="w-6 h-6 text-[#1A6B5A]" />
                     <h3 className="text-lg font-semibold text-stone-800">
                       {egzersiz.tur}
                     </h3>
@@ -387,7 +387,7 @@ export default function LipodemEgzersizPage() {
                             key={oneri}
                             className="flex items-start gap-2 text-sm text-stone-600"
                           >
-                            <CheckCircle2 className="w-3.5 h-3.5 text-purple-600 mt-0.5 shrink-0" />
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#1A6B5A] mt-0.5 shrink-0" />
                             <span>{oneri}</span>
                           </li>
                         ))}
@@ -398,7 +398,7 @@ export default function LipodemEgzersizPage() {
                         <h4 className="text-sm font-semibold text-stone-700 mb-1">
                           Sıklık ve Süre:
                         </h4>
-                        <p className="text-sm text-purple-600 font-medium">
+                        <p className="text-sm text-[#1A6B5A] font-medium">
                           {egzersiz.sure}
                         </p>
                       </div>
@@ -442,7 +442,7 @@ export default function LipodemEgzersizPage() {
                 key={i}
                 className="flex items-start gap-4 bg-white rounded-xl p-5 border border-stone-200"
               >
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-purple-100 text-purple-700 font-bold text-sm shrink-0">
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#E8F5F0] text-[#15594A] font-bold text-sm shrink-0">
                   {i + 1}
                 </span>
                 <p className="text-stone-700 leading-relaxed pt-1">{kural}</p>
@@ -475,9 +475,9 @@ export default function LipodemEgzersizPage() {
                 key={hafta.hafta}
                 className="bg-stone-50 rounded-xl border border-stone-200 overflow-hidden"
               >
-                <div className="bg-purple-600 px-5 py-3 flex items-center justify-between">
+                <div className="bg-[#1A6B5A] px-5 py-3 flex items-center justify-between">
                   <h3 className="text-white font-semibold">{hafta.hafta}</h3>
-                  <span className="text-purple-100 text-sm">
+                  <span className="text-[#E8F5F0] text-sm">
                     {hafta.baslik}
                   </span>
                 </div>
@@ -488,16 +488,16 @@ export default function LipodemEgzersizPage() {
                         key={i}
                         className="flex items-start gap-2 text-stone-700"
                       >
-                        <Activity className="w-4 h-4 text-purple-600 mt-0.5 shrink-0" />
+                        <Activity className="w-4 h-4 text-[#1A6B5A] mt-0.5 shrink-0" />
                         <span className="text-sm">{madde}</span>
                       </li>
                     ))}
                   </ul>
-                  <div className="bg-purple-50 rounded-lg px-4 py-2.5 text-sm">
-                    <span className="font-semibold text-purple-700">
+                  <div className="bg-[#E8F5F0] rounded-lg px-4 py-2.5 text-sm">
+                    <span className="font-semibold text-[#15594A]">
                       Hedef:{" "}
                     </span>
-                    <span className="text-purple-600">{hafta.hedef}</span>
+                    <span className="text-[#1A6B5A]">{hafta.hedef}</span>
                   </div>
                 </div>
               </div>
@@ -611,9 +611,9 @@ export default function LipodemEgzersizPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Link
               href="/lipodem-tedavisi"
-              className="group bg-white rounded-xl p-5 border border-stone-200 hover:border-purple-300 hover:bg-purple-50 transition-colors"
+              className="group bg-white rounded-xl p-5 border border-stone-200 hover:border-[#5BBF9E] hover:bg-[#E8F5F0] transition-colors"
             >
-              <h3 className="font-semibold text-stone-800 group-hover:text-purple-700 mb-2">
+              <h3 className="font-semibold text-stone-800 group-hover:text-[#15594A] mb-2">
                 Tedavi Rehberi
               </h3>
               <p className="text-sm text-stone-600">
@@ -623,9 +623,9 @@ export default function LipodemEgzersizPage() {
             </Link>
             <Link
               href="/lipodem-beslenme"
-              className="group bg-white rounded-xl p-5 border border-stone-200 hover:border-purple-300 hover:bg-purple-50 transition-colors"
+              className="group bg-white rounded-xl p-5 border border-stone-200 hover:border-[#5BBF9E] hover:bg-[#E8F5F0] transition-colors"
             >
-              <h3 className="font-semibold text-stone-800 group-hover:text-purple-700 mb-2">
+              <h3 className="font-semibold text-stone-800 group-hover:text-[#15594A] mb-2">
                 Beslenme Rehberi
               </h3>
               <p className="text-sm text-stone-600">
@@ -635,9 +635,9 @@ export default function LipodemEgzersizPage() {
             </Link>
             <Link
               href="/lipodem-ruh-sagligi"
-              className="group bg-white rounded-xl p-5 border border-stone-200 hover:border-purple-300 hover:bg-purple-50 transition-colors"
+              className="group bg-white rounded-xl p-5 border border-stone-200 hover:border-[#5BBF9E] hover:bg-[#E8F5F0] transition-colors"
             >
-              <h3 className="font-semibold text-stone-800 group-hover:text-purple-700 mb-2">
+              <h3 className="font-semibold text-stone-800 group-hover:text-[#15594A] mb-2">
                 Ruh Sağlığı Rehberi
               </h3>
               <p className="text-sm text-stone-600">
@@ -665,7 +665,7 @@ export default function LipodemEgzersizPage() {
       </section>
 
       {/* SON CTA */}
-      <section className="py-12 md:py-16 bg-gradient-to-br from-purple-50 via-rose-50 to-orange-50">
+      <section className="py-12 md:py-16 bg-gradient-to-br from-[#E8F5F0] via-rose-50 to-orange-50">
         <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-stone-800 mb-4">
             Lipödem riskinizi 2 dakikada değerlendirin
@@ -676,7 +676,7 @@ export default function LipodemEgzersizPage() {
           </p>
           <Link
             href="/araclar/semptom-testi"
-            className="inline-flex items-center gap-2 bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-colors shadow-lg shadow-purple-600/20"
+            className="inline-flex items-center gap-2 bg-[#1A6B5A] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#15594A] transition-colors shadow-lg shadow-[#1A6B5A]/20"
           >
             Ücretsiz Semptom Testini Başlat
             <ArrowRight className="w-5 h-5" />

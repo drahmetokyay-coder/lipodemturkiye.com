@@ -18,7 +18,7 @@ const tools = [
       "12 bilimsel kritere dayalı lipödem risk değerlendirmesi. 2 dakikada tamamlayın, sonucunuzu doktorunuza götürün.",
     href: "/araclar/semptom-testi",
     icon: ClipboardCheck,
-    color: "bg-purple-100 text-purple-700",
+    color: "bg-[#E8F5F0] text-[#1A6B5A]",
     badge: "Ücretsiz",
     available: true,
   },
@@ -28,7 +28,7 @@ const tools = [
       "Lipödem evrenizi görsel ve klinik kriterlerle değerlendirin. Evrenize özel tedavi önerileri alın.",
     href: "/araclar/evre-degerlendirme",
     icon: Activity,
-    color: "bg-purple-100 text-purple-700",
+    color: "bg-[#E8F5F0] text-[#1A6B5A]",
     badge: "Ücretsiz",
     available: true,
   },
@@ -67,11 +67,11 @@ const tools = [
 export default function AraclarPage() {
   return (
     <>
-      <section className="bg-gradient-to-b from-purple-50 to-white py-16 md:py-20">
+      <section className="bg-gradient-to-b from-[#E8F5F0] to-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
             <nav className="text-sm text-stone-500 mb-4">
-              <a href="/" className="hover:text-purple-600">
+              <a href="/" className="hover:text-[#1A6B5A]">
                 Ana Sayfa
               </a>
               <span className="mx-2">/</span>
@@ -97,7 +97,7 @@ export default function AraclarPage() {
                   href={tool.available ? tool.href : "#"}
                   className={`
                     relative bg-white rounded-2xl border border-stone-200 p-6 transition-all
-                    ${tool.available ? "hover:border-purple-300 hover:shadow-md cursor-pointer" : "opacity-75"}
+                    ${tool.available ? "hover:border-[#2D8B73] hover:shadow-md cursor-pointer" : "opacity-75"}
                   `}
                 >
                   <div className="flex items-start justify-between mb-4">
@@ -109,7 +109,7 @@ export default function AraclarPage() {
                         tool.badge === "Ücretsiz"
                           ? "bg-green-100 text-green-700"
                           : tool.badge === "Premium"
-                            ? "bg-purple-100 text-purple-700"
+                            ? "bg-[#E8F5F0] text-[#1A6B5A]"
                             : "bg-stone-100 text-stone-500"
                       }`}
                     >
@@ -125,7 +125,7 @@ export default function AraclarPage() {
                   </p>
 
                   {tool.available && (
-                    <p className="mt-4 text-purple-600 font-semibold text-sm">
+                    <p className="mt-4 text-[#1A6B5A] font-semibold text-sm">
                       Başla &rarr;
                     </p>
                   )}

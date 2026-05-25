@@ -49,7 +49,7 @@ export default function LipodemYazRehberiPage() {
   return (
     <article>
       {/* HERO */}
-      <section className="bg-gradient-to-br from-purple-50 via-rose-50 to-orange-50 py-12 md:py-16">
+      <section className="bg-gradient-to-br from-[#E8F5F0] via-rose-50 to-orange-50 py-12 md:py-16">
         <div className="max-w-3xl mx-auto px-4 md:px-6">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-8">
@@ -57,7 +57,7 @@ export default function LipodemYazRehberiPage() {
               <li>
                 <Link
                   href="/"
-                  className="hover:text-purple-600 transition-colors"
+                  className="hover:text-[#1A6B5A] transition-colors"
                 >
                   Ana Sayfa
                 </Link>
@@ -68,7 +68,7 @@ export default function LipodemYazRehberiPage() {
               <li>
                 <Link
                   href="/blog"
-                  className="hover:text-purple-600 transition-colors"
+                  className="hover:text-[#1A6B5A] transition-colors"
                 >
                   Blog
                 </Link>
@@ -126,7 +126,7 @@ export default function LipodemYazRehberiPage() {
                   </h2>
                 </div>
 
-                <div className="bg-purple-50 border border-purple-100 rounded-xl p-5 mb-5">
+                <div className="bg-[#E8F5F0] border border-[#E8F5F0] rounded-xl p-5 mb-5">
                   <p className="text-stone-700 text-sm leading-relaxed m-0">
                     <strong>Kısa cevap:</strong> Sıcaklık arttığında kan
                     damarları genişler (vazodilatasyon), kapiller geçirgenlik
@@ -157,15 +157,15 @@ export default function LipodemYazRehberiPage() {
             <ScrollReveal>
               <div className="mb-12">
                 <div className="flex items-start gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center shrink-0 mt-1">
-                    <Shield className="w-5 h-5 text-purple-600" />
+                  <div className="w-10 h-10 rounded-lg bg-[#E8F5F0] flex items-center justify-center shrink-0 mt-1">
+                    <Shield className="w-5 h-5 text-[#1A6B5A]" />
                   </div>
                   <h2 className="text-xl md:text-2xl font-bold text-stone-800 font-serif mt-0">
                     Yazın kompresyon giysisi nasıl kullanılmalı?
                   </h2>
                 </div>
 
-                <div className="bg-purple-50 border border-purple-100 rounded-xl p-5 mb-5">
+                <div className="bg-[#E8F5F0] border border-[#E8F5F0] rounded-xl p-5 mb-5">
                   <p className="text-stone-700 text-sm leading-relaxed m-0">
                     <strong>Kısa cevap:</strong> Kompresyonu bırakmayın, ama
                     yazlık alternatiflere geçin. İnce dokuma, nefes alan
@@ -182,7 +182,7 @@ export default function LipodemYazRehberiPage() {
 
                 <ul className="space-y-2 mt-4 mb-4">
                   <li className="flex items-start gap-2 text-stone-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2.5 shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#2D8B73] mt-2.5 shrink-0" />
                     <span>
                       <strong>Yazlık kumaş:</strong> İnce, mikro-fiber dokuma
                       modelleri tercih edin. Birçok marka yaz serisi
@@ -190,21 +190,21 @@ export default function LipodemYazRehberiPage() {
                     </span>
                   </li>
                   <li className="flex items-start gap-2 text-stone-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2.5 shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#2D8B73] mt-2.5 shrink-0" />
                     <span>
                       <strong>Açık burun:</strong> Ayak parmaklarının açık
                       kaldığı modeller hava sirkülasyonunu artırır.
                     </span>
                   </li>
                   <li className="flex items-start gap-2 text-stone-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2.5 shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#2D8B73] mt-2.5 shrink-0" />
                     <span>
                       <strong>Sabah giyin:</strong> Ödem henüz artmadan, sabah
                       erken saatlerde giymeye başlayın.
                     </span>
                   </li>
                   <li className="flex items-start gap-2 text-stone-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-2.5 shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#2D8B73] mt-2.5 shrink-0" />
                     <span>
                       <strong>Islak kompresyon:</strong> Kompresyon çorabını
                       giymeden önce hafifçe nemlendirmek serinlik sağlar.
@@ -226,7 +226,7 @@ export default function LipodemYazRehberiPage() {
                   </h2>
                 </div>
 
-                <div className="bg-purple-50 border border-purple-100 rounded-xl p-5 mb-5">
+                <div className="bg-[#E8F5F0] border border-[#E8F5F0] rounded-xl p-5 mb-5">
                   <p className="text-stone-700 text-sm leading-relaxed m-0">
                     <strong>Kısa cevap:</strong> Hayır, tam tersi. Yeterli su
                     tüketimi lenf drenajını destekler ve ödemi azaltmaya yardımcı
@@ -284,7 +284,7 @@ export default function LipodemYazRehberiPage() {
                   </h2>
                 </div>
 
-                <div className="bg-purple-50 border border-purple-100 rounded-xl p-5 mb-5">
+                <div className="bg-[#E8F5F0] border border-[#E8F5F0] rounded-xl p-5 mb-5">
                   <p className="text-stone-700 text-sm leading-relaxed m-0">
                     <strong>Kısa cevap:</strong> Sabah erken (07:00&ndash;09:00)
                     veya akşam geç (19:00&ndash;21:00) saatlerde, serin
@@ -340,14 +340,14 @@ export default function LipodemYazRehberiPage() {
               <div className="mb-12">
                 <div className="flex items-start gap-3 mb-4">
                   <div className="w-10 h-10 rounded-lg bg-rose-50 flex items-center justify-center shrink-0 mt-1">
-                    <Shirt className="w-5 h-5 text-rose-500" />
+                    <Shirt className="w-5 h-5 text-[#E8916D]" />
                   </div>
                   <h2 className="text-xl md:text-2xl font-bold text-stone-800 font-serif mt-0">
                     Yazın ne giymeliyim?
                   </h2>
                 </div>
 
-                <div className="bg-purple-50 border border-purple-100 rounded-xl p-5 mb-5">
+                <div className="bg-[#E8F5F0] border border-[#E8F5F0] rounded-xl p-5 mb-5">
                   <p className="text-stone-700 text-sm leading-relaxed m-0">
                     <strong>Kısa cevap:</strong> Bol, nefes alan doğal kumaşlar
                     (keten, pamuk) tercih edin. Dar giysiler lenf akışını
@@ -365,14 +365,14 @@ export default function LipodemYazRehberiPage() {
 
                 <ul className="space-y-2 mt-4">
                   <li className="flex items-start gap-2 text-stone-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-2.5 shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#E8916D] mt-2.5 shrink-0" />
                     <span>
                       <strong>Kumaş:</strong> Keten ve pamuk karışımları en iyi
                       hava akışını sağlar. Sentetik kumaşlardan kaçının.
                     </span>
                   </li>
                   <li className="flex items-start gap-2 text-stone-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-2.5 shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#E8916D] mt-2.5 shrink-0" />
                     <span>
                       <strong>Kesim:</strong> A-line etekler, geniş paça
                       pantolonlar ve maxi elbiseler kompresyon giysisinin üzerine
@@ -380,14 +380,14 @@ export default function LipodemYazRehberiPage() {
                     </span>
                   </li>
                   <li className="flex items-start gap-2 text-stone-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-2.5 shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#E8916D] mt-2.5 shrink-0" />
                     <span>
                       <strong>Renk:</strong> Açık renkler güneş ışığını yansıtır
                       ve daha serin tutar.
                     </span>
                   </li>
                   <li className="flex items-start gap-2 text-stone-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-2.5 shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#E8916D] mt-2.5 shrink-0" />
                     <span>
                       <strong>Ayakkabı:</strong> Destekleyici ama sıkmayan,
                       ayağı nefes aldıran sandaletler tercih edin.
@@ -404,17 +404,17 @@ export default function LipodemYazRehberiPage() {
       <section className="py-10 md:py-12 bg-stone-50">
         <div className="max-w-3xl mx-auto px-4 md:px-6">
           <ScrollReveal>
-            <div className="bg-purple-600 rounded-xl p-8 text-white text-center">
+            <div className="bg-[#1A6B5A] rounded-xl p-8 text-white text-center">
               <h2 className="text-xl md:text-2xl font-bold mb-3 font-serif">
                 Bu belirtiler size tanıdık mı geldi?
               </h2>
-              <p className="text-purple-100 leading-relaxed mb-6 max-w-xl mx-auto">
+              <p className="text-[#E8F5F0] leading-relaxed mb-6 max-w-xl mx-auto">
                 Bilimsel semptom testimiz lipödem riskinizi 2 dakikada
                 değerlendirmenize yardımcı olur. Sonuçlarınız tamamen gizlidir.
               </p>
               <Link
                 href="/araclar/semptom-testi"
-                className="inline-flex items-center gap-2 bg-white text-purple-700 px-7 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors"
+                className="inline-flex items-center gap-2 bg-white text-[#15594A] px-7 py-3 rounded-lg font-semibold hover:bg-[#E8F5F0] transition-colors"
               >
                 Semptom Testini Başlat
                 <ArrowRight className="w-5 h-5" />
@@ -437,13 +437,13 @@ export default function LipodemYazRehberiPage() {
                 href={yazi.slug}
                 className="group block bg-stone-50 rounded-xl border border-stone-200 p-5 card-hover"
               >
-                <span className="text-xs font-semibold text-purple-600 mb-2 block">
+                <span className="text-xs font-semibold text-[#1A6B5A] mb-2 block">
                   {yazi.kategori}
                 </span>
-                <h3 className="text-sm font-semibold text-stone-800 leading-snug group-hover:text-purple-600 transition-colors">
+                <h3 className="text-sm font-semibold text-stone-800 leading-snug group-hover:text-[#1A6B5A] transition-colors">
                   {yazi.baslik}
                 </h3>
-                <span className="inline-flex items-center gap-1 text-xs font-semibold text-purple-600 mt-3 group-hover:text-purple-700 transition-colors">
+                <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#1A6B5A] mt-3 group-hover:text-[#15594A] transition-colors">
                   Oku
                   <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
                 </span>
@@ -470,7 +470,7 @@ export default function LipodemYazRehberiPage() {
                 önce doktorunuza danışınız. Daha fazla bilgi için{" "}
                 <Link
                   href="/tibbi-sorumluluk-reddi"
-                  className="text-purple-600 hover:text-purple-700 underline"
+                  className="text-[#1A6B5A] hover:text-[#15594A] underline"
                 >
                   tıbbi sorumluluk reddi
                 </Link>{" "}

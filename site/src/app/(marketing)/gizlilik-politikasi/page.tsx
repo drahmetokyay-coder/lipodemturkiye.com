@@ -12,14 +12,14 @@ export default function GizlilikPolitikasiPage() {
   return (
     <article>
       {/* HERO */}
-      <section className="bg-gradient-to-br from-purple-50 via-rose-50 to-orange-50 py-12 md:py-16">
+      <section className="bg-gradient-to-br from-[#E8F5F0] via-rose-50 to-orange-50 py-12 md:py-16">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center gap-1.5 text-sm text-stone-500">
               <li>
                 <Link
                   href="/"
-                  className="hover:text-purple-600 transition-colors"
+                  className="hover:text-[#1A6B5A] transition-colors"
                 >
                   Ana Sayfa
                 </Link>
@@ -44,9 +44,9 @@ export default function GizlilikPolitikasiPage() {
 
       {/* İÇERİK */}
       <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 md:px-6 prose prose-stone prose-headings:text-stone-800 prose-a:text-purple-600 max-w-none">
-          <div className="bg-purple-50 rounded-xl p-6 border border-purple-100 mb-10 not-prose">
-            <p className="text-sm text-purple-800 leading-relaxed">
+        <div className="max-w-4xl mx-auto px-4 md:px-6 prose prose-stone prose-headings:text-stone-800 prose-a:text-[#1A6B5A] max-w-none">
+          <div className="bg-[#E8F5F0] rounded-xl p-6 border border-[#E8F5F0] mb-10 not-prose">
+            <p className="text-sm text-[#10473B] leading-relaxed">
               Bu gizlilik politikası, 6698 sayılı Kişisel Verilerin Korunması
               Kanunu (KVKK) ve ilgili mevzuat kapsamında hazırlanmıştır.
               Kişisel verilerinizin korunması bizim için en üst düzeyde
@@ -107,7 +107,7 @@ export default function GizlilikPolitikasiPage() {
               Çerezler aracılığıyla toplanan veriler (detaylar için{" "}
               <Link
                 href="/cerez-politikasi"
-                className="text-purple-600 hover:text-purple-700"
+                className="text-[#1A6B5A] hover:text-[#15594A]"
               >
                 Çerez Politikası
               </Link>
