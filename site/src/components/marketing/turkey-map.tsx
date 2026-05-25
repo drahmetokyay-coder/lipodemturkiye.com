@@ -1,161 +1,169 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { MapPin, ArrowRight } from "lucide-react";
 
-const regions = [
-  {
+const regionData: Record<string, { name: string; clinicCount: number; cities: string[]; color: string; slug: string }> = {
+  marmara: {
     name: "Marmara",
-    cities: ["İstanbul", "Bursa", "Kocaeli", "Tekirdağ", "Balıkesir", "Edirne", "Sakarya"],
     clinicCount: 12,
+    cities: ["İstanbul", "Bursa", "Kocaeli", "Tekirdağ", "Balıkesir"],
     color: "#7C3AED",
-    position: { x: 22, y: 18 },
     slug: "istanbul",
   },
-  {
+  ege: {
     name: "Ege",
-    cities: ["İzmir", "Muğla", "Aydın", "Manisa", "Denizli"],
     clinicCount: 5,
+    cities: ["İzmir", "Muğla", "Aydın", "Manisa", "Denizli"],
     color: "#A855F7",
-    position: { x: 14, y: 42 },
     slug: "izmir",
   },
-  {
+  akdeniz: {
     name: "Akdeniz",
-    cities: ["Antalya", "Adana", "Mersin", "Hatay"],
     clinicCount: 6,
+    cities: ["Antalya", "Adana", "Mersin", "Hatay", "Isparta"],
     color: "#E11D48",
-    position: { x: 28, y: 62 },
     slug: "antalya",
   },
-  {
+  "ic-anadolu": {
     name: "İç Anadolu",
-    cities: ["Ankara", "Konya", "Kayseri", "Eskişehir"],
     clinicCount: 7,
+    cities: ["Ankara", "Konya", "Kayseri", "Eskişehir", "Sivas"],
     color: "#F97316",
-    position: { x: 42, y: 38 },
     slug: "ankara",
   },
-  {
+  karadeniz: {
     name: "Karadeniz",
-    cities: ["Samsun", "Trabzon", "Zonguldak", "Rize"],
     clinicCount: 1,
+    cities: ["Samsun", "Trabzon", "Zonguldak", "Rize", "Ordu"],
     color: "#06B6D4",
-    position: { x: 52, y: 14 },
     slug: "samsun",
   },
-  {
+  "dogu-anadolu": {
     name: "Doğu Anadolu",
-    cities: ["Erzurum", "Van", "Malatya", "Elazığ"],
     clinicCount: 0,
+    cities: ["Erzurum", "Van", "Malatya", "Elazığ", "Ağrı"],
     color: "#8B5CF6",
-    position: { x: 74, y: 30 },
     slug: "erzurum",
   },
-  {
+  "guneydogu-anadolu": {
     name: "Güneydoğu Anadolu",
-    cities: ["Gaziantep", "Diyarbakır", "Şanlıurfa"],
     clinicCount: 1,
+    cities: ["Gaziantep", "Diyarbakır", "Şanlıurfa", "Mardin"],
     color: "#EC4899",
-    position: { x: 68, y: 52 },
     slug: "gaziantep",
   },
-];
+};
 
-const totalClinics = regions.reduce((sum, r) => sum + r.clinicCount, 0);
+const totalClinics = Object.values(regionData).reduce((sum, r) => sum + r.clinicCount, 0);
 
 export function TurkeyMap() {
   const [activeRegion, setActiveRegion] = useState<string | null>(null);
-  const active = regions.find((r) => r.name === activeRegion);
+  const objectRef = useRef<HTMLObjectElement>(null);
+  const active = activeRegion ? regionData[activeRegion] : null;
+
+  useEffect(() => {
+    const obj = objectRef.current;
+    if (!obj) return;
+
+    const setupSvg = () => {
+      const svgDoc = obj.contentDocument;
+      if (!svgDoc) return;
+
+      const paths = svgDoc.querySelectorAll("path.region, g.region");
+
+      paths.forEach((el) => {
+        const id = el.id;
+        const region = regionData[id];
+        if (!region) return;
+
+        // Başlangıç rengi
+        if (el.tagName === "path") {
+          (el as SVGPathElement).style.fill = "#e7e5e4";
+          (el as SVGPathElement).style.stroke = "#d6d3d1";
+          (el as SVGPathElement).style.strokeWidth = "0.5";
+          (el as SVGPathElement).style.transition = "all 0.3s ease";
+          (el as SVGPathElement).style.cursor = "pointer";
+        } else {
+          el.querySelectorAll("path").forEach((p) => {
+            p.style.fill = "#e7e5e4";
+            p.style.stroke = "#d6d3d1";
+            p.style.strokeWidth = "0.5";
+            p.style.transition = "all 0.3s ease";
+            p.style.cursor = "pointer";
+          });
+        }
+
+        const setColor = (color: string, stroke: string) => {
+          if (el.tagName === "path") {
+            (el as SVGPathElement).style.fill = color;
+            (el as SVGPathElement).style.stroke = stroke;
+          } else {
+            el.querySelectorAll("path").forEach((p) => {
+              p.style.fill = color;
+              p.style.stroke = stroke;
+            });
+          }
+        };
+
+        el.addEventListener("mouseenter", () => {
+          setColor(region.color + "30", region.color);
+          setActiveRegion(id);
+        });
+
+        el.addEventListener("mouseleave", () => {
+          setColor("#e7e5e4", "#d6d3d1");
+          setActiveRegion(null);
+        });
+      });
+    };
+
+    obj.addEventListener("load", setupSvg);
+    if (obj.contentDocument?.readyState === "complete") setupSvg();
+
+    return () => obj.removeEventListener("load", setupSvg);
+  }, []);
+
+  // Dışarıdan hover olunca SVG'deki bölgeyi de renklendir
+  useEffect(() => {
+    const obj = objectRef.current;
+    if (!obj) return;
+    const svgDoc = obj.contentDocument;
+    if (!svgDoc) return;
+
+    Object.keys(regionData).forEach((id) => {
+      const el = svgDoc.getElementById(id);
+      if (!el) return;
+      const region = regionData[id];
+      const isActive = activeRegion === id;
+      const color = isActive ? region.color + "30" : "#e7e5e4";
+      const stroke = isActive ? region.color : "#d6d3d1";
+
+      if (el.tagName === "path") {
+        (el as unknown as SVGPathElement).style.fill = color;
+        (el as unknown as SVGPathElement).style.stroke = stroke;
+      } else {
+        el.querySelectorAll("path").forEach((p) => {
+          p.style.fill = color;
+          p.style.stroke = stroke;
+        });
+      }
+    });
+  }, [activeRegion]);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
-      {/* Sol: Harita */}
-      <div className="lg:col-span-3 relative">
-        {/* SVG Türkiye haritası */}
-        <div className="relative w-full aspect-[2/1]">
-          {/* Basit outline harita */}
-          <svg viewBox="0 0 100 65" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Türkiye ana outline */}
-            <path
-              d="M2 28 C4 24, 8 20, 12 18 C16 16, 18 14, 22 12 C26 10, 30 8, 34 10 C36 11, 38 8, 40 7 C42 6, 44 8, 46 7 C48 6, 50 5, 52 6 C54 7, 56 8, 58 7 C60 6, 63 5, 66 6 C69 7, 72 6, 75 8 C78 10, 80 9, 83 11 C86 13, 88 12, 90 14 C92 16, 94 18, 96 20 C97 22, 98 24, 97 26 C96 28, 94 30, 92 32 C90 34, 88 36, 86 38 C84 40, 82 42, 80 43 C78 44, 76 46, 74 48 C72 50, 70 52, 68 53 C66 54, 64 56, 62 56 C60 56, 58 58, 56 58 C54 58, 52 57, 50 56 C48 55, 46 56, 44 57 C42 58, 40 58, 38 57 C36 56, 34 58, 32 58 C30 58, 28 56, 26 55 C24 54, 22 56, 20 55 C18 54, 16 52, 14 50 C12 48, 10 46, 8 44 C6 42, 4 40, 3 38 C2 36, 1 34, 1 32 C1 30, 1 29, 2 28 Z"
-              fill="#f5f5f4"
-              stroke="#d6d3d1"
-              strokeWidth="0.5"
-            />
+      {/* Sol: Gerçek Türkiye haritası */}
+      <div className="lg:col-span-3">
+        <object
+          ref={objectRef}
+          data="/turkey-map.svg"
+          type="image/svg+xml"
+          className="w-full h-auto"
+          aria-label="Türkiye bölgeler haritası"
+        />
 
-            {/* Bölge noktaları */}
-            {regions.map((region) => {
-              const isActive = activeRegion === region.name;
-              const hasClinic = region.clinicCount > 0;
-
-              return (
-                <g key={region.name}>
-                  {/* Pulse ring */}
-                  {hasClinic && (
-                    <circle
-                      cx={region.position.x}
-                      cy={region.position.y}
-                      r={isActive ? 5 : 3.5}
-                      fill="none"
-                      stroke={region.color}
-                      strokeWidth="0.3"
-                      opacity={isActive ? 0.6 : 0.3}
-                    >
-                      <animate attributeName="r" from={isActive ? 4 : 3} to={isActive ? 8 : 6} dur="2s" repeatCount="indefinite" />
-                      <animate attributeName="opacity" from={isActive ? 0.6 : 0.3} to="0" dur="2s" repeatCount="indefinite" />
-                    </circle>
-                  )}
-
-                  {/* Ana nokta */}
-                  <circle
-                    cx={region.position.x}
-                    cy={region.position.y}
-                    r={isActive ? 3.5 : 2.5}
-                    fill={hasClinic ? region.color : "#d6d3d1"}
-                    stroke="white"
-                    strokeWidth="0.8"
-                    className="cursor-pointer transition-all duration-300"
-                    onMouseEnter={() => setActiveRegion(region.name)}
-                    onMouseLeave={() => setActiveRegion(null)}
-                    style={{ filter: isActive ? `drop-shadow(0 0 4px ${region.color})` : "none" }}
-                  />
-
-                  {/* Klinik sayısı badge */}
-                  {hasClinic && (
-                    <text
-                      x={region.position.x}
-                      y={region.position.y - 5}
-                      textAnchor="middle"
-                      fill={region.color}
-                      fontSize="3"
-                      fontWeight="bold"
-                      className="pointer-events-none"
-                    >
-                      {region.clinicCount}
-                    </text>
-                  )}
-
-                  {/* Bölge adı */}
-                  <text
-                    x={region.position.x}
-                    y={region.position.y + 6}
-                    textAnchor="middle"
-                    fill={isActive ? "#000" : "#a8a29e"}
-                    fontSize="2.2"
-                    fontWeight={isActive ? "bold" : "normal"}
-                    className="pointer-events-none transition-all"
-                  >
-                    {region.name}
-                  </text>
-                </g>
-              );
-            })}
-          </svg>
-        </div>
-
-        {/* Toplam merkez sayısı */}
         <div className="flex items-center justify-center gap-6 mt-4">
           <div className="flex items-center gap-2">
             <span className="w-3 h-3 rounded-full bg-purple-600" />
@@ -184,15 +192,13 @@ export function TurkeyMap() {
 
         {/* Bölge listesi */}
         <div className="mt-8 space-y-2">
-          {regions.map((region) => (
+          {Object.entries(regionData).map(([id, region]) => (
             <div
-              key={region.name}
+              key={id}
               className={`flex items-center justify-between px-4 py-3 rounded-xl cursor-pointer transition-all duration-300 ${
-                activeRegion === region.name
-                  ? "bg-stone-100 shadow-soft"
-                  : "hover:bg-stone-50"
+                activeRegion === id ? "bg-stone-100 shadow-soft" : "hover:bg-stone-50"
               }`}
-              onMouseEnter={() => setActiveRegion(region.name)}
+              onMouseEnter={() => setActiveRegion(id)}
               onMouseLeave={() => setActiveRegion(null)}
             >
               <div className="flex items-center gap-3">
