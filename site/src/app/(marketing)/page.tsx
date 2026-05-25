@@ -26,7 +26,7 @@ export default function HomePage() {
           SECTION 1 - HERO
          ────────────────────────────────────────── */}
       <section className="relative min-h-screen overflow-hidden flex items-center bg-[#000]">
-        {/* Background video -- scroll ile kontrol edilecek */}
+        {/* Background video -- autoplay loop */}
         <HeroBackgroundVideo />
 
         {/* Hafif koyu overlay -- metin okunabilirliği */}

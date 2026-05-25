@@ -1,52 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState, useRef } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 
 export function HeroBackgroundVideo() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
   const [isMuted, setIsMuted] = useState(true);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    let ticking = false;
-
-    const handleScroll = () => {
-      if (ticking) return;
-      ticking = true;
-
-      requestAnimationFrame(() => {
-        if (!video || !video.duration) {
-          ticking = false;
-          return;
-        }
-
-        const scrollY = window.scrollY;
-        const windowH = window.innerHeight;
-        const scrollRange = windowH * 2;
-        const progress = Math.min(Math.max(scrollY / scrollRange, 0), 1);
-
-        video.currentTime = progress * video.duration;
-        ticking = false;
-      });
-    };
-
-    video.addEventListener("loadedmetadata", () => {
-      video.pause();
-      video.currentTime = 0;
-    });
-
-    if (video.readyState >= 1) {
-      video.pause();
-      video.currentTime = 0;
-    }
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -56,12 +15,13 @@ export function HeroBackgroundVideo() {
   };
 
   return (
-    <div ref={containerRef} className="absolute inset-0">
+    <>
       <video
         ref={videoRef}
+        autoPlay
+        loop
         muted
         playsInline
-        preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source src="/hero-video.mp4" type="video/mp4" />
@@ -74,6 +34,6 @@ export function HeroBackgroundVideo() {
       >
         {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
       </button>
-    </div>
+    </>
   );
 }
