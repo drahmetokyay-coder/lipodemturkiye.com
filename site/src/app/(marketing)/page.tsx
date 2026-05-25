@@ -25,12 +25,9 @@ export default function HomePage() {
       {/* ──────────────────────────────────────────
           SECTION 1 - HERO
          ────────────────────────────────────────── */}
-      <section className="relative min-h-screen overflow-hidden flex items-center bg-[#000]">
-        {/* Background video -- autoplay loop */}
+      <section className="relative min-h-screen overflow-hidden flex items-center bg-white">
+        {/* Background video -- kadın sağda net, etrafı beyaz gradient */}
         <HeroBackgroundVideo />
-
-        {/* Hafif koyu overlay -- metin okunabilirliği */}
-        <div className="absolute inset-0 bg-black/40 z-10" />
 
         {/* Content */}
         <div className="relative z-20 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 w-full py-20 md:py-28 lg:py-36">
