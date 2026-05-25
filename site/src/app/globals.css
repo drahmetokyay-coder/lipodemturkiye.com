@@ -2,8 +2,8 @@
 
 @theme inline {
   --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Lora', Georgia, 'Times New Roman', serif;
-  --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-display: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Montserrat', system-ui, -apple-system, sans-serif;
 
   /* Primary - Lipödem Awareness Purple */
   --color-primary-50: #FAF5FF;
@@ -215,8 +215,46 @@ body {
 }
 
 .card-hover:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(1.02);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================
+   Mefit-style Pill Buttons
+   ============================================ */
+
+.btn-pill {
+  border-radius: 40px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-pill-primary {
+  border-radius: 40px;
+  background: #000;
+  color: #fff;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-pill-primary:hover {
+  background: #1a1a2e;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+}
+
+.btn-pill-gradient {
+  border-radius: 40px;
+  background: linear-gradient(135deg, #7C3AED, #DB2777);
+  color: #fff;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-pill-gradient:hover {
+  background: linear-gradient(135deg, #6B21A8, #BE185D);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(124, 58, 237, 0.3);
 }
 
 /* ============================================

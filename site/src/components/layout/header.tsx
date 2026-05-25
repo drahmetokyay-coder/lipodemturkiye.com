@@ -51,7 +51,7 @@ export default function Header() {
                 strokeLinejoin="round"
               />
             </svg>
-            <span className="font-serif text-xl font-semibold text-stone-800 group-hover:text-purple-700 transition-colors tracking-tight">
+            <span className="font-display text-xl font-bold text-[#000] group-hover:text-purple-700 transition-colors tracking-tight uppercase">
               Lip&ouml;dem T&uuml;rkiye
             </span>
           </Link>
@@ -63,9 +63,9 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "px-4 py-2 rounded-lg text-sm font-medium",
-                  "text-stone-600 hover:text-purple-600",
-                  "transition-colors duration-200"
+                  "px-4 py-2 rounded-lg text-sm font-semibold",
+                  "text-stone-700 hover:text-[#000]",
+                  "transition-colors duration-200 uppercase tracking-wide"
                 )}
               >
                 {item.label}
@@ -78,11 +78,11 @@ export default function Header() {
             <Link
               href="/araclar/semptom-testi"
               className={cn(
-                "inline-flex items-center gap-2 px-5 py-2.5 rounded-lg",
-                "bg-gradient-to-r from-purple-600 to-rose-500 text-white text-sm font-semibold",
-                "hover:from-purple-700 hover:to-rose-600 active:from-purple-800 active:to-rose-700",
+                "inline-flex items-center gap-2 px-6 py-2.5 rounded-full",
+                "bg-[#000] text-white text-sm font-bold",
+                "hover:bg-stone-800",
                 "shadow-sm hover:shadow-md",
-                "transition-all duration-200"
+                "transition-all duration-200 uppercase tracking-wide"
               )}
             >
               Semptom Testi
