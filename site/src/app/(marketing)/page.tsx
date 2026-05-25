@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { HeroBackgroundVideo } from "@/components/marketing/hero-video"
 import { ScrollReveal } from "@/components/marketing/scroll-reveal"
+import { TurkeyMap } from "@/components/marketing/turkey-map"
 import {
   ArrowRight,
   Activity,
@@ -216,7 +217,29 @@ export default function HomePage() {
       </section>
 
       {/* ──────────────────────────────────────────
-          SECTION 5 - ARACLAR
+          SECTION 5 - TÜRKİYE HARİTASI
+         ────────────────────────────────────────── */}
+      <section className="bg-white py-20 md:py-28 lg:py-36 border-t border-stone-100">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center mb-14">
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#000] uppercase tracking-wide">
+                T&uuml;rkiye Genelinde Tedavi Merkezleri
+              </h2>
+              <p className="mt-4 text-stone-500 text-base md:text-lg max-w-2xl mx-auto">
+                Lip&ouml;dem tedavisi sunan klinik ve uzmanları b&ouml;lgenizde keşfedin. Harita &uuml;zerinde b&ouml;lgelere tıklayarak detay g&ouml;r&uuml;n.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={150}>
+            <TurkeyMap />
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ──────────────────────────────────────────
+          SECTION 6 - ARACLAR
          ────────────────────────────────────────── */}
       <section className="bg-stone-50 py-20 md:py-28 lg:py-36">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
