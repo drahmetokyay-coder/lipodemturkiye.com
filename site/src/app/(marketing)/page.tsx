@@ -45,9 +45,13 @@ export default function HomePage() {
                 </span>
               </div>
 
-              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[3.5rem] xl:text-[4rem] font-bold leading-[1.1] tracking-tight text-[#163832] animate-fade-in-up">
-                Lip&ouml;dem&apos;de<br />
-                <span className="text-[#1A6B5A]">Yalnız Değilsiniz</span>
+              <h1 className="animate-fade-in-up">
+                <span className="block font-display text-2xl sm:text-3xl md:text-4xl font-semibold text-[#163832] leading-tight tracking-tight">
+                  Lip&ouml;dem&apos;de
+                </span>
+                <span className="block font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-bold text-[#1A6B5A] leading-[1.05] tracking-tight mt-1">
+                  Yalnız Değilsiniz
+                </span>
               </h1>
 
               <p className="mt-6 text-base sm:text-lg text-[#6B7B75] max-w-lg leading-relaxed animate-fade-in-up-d1">
@@ -85,6 +89,24 @@ export default function HomePage() {
                   Hızlı &Ouml;zel Ara&ccedil;larımız
                   <ArrowRight className="w-4 h-4" />
                 </Link>
+              </div>
+
+              {/* Quick nav links */}
+              <div className="mt-6 flex flex-wrap gap-3 animate-fade-in-up-d3">
+                {[
+                  { label: "Semptom Testi", href: "/araclar/semptom-testi" },
+                  { label: "Klinik Bul", href: "/klinikler" },
+                  { label: "Tedavi Rehberi", href: "/lipodem-tedavisi" },
+                  { label: "Beslenme", href: "/lipodem-beslenme" },
+                ].map((link) => (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    className="text-xs font-medium text-[#1A6B5A] bg-[#E8F5F0] px-3 py-1.5 rounded-full hover:bg-[#1A6B5A] hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
               </div>
             </div>
 
@@ -506,7 +528,52 @@ export default function HomePage() {
       </section>
 
       {/* ──────────────────────────────────────────
-          SECTION 8 — GÜVEN SİNYALLERİ
+          SECTION 8 — TEDAVİ TAKVİMİ
+         ────────────────────────────────────────── */}
+      <section className="bg-[#FAF7F2] py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <ScrollReveal>
+              <div>
+                <p className="text-sm font-semibold text-[#1A6B5A] mb-3 tracking-wide">TEDAVİ TAKVİMİ</p>
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-[#163832] leading-tight">
+                  Tedavi Takvimimiz
+                </h2>
+                <p className="mt-4 text-[#6B7B75] text-base leading-relaxed">
+                  Lip&ouml;dem tedavi s&uuml;reciniz adım adım planlanır. Konservatif tedaviden cerrahi se&ccedil;eneklere, beslenme planından egzersiz programına kadar t&uuml;m a&#351;amalar.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={150}>
+              <div className="space-y-4">
+                {[
+                  { step: "1", title: "De&#287;erlendirme", desc: "Semptom testi ve evre belirleme", color: "#1A6B5A" },
+                  { step: "2", title: "Bilgilenme", desc: "Ki&#351;isel rehberler ve beslenme planı", color: "#2D8B73" },
+                  { step: "3", title: "Uzman E&#351;le&#351;me", desc: "B&ouml;lgenizdeki klinik ve doktor &ouml;nerileri", color: "#5BBF9E" },
+                  { step: "4", title: "Tedavi Takibi", desc: "İlerleme takibi ve topluluk deste&#287;i", color: "#E8916D" },
+                ].map((item) => (
+                  <div key={item.step} className="flex items-start gap-4 bg-white rounded-xl p-4 shadow-sm border border-stone-100">
+                    <span
+                      className="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0"
+                      style={{ backgroundColor: item.color }}
+                    >
+                      {item.step}
+                    </span>
+                    <div>
+                      <h4 className="font-semibold text-[#163832] text-sm" dangerouslySetInnerHTML={{ __html: item.title }} />
+                      <p className="text-xs text-[#6B7B75] mt-0.5" dangerouslySetInnerHTML={{ __html: item.desc }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ──────────────────────────────────────────
+          SECTION 9 — GÜVEN SİNYALLERİ
          ────────────────────────────────────────── */}
       <section className="bg-[#FAF7F2] py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
