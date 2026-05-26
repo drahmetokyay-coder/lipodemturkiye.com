@@ -16,7 +16,7 @@ export default function Header() {
       className={cn(
         "sticky top-0 z-50",
         "bg-white/95 backdrop-blur-lg",
-        "border-b border-[#2D3B36]/8",
+        "border-b border-stone-100",
         "transition-all duration-300"
       )}
     >
@@ -27,7 +27,7 @@ export default function Header() {
             <img src="/logo.png" alt="Lipödem Türkiye" className="h-9 md:h-10 w-auto" />
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Nav — normal case, no uppercase */}
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((item) => (
               <Link
@@ -35,7 +35,7 @@ export default function Header() {
                 href={item.href}
                 className={cn(
                   "px-3.5 py-2 rounded-lg text-sm font-medium",
-                  "text-[#2D3B36] hover:text-[#1A6B5A] hover:bg-[#1A6B5A]/5",
+                  "text-[#2D3B36] hover:text-[#1A6B5A] hover:bg-[#E8F5F0]",
                   "transition-colors duration-200"
                 )}
               >
@@ -49,7 +49,7 @@ export default function Header() {
             <Link
               href="/araclar/semptom-testi"
               className={cn(
-                "inline-flex items-center gap-2 px-5 py-2.5 rounded-full",
+                "inline-flex items-center gap-2 px-5 py-2.5 rounded-lg",
                 "bg-[#1A6B5A] text-white text-sm font-semibold",
                 "hover:bg-[#15594A]",
                 "shadow-sm hover:shadow-md",

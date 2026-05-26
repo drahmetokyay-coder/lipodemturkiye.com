@@ -26,7 +26,7 @@ export default function HomePage() {
   return (
     <>
       {/* ──────────────────────────────────────────
-          SECTION 1 - HERO
+          SECTION 1 — HERO
          ────────────────────────────────────────── */}
       <section className="relative min-h-[90vh] overflow-hidden flex items-center bg-white">
         {/* Background video */}
@@ -35,60 +35,60 @@ export default function HomePage() {
         {/* Content */}
         <div className="relative z-20 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 w-full py-16 md:py-24 lg:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left -- text */}
+            {/* Left — text */}
             <div>
-              <div className="inline-flex items-center gap-2 mb-6 animate-fade-in">
-                <span className="w-2 h-2 rounded-full bg-[#1A6B5A]" />
-                <span className="text-sm font-medium text-[#1A6B5A] tracking-wide">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E8F5F0] mb-6 animate-fade-in">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#1A6B5A]" />
+                <span className="text-sm font-medium text-[#1A6B5A]">
                   T&uuml;rkiye&apos;nin ilk lip&ouml;dem platformu
                 </span>
               </div>
 
-              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight text-[#2D3B36] animate-fade-in-up">
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[3.5rem] xl:text-[4rem] font-bold leading-[1.1] tracking-tight text-[#163832] animate-fade-in-up">
                 Lip&ouml;dem&apos;de<br />
                 <span className="text-[#1A6B5A]">Yalnız Değilsiniz</span>
               </h1>
 
-              <p className="mt-6 text-base sm:text-lg md:text-xl text-[#6B7B75] max-w-lg leading-relaxed animate-fade-in-up-d1">
+              <p className="mt-6 text-base sm:text-lg text-[#6B7B75] max-w-lg leading-relaxed animate-fade-in-up-d1">
                 Bilimsel kaynaklı bilgi, interaktif ara&ccedil;lar ve size &ouml;zel rehberlerle lip&ouml;dem yolculuğunuzda yanınızdayız.
               </p>
 
-              {/* CTA buttons */}
-              <div className="mt-8 flex flex-col sm:flex-row items-start gap-3 animate-fade-in-up-d2">
-                <Link
-                  href="/araclar/semptom-testi"
-                  className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-[#1A6B5A] text-white rounded-full text-base font-semibold hover:bg-[#15594A] shadow-sm hover:shadow-md transition-all duration-300"
-                >
-                  Semptom Testini &Ccedil;&ouml;z
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="/lipodem-nedir"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-semibold text-[#2D3B36] border-2 border-[#2D3B36]/20 hover:border-[#1A6B5A] hover:text-[#1A6B5A] transition-all duration-300"
-                >
-                  Lip&ouml;dem Nedir?
-                </Link>
-              </div>
-
-              {/* Stats inline */}
-              <div className="mt-10 flex items-center gap-6 md:gap-8 animate-fade-in-up-d3">
+              {/* 4 stat cards — inline, small, white cards with teal numbers */}
+              <div className="mt-8 grid grid-cols-4 gap-3 max-w-lg animate-fade-in-up-d2">
                 {[
-                  { value: "9/11", label: "kadın etkileniyor" },
-                  { value: "370M+", label: "d&uuml;nyada hasta" },
-                  { value: "25+", label: "yıl ge&ccedil; tanı" },
+                  { value: "9/11", label: "kadın" },
+                  { value: "370M+", label: "etkilenen" },
+                  { value: "25+", label: "uzman" },
                   { value: "%51", label: "farkındalık" },
                 ].map((stat) => (
-                  <div key={stat.label} className="text-left">
-                    <p className="font-display text-2xl md:text-3xl font-bold text-[#1A6B5A] tracking-tight leading-none">
+                  <div
+                    key={stat.label}
+                    className="bg-white rounded-xl shadow-sm border border-stone-100 px-3 py-3 text-center"
+                  >
+                    <p className="font-display text-xl md:text-2xl font-bold text-[#1A6B5A] leading-none">
                       {stat.value}
                     </p>
-                    <p className="text-[11px] text-[#6B7B75] mt-1 font-medium" dangerouslySetInnerHTML={{ __html: stat.label }} />
+                    <p className="text-[10px] text-[#6B7B75] mt-1.5 font-medium">
+                      {stat.label}
+                    </p>
                   </div>
                 ))}
               </div>
+
+              {/* CTA button */}
+              <div className="mt-8 animate-fade-in-up-d3">
+                <Link
+                  href="/araclar/semptom-testi"
+                  className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-[#1A6B5A] text-white rounded-lg text-base font-semibold hover:bg-[#15594A] shadow-sm hover:shadow-md transition-all duration-300"
+                >
+                  Hızlı &Ouml;zel Ara&ccedil;larımız
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
 
-            {/* Right -- empty space for video to show through */}
+            {/* Right — empty space for video to show through */}
             <div className="hidden lg:block" aria-hidden="true" />
           </div>
         </div>
@@ -103,27 +103,35 @@ export default function HomePage() {
       </section>
 
       {/* ──────────────────────────────────────────
-          SECTION 2 - EMPATHY BAR
+          SECTION 2 — EMPATHY BAR
          ────────────────────────────────────────── */}
-      <section className="bg-[#1A6B5A] py-4">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
-          <p className="text-white text-sm md:text-base font-medium leading-relaxed">
-            Her 9 kadından 1&apos;ini etkileyen lip&ouml;dem, doktorların yarısı tarafından bile tanınmıyor.
+      <section className="bg-[#E8F5F0] py-12 md:py-16">
+        <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 text-center">
+          <div className="w-12 h-0.5 bg-[#1A6B5A]/30 mx-auto mb-6" />
+          <p className="font-display text-lg md:text-xl lg:text-2xl text-[#163832] italic leading-relaxed">
+            &ldquo;Diyet yapıyorsunuz ama bacaklarınız incelmiyor. Spor yapıyorsunuz ama hi&ccedil;bir &#351;ey değ&#351;miyor. S&uuml;rekli yorgunsunuz ve kimse sizi anlamıyor...&rdquo;
+          </p>
+          <div className="w-12 h-0.5 bg-[#1A6B5A]/30 mx-auto my-6" />
+          <p className="text-[#1A6B5A] font-semibold text-base md:text-lg">
+            Bu sizin hatanız değil.
+          </p>
+          <p className="text-[#6B7B75] text-sm mt-2">
+            Lip&ouml;dem, diyet ve egzersizle ge&ccedil;meyen genetik k&ouml;kenli bir hastalıktır.
           </p>
         </div>
       </section>
 
       {/* ──────────────────────────────────────────
-          SECTION 3 - "BU NEDİR?" ACIKLAMA
+          SECTION 3 — LİPÖDEM NEDİR?
          ────────────────────────────────────────── */}
       <section className="bg-white py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-          {/* Top -- Two column text */}
+          {/* Top — heading + description */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             <ScrollReveal>
               <p className="text-sm font-semibold text-[#1A6B5A] mb-3 tracking-wide">LIP&Ouml;DEM NEDİR?</p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#2D3B36] leading-tight">
-                Belirtileri, evreleri ve tedavi se&ccedil;enekleri
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#163832] leading-tight">
+                Lip&ouml;dem Nedir? Belirtileri, Evreleri ve Tedavi Se&ccedil;enekleri
               </h2>
             </ScrollReveal>
 
@@ -140,119 +148,149 @@ export default function HomePage() {
           {/* Gradient line separator */}
           <div className="line-gradient my-12 md:my-16" />
 
-          {/* Bottom -- 4 feature cards */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              { icon: Clock, title: "Kronik", desc: "Ya&#351;am boyu y&ouml;netim gerektirir" },
-              { icon: Heart, title: "Genetik", desc: "Sizin hatanız değil, kalıtımsal" },
-              { icon: TrendingUp, title: "İlerleyici", desc: "Erken m&uuml;dahale &ccedil;ok &ouml;nemli" },
-              { icon: Shield, title: "Tedavi edilebilir", desc: "Doğru yakla&#351;ımla kontrol altına alınır" },
-            ].map((item, i) => (
-              <ScrollReveal key={item.title} delay={i * 80}>
-                <div className="bg-[#FAF7F2] rounded-xl p-5 text-center hover:shadow-sm transition-shadow">
-                  <div className="w-11 h-11 rounded-full bg-[#1A6B5A] flex items-center justify-center mb-3 mx-auto">
-                    <item.icon className="w-5 h-5 text-white" />
-                  </div>
-                  <h3 className="font-display text-sm font-bold text-[#2D3B36] mb-1">{item.title}</h3>
-                  <p className="text-xs text-[#6B7B75] leading-relaxed" dangerouslySetInnerHTML={{ __html: item.desc }} />
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ──────────────────────────────────────────
-          SECTION 4 - BELİRTİLER
-         ────────────────────────────────────────── */}
-      <section className="bg-[#FAF7F2] py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          {/* Lipödem Belirtileri — numbered list, each in white card */}
           <ScrollReveal>
-            <div className="text-center mb-12 md:mb-16">
-              <p className="text-sm font-semibold text-[#1A6B5A] mb-3 tracking-wide">BELİRTİLER</p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#2D3B36]">
-                Lip&ouml;dem belirtilerini tanıyın
-              </h2>
-              <p className="mt-3 text-[#6B7B75] text-base max-w-xl mx-auto">
-                En yaygın 5 belirti ile kendinizi değerlendirin.
-              </p>
-            </div>
+            <h3 className="font-display text-2xl md:text-3xl font-bold text-[#163832] mb-8">
+              Lip&ouml;dem Belirtileri
+            </h3>
           </ScrollReveal>
 
-          <div className="max-w-3xl mx-auto space-y-8 md:space-y-10">
+          <div className="space-y-4">
             {[
               {
-                num: "01",
+                num: "1",
                 title: "Orantısız yağ birikimi",
-                desc: "Bacak ve kal&ccedil;alarda belirgin, &uuml;st bedene oranla &ccedil;ok fazla yağ birikimi. Ayak bilekleri etkilenmez, belirgin bir 'bilezik' olu&#351;ur.",
+                desc: "Bacak ve kal&ccedil;alarda belirgin, &uuml;st bedene oranla &ccedil;ok fazla yağ birikimi. Ayak bilekleri etkilenmez.",
               },
               {
-                num: "02",
+                num: "2",
                 title: "Diyete diren&ccedil;li yapı",
                 desc: "Sıkı diyet ve egzersize rağmen etkilenen b&ouml;lgelerdeki yağ erimez. &Uuml;st beden zayıflarken alt beden aynı kalır.",
               },
               {
-                num: "03",
+                num: "3",
                 title: "Ağrı ve hassasiyet",
                 desc: "Etkilenen b&ouml;lgelerde basın&ccedil; ağrısı, dokunma hassasiyeti ve yorgunluk hissi. G&uuml;n sonunda bacaklarda ağırlık.",
               },
               {
-                num: "04",
+                num: "4",
                 title: "Kolay morarma",
                 desc: "Hafif temasla bile morluklar olu&#351;ur. Bu, doku altındaki damarsal kırılganlığın bir i&#351;aretidir.",
               },
               {
-                num: "05",
+                num: "5",
                 title: "Simetrik tutulum",
                 desc: "Her iki bacak veya kol e&#351;it &#351;ekilde etkilenir. Tek taraflı &#351;i&#351;lik lip&ouml;dem değil, lenf&ouml;dem i&#351;areti olabilir.",
               },
             ].map((item, i) => (
               <ScrollReveal key={item.num} delay={i * 80}>
-                <div className="flex items-start gap-5 md:gap-8 bg-white rounded-xl p-5 md:p-6 shadow-soft">
-                  <span className="font-display text-4xl md:text-5xl font-bold text-[#1A6B5A]/20 shrink-0 leading-none select-none">
+                <div className="flex items-start gap-5 bg-white rounded-xl p-5 md:p-6 shadow-sm border border-stone-100">
+                  <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#E8F5F0] text-[#1A6B5A] font-display font-bold text-lg shrink-0">
                     {item.num}
                   </span>
                   <div>
-                    <h3 className="text-base md:text-lg font-semibold text-[#2D3B36]">
+                    <h4 className="text-base md:text-lg font-semibold text-[#163832]">
                       {item.title}
-                    </h3>
+                    </h4>
                     <p className="mt-1.5 text-[#6B7B75] text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: item.desc }} />
                   </div>
                 </div>
               </ScrollReveal>
             ))}
           </div>
+
+          {/* Bilimsel Kaynaklarla Yönetiliyoruz */}
+          <div className="mt-16">
+            <ScrollReveal>
+              <h3 className="font-display text-xl md:text-2xl font-bold text-[#163832] mb-6 text-center">
+                Bilimsel Kaynaklarla Y&ouml;netiliyoruz
+              </h3>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { icon: BookOpen, title: "Peer-reviewed makaleler", desc: "20+ bilimsel kaynak referans" },
+                { icon: Stethoscope, title: "Uzman denetimi", desc: "T&uuml;m i&ccedil;erikler tıbbi kontrol altında" },
+                { icon: Shield, title: "Bağımsız platform", desc: "Hi&ccedil;bir kliniğe bağlı değiliz" },
+                { icon: Zap, title: "S&uuml;rekli g&uuml;ncelleme", desc: "En g&uuml;ncel kılavuzlarla uyumlu" },
+              ].map((item, i) => (
+                <ScrollReveal key={item.title} delay={i * 80}>
+                  <div className="bg-white rounded-xl shadow-sm border border-stone-100 p-5 text-center hover:shadow-md transition-shadow">
+                    <div className="w-11 h-11 rounded-full bg-[#E8F5F0] flex items-center justify-center mb-3 mx-auto">
+                      <item.icon className="w-5 h-5 text-[#1A6B5A]" />
+                    </div>
+                    <h4 className="font-semibold text-[#163832] text-sm mb-1">{item.title}</h4>
+                    <p className="text-xs text-[#6B7B75] leading-relaxed" dangerouslySetInnerHTML={{ __html: item.desc }} />
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* ──────────────────────────────────────────
-          SECTION 5 - SEMPTOM TESTİ CTA
+          SECTION 4 — SEMPTOM TESTİ TANITIM
          ────────────────────────────────────────── */}
-      <section className="bg-white py-16 md:py-24">
+      <section className="bg-[#FAF7F2] py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="rounded-2xl bg-[#1A6B5A] overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-sm border border-stone-100 overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-2">
+                {/* Left — text */}
                 <div className="p-8 md:p-12 flex flex-col justify-center">
-                  <p className="text-[#93D4BE] text-sm font-medium mb-3">2 dakika &middot; 12 soru &middot; &Uuml;cretsiz</p>
-                  <h2 className="font-display text-2xl md:text-3xl font-bold text-white leading-snug">
-                    Semptom Testi ile Riskinizi Değerlendirin
+                  <p className="text-sm font-semibold text-[#1A6B5A] mb-3 tracking-wide">SEMPTOM TESTİ</p>
+                  <h2 className="font-display text-2xl md:text-3xl font-bold text-[#163832] leading-snug">
+                    Semptom Testi: Riskinizi Değerlendirin
                   </h2>
-                  <p className="mt-3 text-white/70 text-sm md:text-base leading-relaxed">
-                    12 soruluk bilimsel test ile lip&ouml;dem risk seviyenizi &ouml;ğrenin. Sonucunuzu doktorunuza g&ouml;t&uuml;rebilirsiniz.
+                  <p className="mt-3 text-[#6B7B75] text-sm md:text-base leading-relaxed">
+                    12 soruluk bilimsel &ouml;l&ccedil;ekle lip&ouml;dem risk seviyenizi &ouml;ğrenin.
+                    Sonu&ccedil;larınızı doktorunuza g&ouml;t&uuml;r&uuml;n, erken tanı i&ccedil;in ilk adımı atın.
+                  </p>
+                  <p className="mt-2 text-xs text-[#6B7B75]">
+                    2 dakika &middot; 12 soru &middot; &Uuml;cretsiz
                   </p>
                   <div className="mt-6">
                     <Link
                       href="/araclar/semptom-testi"
-                      className="inline-flex items-center justify-center gap-2 bg-white text-[#1A6B5A] px-6 py-3 rounded-full font-semibold text-sm hover:bg-[#FAF7F2] transition-all"
+                      className="inline-flex items-center justify-center gap-2 bg-[#1A6B5A] text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-[#15594A] shadow-sm hover:shadow-md transition-all"
                     >
                       Teste Ba&#351;la <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
                 </div>
-                <div className="bg-white/5 flex items-center justify-center p-8 md:p-12">
-                  <div className="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center">
-                    <ClipboardCheck className="w-10 h-10 text-white/80" />
+
+                {/* Right — test mockup */}
+                <div className="bg-[#E8F5F0] flex items-center justify-center p-8 md:p-12">
+                  <div className="w-full max-w-xs">
+                    {/* Mockup card */}
+                    <div className="bg-white rounded-xl shadow-sm p-6">
+                      {/* Progress circle mockup */}
+                      <div className="flex items-center justify-between mb-5">
+                        <span className="text-xs text-[#6B7B75] font-medium">Soru 3/12</span>
+                        <div className="relative w-10 h-10">
+                          <svg className="w-10 h-10 -rotate-90" viewBox="0 0 36 36">
+                            <circle cx="18" cy="18" r="15.5" fill="none" stroke="#E8F5F0" strokeWidth="3" />
+                            <circle cx="18" cy="18" r="15.5" fill="none" stroke="#1A6B5A" strokeWidth="3" strokeDasharray="97.4" strokeDashoffset="73" strokeLinecap="round" />
+                          </svg>
+                          <span className="absolute inset-0 flex items-center justify-center text-[10px] font-bold text-[#1A6B5A]">25%</span>
+                        </div>
+                      </div>
+
+                      <p className="text-sm font-semibold text-[#163832] leading-snug">
+                        Bacaklarınızda dokunmaya kar&#351;ı hassasiyet veya ağrı hissediyor musunuz?
+                      </p>
+
+                      <div className="mt-4 space-y-2">
+                        {["Evet, s&uuml;rekli", "Bazen", "Hayır"].map((option, i) => (
+                          <div
+                            key={i}
+                            className={`px-4 py-2.5 rounded-lg border text-sm ${i === 0 ? "border-[#1A6B5A] bg-[#E8F5F0] text-[#1A6B5A] font-medium" : "border-stone-200 text-[#6B7B75]"}`}
+                            dangerouslySetInnerHTML={{ __html: option }}
+                          />
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -262,18 +300,18 @@ export default function HomePage() {
       </section>
 
       {/* ──────────────────────────────────────────
-          SECTION 6 - TÜRKİYE HARİTASI
+          SECTION 5 — TÜRKİYE HARİTASI / KLİNİK BULUCU
          ────────────────────────────────────────── */}
-      <section className="bg-[#FAF7F2] py-16 md:py-24">
+      <section className="bg-white py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-12">
               <p className="text-sm font-semibold text-[#1A6B5A] mb-3 tracking-wide">KLİNİK BULUCU</p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#2D3B36]">
-                T&uuml;rkiye genelinde tedavi merkezleri
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#163832]">
+                İstanbul&apos;da Lip&ouml;dem Tedavisi Veren Klinikler
               </h2>
               <p className="mt-3 text-[#6B7B75] text-base max-w-2xl mx-auto">
-                Lip&ouml;dem tedavisi sunan klinik ve uzmanları b&ouml;lgenizde ke&#351;fedin.
+                T&uuml;rkiye genelinde lip&ouml;dem tedavisi sunan klinik ve uzmanları b&ouml;lgenizde ke&#351;fedin.
               </p>
             </div>
           </ScrollReveal>
@@ -285,164 +323,112 @@ export default function HomePage() {
       </section>
 
       {/* ──────────────────────────────────────────
-          SECTION 7 - ARACLAR
-         ────────────────────────────────────────── */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-12">
-              <p className="text-sm font-semibold text-[#1A6B5A] mb-3 tracking-wide">ARA&Ccedil;LAR</p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#2D3B36]">
-                Size &ouml;zel interaktif ara&ccedil;lar
-              </h2>
-              <p className="mt-3 text-[#6B7B75] text-base max-w-xl mx-auto">
-                Kendi durumunuzu değerlendirmek i&ccedil;in &uuml;cretsiz ara&ccedil;larımızı kullanın.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          {/* 3 tool cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-            {[
-              {
-                icon: Activity,
-                title: "Evre Değerlendirme",
-                desc: "Lip&ouml;dem evrenizi &ouml;ğrenin",
-                href: "/araclar/evre-degerlendirme",
-                delay: 100,
-              },
-              {
-                icon: MapPin,
-                title: "Klinik Bulucu",
-                desc: "Size en yakın uzman klinikleri bulun",
-                href: "/araclar/klinik-bulucu",
-                delay: 200,
-              },
-              {
-                icon: BookOpen,
-                title: "Maliyet Hesaplayıcı",
-                desc: "Tedavi maliyetlerini kar&#351;ıla&#351;tırın",
-                href: "/araclar/maliyet-hesaplayici",
-                delay: 300,
-              },
-            ].map((tool) => (
-              <ScrollReveal key={tool.href} delay={tool.delay}>
-                <Link
-                  href={tool.href}
-                  className="group block rounded-xl bg-[#FAF7F2] border border-transparent p-6 hover:border-[#1A6B5A]/20 hover:shadow-sm transition-all text-center"
-                >
-                  <div className="w-11 h-11 rounded-full bg-[#1A6B5A]/10 flex items-center justify-center mb-4 mx-auto group-hover:bg-[#1A6B5A] transition-colors">
-                    <tool.icon className="w-5 h-5 text-[#1A6B5A] group-hover:text-white transition-colors" />
-                  </div>
-                  <h3 className="font-semibold text-[#2D3B36] group-hover:text-[#1A6B5A] transition-colors text-sm">
-                    {tool.title}
-                  </h3>
-                  <p className="mt-1.5 text-[#6B7B75] text-xs" dangerouslySetInnerHTML={{ __html: tool.desc }} />
-                </Link>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ──────────────────────────────────────────
-          SECTION 8 - REHBER KARTLARI
+          SECTION 6 — SAĞLIĞINIZA YATIRIM
          ────────────────────────────────────────── */}
       <section className="bg-[#FAF7F2] py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <p className="text-sm font-semibold text-[#1A6B5A] mb-3 tracking-wide">REHBERLER</p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#2D3B36]">
-                Kapsamlı rehberlerimiz
+              <p className="text-sm font-semibold text-[#1A6B5A] mb-3 tracking-wide">PREMIUM</p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#163832]">
+                Sağlığınıza Yatırım Yapın
               </h2>
               <p className="mt-3 text-[#6B7B75] text-base max-w-xl mx-auto">
-                İhtiyacınız olan her bilgi, bilimsel kaynaklı ve T&uuml;rk&ccedil;e.
+                &Uuml;cretsiz i&ccedil;eriklerin &ouml;tesinde, ki&#351;iselle&#351;tirilmi&#351; rehberlik ve derinlemesine bilgi i&ccedil;in.
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {[
-              {
-                icon: Activity,
-                title: "Tanı ve Farkındalık",
-                desc: "Lip&ouml;dem nasıl anla&#351;ılır, evreleri nelerdir?",
-                href: "/lipodem-nedir",
-                delay: 0,
-              },
-              {
-                icon: Heart,
-                title: "Tedavi Se&ccedil;enekleri",
-                desc: "Konservatif tedaviden cerrahiye t&uuml;m yol haritası.",
-                href: "/lipodem-tedavisi",
-                delay: 80,
-              },
-              {
-                icon: Utensils,
-                title: "Beslenme Rehberi",
-                desc: "Anti-inflamatuar beslenme ve pratik tarifler.",
-                href: "/lipodem-beslenme",
-                delay: 160,
-              },
-              {
-                icon: Dumbbell,
-                title: "Egzersiz Programı",
-                desc: "Lip&ouml;deme uygun hareket ve spor rehberi.",
-                href: "/lipodem-egzersiz",
-                delay: 240,
-              },
-              {
-                icon: Brain,
-                title: "Ruh Sağlığı",
-                desc: "Psikolojik destek ve ba&#351;a &ccedil;ıkma stratejileri.",
-                href: "/lipodem-ruh-sagligi",
-                delay: 320,
-              },
-              {
-                icon: MapPin,
-                title: "T&uuml;rkiye Rehberi",
-                desc: "&#350;ehir bazlı klinikler ve SGK bilgisi.",
-                href: "/lipodem-turkiye-rehberi",
-                delay: 400,
-              },
-            ].map((item) => (
-              <ScrollReveal key={item.href} delay={item.delay}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {/* Free card */}
+            <ScrollReveal>
+              <div className="bg-white rounded-xl shadow-sm border border-stone-100 p-6 h-full flex flex-col">
+                <h3 className="font-display text-lg font-bold text-[#163832]">&Uuml;cretsiz</h3>
+                <p className="text-3xl font-display font-bold text-[#163832] mt-2">0 TL</p>
+                <p className="text-xs text-[#6B7B75] mt-1">Sonsuza kadar &uuml;cretsiz</p>
+                <ul className="mt-6 space-y-3 flex-1">
+                  {["Genel bilgi makaleleri", "Semptom testi", "Klinik bulucu", "Topluluk eri&#351;imi"].map((f, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-[#6B7B75]">
+                      <CheckCircle className="w-4 h-4 text-[#1A6B5A] mt-0.5 shrink-0" />
+                      <span dangerouslySetInnerHTML={{ __html: f }} />
+                    </li>
+                  ))}
+                </ul>
                 <Link
-                  href={item.href}
-                  className="group block rounded-xl bg-white p-5 shadow-soft hover:shadow-md transition-all relative overflow-hidden"
+                  href="/araclar/semptom-testi"
+                  className="mt-6 inline-flex items-center justify-center w-full py-3 rounded-lg border-2 border-[#1A6B5A] text-[#1A6B5A] font-semibold text-sm hover:bg-[#E8F5F0] transition-colors"
                 >
-                  {/* Top accent line */}
-                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-[#1A6B5A] opacity-0 group-hover:opacity-100 transition-opacity" />
-
-                  <div className="w-10 h-10 rounded-lg bg-[#1A6B5A]/10 flex items-center justify-center mb-3 group-hover:bg-[#1A6B5A] transition-colors">
-                    <item.icon className="w-5 h-5 text-[#1A6B5A] group-hover:text-white transition-colors" />
-                  </div>
-                  <h3 className="font-semibold text-[#2D3B36] text-sm mb-1" dangerouslySetInnerHTML={{ __html: item.title }} />
-                  <p className="text-[#6B7B75] text-xs leading-relaxed" dangerouslySetInnerHTML={{ __html: item.desc }} />
-                  <span className="mt-3 inline-flex items-center gap-1 text-[#1A6B5A] text-xs font-semibold group-hover:gap-2 transition-all">
-                    Ke&#351;fet <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
-                  </span>
+                  Hemen Ba&#351;la
                 </Link>
-              </ScrollReveal>
-            ))}
+              </div>
+            </ScrollReveal>
+
+            {/* Premium card — highlight */}
+            <ScrollReveal delay={100}>
+              <div className="bg-[#1A6B5A] rounded-xl shadow-md p-6 h-full flex flex-col relative">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-[#E8916D] text-white text-xs font-bold rounded-full">
+                  Popüler
+                </div>
+                <h3 className="font-display text-lg font-bold text-white mt-2">Premium</h3>
+                <div className="flex items-baseline gap-1 mt-2">
+                  <p className="text-3xl font-display font-bold text-white">49 TL</p>
+                  <span className="text-white/60 text-sm">/ay</span>
+                </div>
+                <p className="text-xs text-white/60 mt-1">Yıllık &ouml;demede 39 TL/ay</p>
+                <ul className="mt-6 space-y-3 flex-1">
+                  {["&Uuml;cretsiz planın t&uuml;m &ouml;zellikleri", "Ki&#351;isel beslenme planı", "Egzersiz program &ouml;nerileri", "Uzman i&ccedil;erikleri", "&Ouml;ncelikli destek"].map((f, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-white/80">
+                      <CheckCircle className="w-4 h-4 text-[#93D4BE] mt-0.5 shrink-0" />
+                      <span dangerouslySetInnerHTML={{ __html: f }} />
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="/premium"
+                  className="mt-6 inline-flex items-center justify-center w-full py-3 rounded-lg bg-white text-[#1A6B5A] font-semibold text-sm hover:bg-[#FAF7F2] transition-colors"
+                >
+                  Premium&apos;a Ge&ccedil;
+                </Link>
+              </div>
+            </ScrollReveal>
+
+            {/* Daily price highlight card */}
+            <ScrollReveal delay={200}>
+              <div className="bg-[#E8916D] rounded-xl shadow-sm p-6 h-full flex flex-col items-center justify-center text-center">
+                <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-4">
+                  <Heart className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="font-display text-2xl md:text-3xl font-bold text-white leading-tight">
+                  G&uuml;nl&uuml;k Sadece<br />1.67 TL
+                </h3>
+                <p className="text-white/80 text-sm mt-3 leading-relaxed max-w-[200px]">
+                  Bir &ccedil;ay bardağından az. Sağlığınız i&ccedil;in en değerli yatırım.
+                </p>
+                <Link
+                  href="/premium"
+                  className="mt-6 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white text-[#E8916D] font-semibold text-sm hover:bg-white/90 transition-colors"
+                >
+                  Detayları G&ouml;r <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
       {/* ──────────────────────────────────────────
-          SECTION 9 - HASTA HİKAYELERİ
+          SECTION 7 — HASTA HİKAYELERİ
          ────────────────────────────────────────── */}
       <section className="bg-white py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-12">
               <p className="text-sm font-semibold text-[#1A6B5A] mb-3 tracking-wide">DENEYİMLER</p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#2D3B36]">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-[#163832]">
                 Yalnız değilsiniz
               </h2>
               <p className="mt-3 text-[#6B7B75] text-base max-w-xl mx-auto">
-                Lip&ouml;demle ya&#351;ayan kadınların deneyimleri.
+                Lip&ouml;demle ya&#351;ayan kadınların ger&ccedil;ek deneyimleri.
               </p>
             </div>
           </ScrollReveal>
@@ -456,7 +442,7 @@ export default function HomePage() {
                 delay: 0,
               },
               {
-                quote: "Doktorlara gidip gidip hep aynı cevabı alıyordum: 'Daha &ccedil;ok spor yap.' Burada ilk kez ger&ccedil;ekten anla&#351;ıldığımı hissettim.",
+                quote: "Doktorlara gidip gidip hep aynı cevabı alıyordum: &lsquo;Daha &ccedil;ok spor yap.&rsquo; Burada ilk kez ger&ccedil;ekten anla&#351;ıldığımı hissettim.",
                 name: "Z.K., Ankara",
                 stage: "Evre 1",
                 delay: 100,
@@ -469,13 +455,22 @@ export default function HomePage() {
               },
             ].map((testimonial) => (
               <ScrollReveal key={testimonial.name} delay={testimonial.delay}>
-                <div className="h-full bg-[#FAF7F2] rounded-xl p-6 flex flex-col">
+                <div className="h-full bg-white rounded-xl shadow-sm border border-stone-100 p-6 flex flex-col">
+                  {/* Stars */}
+                  <div className="flex gap-0.5 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-4 h-4 text-[#E8916D]" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+
                   {/* Quote */}
                   <p className="text-[#2D3B36] text-sm leading-relaxed flex-1" dangerouslySetInnerHTML={{ __html: `&ldquo;${testimonial.quote}&rdquo;` }} />
 
                   {/* Attribution */}
-                  <div className="mt-6 pt-4 border-t border-[#2D3B36]/10">
-                    <p className="font-semibold text-[#2D3B36] text-sm">
+                  <div className="mt-6 pt-4 border-t border-stone-100">
+                    <p className="font-semibold text-[#163832] text-sm">
                       {testimonial.name}
                     </p>
                     <p className="text-[#6B7B75] text-xs mt-0.5">
@@ -486,18 +481,39 @@ export default function HomePage() {
               </ScrollReveal>
             ))}
           </div>
+
+          {/* Test Completed success card */}
+          <ScrollReveal delay={100}>
+            <div className="mt-10 max-w-md mx-auto">
+              <div className="bg-[#E8F5F0] rounded-xl p-6 text-center border border-[#1A6B5A]/10">
+                <div className="w-14 h-14 rounded-full bg-[#1A6B5A] flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="font-display text-lg font-bold text-[#163832]">Test Tamamlandı</h3>
+                <p className="text-[#6B7B75] text-sm mt-2">
+                  3.000+ ki&#351;i semptom testini tamamladı ve doğru bilgiye ula&#351;tı.
+                </p>
+                <Link
+                  href="/araclar/semptom-testi"
+                  className="mt-4 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-[#1A6B5A] text-white text-sm font-semibold hover:bg-[#15594A] transition-colors"
+                >
+                  Siz de ba&#351;layın <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* ──────────────────────────────────────────
-          SECTION 10 - GUVEN SINYALLERİ
+          SECTION 8 — GÜVEN SİNYALLERİ
          ────────────────────────────────────────── */}
       <section className="bg-[#FAF7F2] py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Shield, title: "Bilimsel kaynaklı", desc: "T&uuml;m i&ccedil;erikler akademik ara&#351;tırmalara dayalı", delay: 0 },
-              { icon: BookOpen, title: "20+ ara&#351;tırma", desc: "Peer-reviewed makalelere referans", delay: 80 },
+              { icon: Shield, title: "Bilimsel kaynaklı", desc: "T&uuml;m i&ccedil;erikler akademik araştırmalara dayalı", delay: 0 },
+              { icon: BookOpen, title: "20+ araştırma", desc: "Peer-reviewed makalelere referans", delay: 80 },
               { icon: Users, title: "Bağımsız platform", desc: "Hi&ccedil;bir kliniğe bağlı değiliz", delay: 160 },
               { icon: Zap, title: "D&uuml;zenli g&uuml;ncelleme", desc: "İ&ccedil;erikler s&uuml;rekli g&uuml;ncel tutulur", delay: 240 },
             ].map((item) => (
@@ -506,7 +522,7 @@ export default function HomePage() {
                   <div className="w-12 h-12 rounded-full bg-[#1A6B5A]/10 flex items-center justify-center mb-3">
                     <item.icon className="w-5 h-5 text-[#1A6B5A]" />
                   </div>
-                  <p className="font-semibold text-[#2D3B36] text-sm" dangerouslySetInnerHTML={{ __html: item.title }} />
+                  <p className="font-semibold text-[#163832] text-sm" dangerouslySetInnerHTML={{ __html: item.title }} />
                   <p className="text-xs text-[#6B7B75] mt-1 max-w-[180px]" dangerouslySetInnerHTML={{ __html: item.desc }} />
                 </div>
               </ScrollReveal>
@@ -516,32 +532,7 @@ export default function HomePage() {
       </section>
 
       {/* ──────────────────────────────────────────
-          SECTION 11 - CTA BANT
-         ────────────────────────────────────────── */}
-      <section className="bg-[#1A6B5A] py-12 md:py-16">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
-          <ScrollReveal>
-            <h2 className="font-display text-2xl md:text-3xl font-bold text-white leading-snug">
-              Lip&ouml;dem yolculuğunuza bug&uuml;n ba&#351;layın
-            </h2>
-            <div className="mt-6">
-              <Link
-                href="/araclar/semptom-testi"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-semibold text-[#1A6B5A] bg-white hover:bg-[#FAF7F2] transition-all duration-300 text-sm"
-              >
-                Semptom Testini &Ccedil;&ouml;z
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-            <p className="mt-4 text-white/60 text-xs">
-              &Uuml;cretsiz, 2 dakika, kayıt gerekmez
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ──────────────────────────────────────────
-          SECTION 12 - NEWSLETTER
+          SECTION 9 — NEWSLETTER
          ────────────────────────────────────────── */}
       <section className="bg-white py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
@@ -549,11 +540,11 @@ export default function HomePage() {
             <ScrollReveal>
               <div>
                 <p className="text-sm font-semibold text-[#1A6B5A] mb-3 tracking-wide">B&Uuml;LTEN</p>
-                <h2 className="font-display text-2xl md:text-3xl font-bold text-[#2D3B36]">
+                <h2 className="font-display text-2xl md:text-3xl font-bold text-[#163832]">
                   Haftalık lip&ouml;dem bilgisi, doğrudan e-postanıza
                 </h2>
                 <p className="mt-3 text-[#6B7B75] text-base leading-relaxed">
-                  En yeni ara&#351;tırmalar, pratik ipu&ccedil;ları ve topluluk haberleri her hafta gelen kutunuzda.
+                  En yeni araştırmalar, pratik ipu&ccedil;ları ve topluluk haberleri her hafta gelen kutunuzda.
                 </p>
               </div>
             </ScrollReveal>
@@ -563,12 +554,12 @@ export default function HomePage() {
                 <input
                   type="email"
                   placeholder="E-posta adresiniz"
-                  className="flex-1 px-5 py-3.5 rounded-full border border-[#2D3B36]/15 bg-[#FAF7F2] text-[#2D3B36] placeholder:text-[#6B7B75] focus:outline-none focus:ring-2 focus:ring-[#1A6B5A]/30 focus:border-[#1A6B5A] transition-all text-sm"
+                  className="flex-1 px-5 py-3.5 rounded-lg border border-stone-200 bg-white text-[#2D3B36] placeholder:text-[#6B7B75] focus:outline-none focus:ring-2 focus:ring-[#1A6B5A]/30 focus:border-[#1A6B5A] transition-all text-sm"
                   required
                 />
                 <button
                   type="submit"
-                  className="px-6 py-3.5 bg-[#1A6B5A] text-white rounded-full font-semibold text-sm whitespace-nowrap hover:bg-[#15594A] transition-colors"
+                  className="px-6 py-3.5 bg-[#1A6B5A] text-white rounded-lg font-semibold text-sm whitespace-nowrap hover:bg-[#15594A] transition-colors"
                 >
                   Abone Ol
                 </button>
@@ -585,10 +576,10 @@ export default function HomePage() {
       {/* ──────────────────────────────────────────
           STICKY MOBİL CTA BAR
          ────────────────────────────────────────── */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white/95 backdrop-blur-lg px-4 py-3 border-t border-[#2D3B36]/10 shadow-soft-lg">
+      <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white/95 backdrop-blur-lg px-4 py-3 border-t border-stone-200 shadow-soft-lg">
         <Link
           href="/araclar/semptom-testi"
-          className="flex items-center justify-center gap-2 w-full bg-[#1A6B5A] text-white py-3 rounded-full font-semibold text-sm shadow-sm hover:bg-[#15594A] transition-colors"
+          className="flex items-center justify-center gap-2 w-full bg-[#1A6B5A] text-white py-3 rounded-lg font-semibold text-sm shadow-sm hover:bg-[#15594A] transition-colors"
         >
           <ClipboardCheck className="w-4 h-4" />
           Semptom Testini &Ccedil;&ouml;z
