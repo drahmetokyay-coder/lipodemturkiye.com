@@ -23,6 +23,38 @@ const kategoriBadgeRenk: Record<string, string> = {
 
 const blogYazilari = [
   {
+    baslik: "Lipödem Araştırmalarında Son Durum: İlerleme, Zorluklar ve Gelecek",
+    slug: "lipodem-ilerleme-zorluklar-gelecek",
+    ozet:
+      "Lipödem araştırmalarında neredeyiz? Genetik yatkınlık, hormonal etkiler, damar disfonksiyonu ve multidisipliner tedavi yaklaşımlarının güncel bilimsel değerlendirmesi.",
+    tarih: "26 Mayıs 2026",
+    kategori: "Araştırma",
+  },
+  {
+    baslik: "Lipödem: Klinik Özellikler, Tanı ve Modern Tedavi Yaklaşımları",
+    slug: "lipodem-klinik-ozellikler-tani-tedavi",
+    ozet:
+      "Lipödem obezite veya lenfödemle neden karıştırılır? Klinik özellikleri, modern tanı yöntemleri ve CDT'den liposüksiyona tedavi seçenekleri.",
+    tarih: "25 Mayıs 2026",
+    kategori: "Tedavi",
+  },
+  {
+    baslik: "Almanya S2k Lipödem Kılavuzu: 60 Uzman Önerisi Ne Diyor?",
+    slug: "almanya-s2k-lipodem-kilavuzu",
+    ozet:
+      "Alman Fleboloji ve Lenfoloji Derneği'nin 60 önerilik resmi lipödem kılavuzu: tanı kriterleri, konservatif tedavi, cerrahi ve öz-yönetim.",
+    tarih: "24 Mayıs 2026",
+    kategori: "Araştırma",
+  },
+  {
+    baslik: "Egzersiz Lipödemi Tedavi Edebilir mi? İtalyan Bilim Konsensüsü",
+    slug: "lipodem-egzersiz-tedavi-konsensus",
+    ozet:
+      "Su egzersizleri ve kuvvet antrenmanı lipödemde gerçekten faydalı mı? İtalyan bilim konsensüsünün önerileri ve pratik egzersiz planı.",
+    tarih: "23 Mayıs 2026",
+    kategori: "Tedavi",
+  },
+  {
     baslik: "Lipödem ve Yaz: Sıcak Havalarda Kendinizi Koruma Rehberi",
     slug: "lipodem-yaz-rehberi",
     ozet:
@@ -31,36 +63,132 @@ const blogYazilari = [
     kategori: "Beslenme",
   },
   {
-    baslik: "2025 Delphi Konsensüsü: Lipödem Tanımı Nasıl Değişti?",
-    slug: "2025-delphi-konsensus",
+    baslik: "Lenfödem mi Lipödem mi? İkisini Ayırt Etmenin Pratik Kılavuzu",
+    slug: "lenfodem-mi-lipodem-mi-farklar",
     ozet:
-      "Uluslararası uzmanların 2025 Delphi konsensüsüyle lipödem tanım, tanı ve sınıflandırma kriterleri nasıl güncellendi? Yeni yaklaşımın hastaları nasıl etkileyeceği.",
+      "Lenfödem ve lipödem birbirine benzer ama temelden farklıdır. Stemmer testi, bilateral dağılım ve tedavi yaklaşımlarındaki farklar.",
+    tarih: "22 Mayıs 2026",
+    kategori: "Genel",
+  },
+  {
+    baslik: "Lipödem Tanısında Görüntüleme: MR mı, Ultrason mu?",
+    slug: "lipodem-goruntuleme-yontemleri",
+    ozet:
+      "Ultrason, MR, BT ve lenfosintigrafi lipödem tanısında ne kadar etkili? Sistematik derleme sonuçları ve görüntülemenin sınırları.",
+    tarih: "21 Mayıs 2026",
+    kategori: "Araştırma",
+  },
+  {
+    baslik: "Ketojenik Diyet Lipödem Ağrısını Azaltır mı? Bilim Ne Diyor?",
+    slug: "ketojenik-diyet-lipodem",
+    ozet:
+      "Çok düşük kalorili ketojenik diyet lipödemde Akdeniz diyetinden daha etkili olabilir mi? Anti-inflamatuar özellikleri ve pratik öneriler.",
+    tarih: "20 Mayıs 2026",
+    kategori: "Beslenme",
+  },
+  {
+    baslik: "Lipödem Hakkında Bilmediklerimiz: Bilimin Açık Soruları",
+    slug: "lipodem-bilmediklerimiz",
+    ozet:
+      "Lipödem hakkında bilmediklerimiz, bildiklerimizden fazla. Patogenez, genetik, biyobelirteçler ve gelecek araştırma yönleri.",
+    tarih: "19 Mayıs 2026",
+    kategori: "Araştırma",
+  },
+  {
+    baslik: "Lipödem Araştırması Nereye Gidiyor? Bilim İnsanlarının Yol Haritası",
+    slug: "lipodem-arastirma-gelecek",
+    ozet:
+      "Lipödem araştırma tarihçesi, genetik faktörler, evreleme zorlukları ve geleceğin tedavi umutları. Bilim insanlarının çizdiği yol haritası.",
     tarih: "18 Mayıs 2026",
     kategori: "Araştırma",
   },
   {
-    baslik: "Kompresyon Çorabı Seçim Rehberi: Hangi Sınıf, Hangi Marka?",
-    slug: "kompresyon-corabi-rehberi",
+    baslik: "Lipödem Yağı Neden Farklı? Mikroskop Altında Gerçekler",
+    slug: "lipodem-morfoloji-patofizyoloji",
     ozet:
-      "Lipödemde kompresyon tedavisi neden kritik? Düz örgü vs yuvarlak örgü, basınç sınıfları, doğru ölçü alma ve Türkiye'de ulaşılabilir markalar.",
+      "Lipödem yağ dokusunun morfolojik farklılıkları, fibrozis-inflamasyon döngüsü, biyobelirteç araştırmaları ve neden sıradan obezite olmadığı.",
+    tarih: "17 Mayıs 2026",
+    kategori: "Araştırma",
+  },
+  {
+    baslik: "Lipödeme Karşı Takviyeler: Hangisi İşe Yarar, Hangisi Para Tuzağı?",
+    slug: "lipodem-takviye-rehberi",
+    ozet:
+      "Yeşil çay, kafein, krom, karnitin ve CLA: Lipödemde hangi besin takviyeleri bilimsel kanıta sahip, hangisi sadece pazarlama?",
+    tarih: "16 Mayıs 2026",
+    kategori: "Beslenme",
+  },
+  {
+    baslik: "Östrojen ve Lipödem: Hormonal Bağlantının Bilimi",
+    slug: "ostrojen-lipodem-iliskisi",
+    ozet:
+      "Lipödem neden ergenlik, hamilelik ve menopoz dönemlerinde ortaya çıkar? Östrojen reseptör anormallikleri ve hormonal tedavi implikasyonları.",
+    tarih: "15 Mayıs 2026",
+    kategori: "Araştırma",
+  },
+  {
+    baslik: "ABD Lipödem Standart Bakım Protokolü: Tedavi Sırası Nasıl Olmalı?",
+    slug: "abd-lipodem-standart-bakim",
+    ozet:
+      "ABD'nin 85 maddelik lipödem konsensüs kılavuzu: önerilen tedavi sırası, konservatif öncelik yaklaşımı ve Türkiye'ye uyarlama notları.",
+    tarih: "14 Mayıs 2026",
+    kategori: "Tedavi",
+  },
+  {
+    baslik: "Lipödem Yönetiminde Güncelleme: Kanıtlı Tedavi mi, Efsane mi?",
+    slug: "lipodem-yonetim-guncelleme",
+    ozet:
+      "Lipödem tedavisinde mitler ve gerçekler. Multimodal yönetim yaklaşımı, psikolojik destek ve gerçekçi beklentiler.",
+    tarih: "13 Mayıs 2026",
+    kategori: "Tedavi",
+  },
+  {
+    baslik: "Lipödem Ağrısının Nedeni ve Yönetimi: Pratik Bir Rehber",
+    slug: "lipodem-agrisi-nedenleri-yonetimi",
+    ozet:
+      "Lipödem ağrısında allodini, sinir sinyalizasyonu ve östrojen rolü. Konservatif yönetimden liposüksiyona tedavi seçenekleri.",
     tarih: "12 Mayıs 2026",
     kategori: "Tedavi",
   },
   {
-    baslik: "Anti-İnflamatuar Kahvaltı: 5 Kolay Türk Mutfağı Tarifi",
-    slug: "anti-inflamatuar-kahvalti",
+    baslik: "Lipödemin A'dan Z'ye Haritası: Patogenez, Tanı ve Tedavi",
+    slug: "lipodem-patogenez-tani-tedavi",
     ozet:
-      "Lipödemde inflamasyonu azaltmaya yardımcı 5 pratik kahvaltı tarifi. Türk mutfağına uygun, kolay hazırlanan ve lezzetli anti-inflamatuar öneriler.",
-    tarih: "6 Mayıs 2026",
-    kategori: "Beslenme",
+      "Kadınların %10'unu etkileyen lipödemde patogenez mekanizmaları, klinik tanı adımları ve CDT'den liposüksiyona kanıt temelli tedaviler.",
+    tarih: "11 Mayıs 2026",
+    kategori: "Tedavi",
   },
   {
-    baslik: "Lipödem ve Hamilelik: Bilmeniz Gereken 7 Şey",
-    slug: "lipodem-hamilelik",
+    baslik: "Dünya Lipödeme Uyandı: Görmezden Gelinen Hastalığın Hikayesi",
+    slug: "lipodem-farkindalik-cagrisi",
     ozet:
-      "Hamilelik lipödemi nasıl etkiler? Hormonal değişimler, kompresyon kullanımı, kilo yönetimi ve doğum sonrası süreçte dikkat edilmesi gerekenler.",
-    tarih: "28 Nisan 2026",
+      "1940'lardan bugüne lipödem farkındalık yolculuğu. Neden görmezden gelindi, küresel tanınma hareketi ve kilo kaybının neden işe yaramadığı.",
+    tarih: "10 Mayıs 2026",
     kategori: "Genel",
+  },
+  {
+    baslik: "Lipödemin Modern Tanımı: Bir Alman Dermatologun Güncelleme Raporu",
+    slug: "lipodem-guncel-guncelleme",
+    ozet:
+      "Lipödemin güncellenmiş tanımı: bilateral simetri, distal korunma, hormonal bağlantılar ve obezite ile lenfödemden ayrımı.",
+    tarih: "9 Mayıs 2026",
+    kategori: "Araştırma",
+  },
+  {
+    baslik: "Lipödem Yağı: Vücudu Hem Koruyan Hem Zorlayan Paradoks",
+    slug: "lipodem-dost-dusman",
+    ozet:
+      "Lipödem yağının metabolik paradoksu: ağrı oluştururken neden diyabet ve hipertansiyon riski düşük? Bilimin çarpıcı bulguları.",
+    tarih: "8 Mayıs 2026",
+    kategori: "Araştırma",
+  },
+  {
+    baslik: "Damar Hekimlerinin Gözünden Lipödem: Klinik Özet",
+    slug: "damar-hekimlerinden-lipodem",
+    ozet:
+      "Vasküler tıp perspektifinden lipödem: damar hastalıklarından ayrımı, egzersiz fizyolojisi ve multidisipliner yönetim.",
+    tarih: "7 Mayıs 2026",
+    kategori: "Tedavi",
   },
 ];
 
