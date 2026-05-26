@@ -208,7 +208,7 @@ export function PubmedShowcase() {
         className="relative overflow-hidden py-3 mb-10 border-y border-stone-200/60"
         aria-hidden="true"
       >
-        <div className="flex gap-8 animate-[marquee_60s_linear_infinite] whitespace-nowrap will-change-transform">
+        <div className="flex gap-8 animate-marquee whitespace-nowrap will-change-transform">
           {[...publications, ...publications].map((p, i) => (
             <span
               key={`${p.pmid}-${i}`}
@@ -282,17 +282,6 @@ export function PubmedShowcase() {
           )
         })}
       </div>
-
-      <style jsx>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-      `}</style>
     </section>
   )
 }
