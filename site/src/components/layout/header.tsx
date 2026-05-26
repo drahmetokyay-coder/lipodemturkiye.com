@@ -7,8 +7,8 @@ const navLinks = [
   { label: "Tedavi", href: "/lipodem-tedavisi" },
   { label: "Beslenme", href: "/lipodem-beslenme" },
   { label: "Egzersiz", href: "/lipodem-egzersiz" },
+  { label: "Uzmanlar", href: "/uzmanlar" },
   { label: "Araçlar", href: "/araclar/semptom-testi" },
-  { label: "Klinikler", href: "/klinikler" },
 ];
 
 export default function Header() {
