@@ -9,8 +9,9 @@ const mobileNavLinks = [
   { label: "Lipödem Nedir", href: "/lipodem-nedir" },
   { label: "Tedavi", href: "/lipodem-tedavisi" },
   { label: "Beslenme", href: "/lipodem-beslenme" },
+  { label: "Egzersiz", href: "/lipodem-egzersiz" },
   { label: "Araçlar", href: "/araclar/semptom-testi" },
-  { label: "Hakkımızda", href: "/hakkimizda" },
+  { label: "Klinikler", href: "/klinikler" },
 ];
 
 export default function MobileNav() {
@@ -53,9 +54,8 @@ export default function MobileNav() {
               <Link
                 href="/"
                 onClick={() => setIsOpen(false)}
-                className="font-serif font-semibold text-xl text-stone-800"
               >
-                Lip&ouml;dem T&uuml;rkiye
+                <img src="/logo.png" alt="Lipödem Türkiye" className="h-9 w-auto" />
               </Link>
               <button
                 type="button"

@@ -6,8 +6,9 @@ const navLinks = [
   { label: "Lipödem Nedir", href: "/lipodem-nedir" },
   { label: "Tedavi", href: "/lipodem-tedavisi" },
   { label: "Beslenme", href: "/lipodem-beslenme" },
+  { label: "Egzersiz", href: "/lipodem-egzersiz" },
   { label: "Araçlar", href: "/araclar/semptom-testi" },
-  { label: "Hakkımızda", href: "/hakkimizda" },
+  { label: "Klinikler", href: "/klinikler" },
 ];
 
 export default function Header() {

@@ -3,23 +3,20 @@ import Image from "next/image"
 import { HeroBackgroundVideo } from "@/components/marketing/hero-video"
 import { ScrollReveal } from "@/components/marketing/scroll-reveal"
 import { TurkeyMap } from "@/components/marketing/turkey-map"
+import { NewsletterForm } from "@/components/marketing/newsletter-form"
 import {
   ArrowRight,
   Heart,
   ClipboardCheck,
   BookOpen,
-  Mail,
   Shield,
-  Users,
   Clock,
   TrendingUp,
-  MapPin,
   Zap,
   CheckCircle,
   Stethoscope,
   Sparkles,
   Star,
-  Play,
 } from "lucide-react"
 
 export default function HomePage() {
@@ -68,13 +65,13 @@ export default function HomePage() {
             <div className="mt-8 flex flex-wrap gap-3 animate-fade-in-up-d2">
               {[
                 { val: "9/11", label: "kadın etkileniyor" },
-                { val: "370M+", label: "d&uuml;nyada hasta" },
+                { val: "370M+", label: "dünyada hasta" },
                 { val: "25+", label: "bilimsel kaynak" },
                 { val: "%51", label: "doktor farkındalığı" },
               ].map((s) => (
                 <div key={s.val} className="flex items-center gap-2.5 bg-white rounded-xl border border-stone-100 shadow-sm px-4 py-2.5">
                   <span className="font-display text-lg font-bold text-[#1A6B5A]">{s.val}</span>
-                  <span className="text-[11px] text-[#6B7B75] font-medium leading-tight" dangerouslySetInnerHTML={{ __html: s.label }} />
+                  <span className="text-[11px] text-[#6B7B75] font-medium leading-tight">{s.label}</span>
                 </div>
               ))}
             </div>
@@ -195,16 +192,16 @@ export default function HomePage() {
             </ScrollReveal>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
               {[
-                { icon: BookOpen, t: "20+ ara&#351;tırma", d: "Peer-reviewed referans" },
+                { icon: BookOpen, t: "20+ araştırma", d: "Peer-reviewed referans" },
                 { icon: Stethoscope, t: "Uzman denetimi", d: "Tıbbi kontrol altında" },
                 { icon: Shield, t: "Bağımsız", d: "Kliniğe bağlı değiliz" },
-                { icon: Zap, t: "G&uuml;ncel", d: "S&uuml;rekli g&uuml;ncellenir" },
+                { icon: Zap, t: "Güncel", d: "Sürekli güncellenir" },
               ].map((item, i) => (
                 <ScrollReveal key={item.t} delay={i * 60}>
                   <div className="text-center p-4 rounded-xl border border-stone-100 bg-white hover:shadow-sm transition-shadow">
                     <item.icon className="w-5 h-5 text-[#1A6B5A] mx-auto mb-2" />
-                    <p className="font-semibold text-[#163832] text-[13px]" dangerouslySetInnerHTML={{ __html: item.t }} />
-                    <p className="text-[11px] text-[#6B7B75] mt-0.5" dangerouslySetInnerHTML={{ __html: item.d }} />
+                    <p className="font-semibold text-[#163832] text-[13px]">{item.t}</p>
+                    <p className="text-[11px] text-[#6B7B75] mt-0.5">{item.d}</p>
                   </div>
                 </ScrollReveal>
               ))}
@@ -408,8 +405,8 @@ export default function HomePage() {
                 <h3 className="font-display text-lg font-bold text-[#163832]">&Uuml;cretsiz</h3>
                 <p className="font-display text-3xl font-bold text-[#163832] mt-1">0 TL</p>
                 <ul className="mt-6 space-y-3 flex-1">
-                  {["Bilgi makaleleri", "Semptom testi", "Klinik bulucu", "Haftalık b&uuml;lten"].map((f, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-[#6B7B75]"><CheckCircle className="w-4 h-4 text-[#1A6B5A] shrink-0" /><span dangerouslySetInnerHTML={{ __html: f }} /></li>
+                  {["Bilgi makaleleri", "Semptom testi", "Klinik bulucu", "Haftalık bülten"].map((f, i) => (
+                    <li key={i} className="flex items-center gap-2 text-sm text-[#6B7B75]"><CheckCircle className="w-4 h-4 text-[#1A6B5A] shrink-0" />{f}</li>
                   ))}
                 </ul>
                 <Link href="/araclar/semptom-testi" className="mt-7 w-full py-3 rounded-xl border-2 border-[#1A6B5A] text-[#1A6B5A] font-semibold text-sm text-center hover:bg-[#E8F5F0] transition-colors block">Hemen Ba&#351;la</Link>
@@ -423,8 +420,8 @@ export default function HomePage() {
                 <div className="flex items-baseline gap-1 mt-1"><span className="font-display text-3xl font-bold text-white">49 TL</span><span className="text-white/50 text-sm">/ay</span></div>
                 <p className="text-white/50 text-xs mt-1">Yıllıkta 39 TL/ay</p>
                 <ul className="mt-6 space-y-3 flex-1">
-                  {["&Uuml;cretsiz t&uuml;m &ouml;zellikler", "Beslenme planı", "Egzersiz programı", "Uzman i&ccedil;erikleri", "&Ouml;ncelikli destek"].map((f, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-white/75"><CheckCircle className="w-4 h-4 text-[#93D4BE] shrink-0" /><span dangerouslySetInnerHTML={{ __html: f }} /></li>
+                  {["Ücretsiz tüm özellikler", "Beslenme planı", "Egzersiz programı", "Uzman içerikleri", "Öncelikli destek"].map((f, i) => (
+                    <li key={i} className="flex items-center gap-2 text-sm text-white/75"><CheckCircle className="w-4 h-4 text-[#93D4BE] shrink-0" />{f}</li>
                   ))}
                 </ul>
                 <Link href="/premium" className="mt-7 w-full py-3 rounded-xl bg-white text-[#1A6B5A] font-semibold text-sm text-center hover:bg-[#FAF7F2] transition-colors block">Premium&apos;a Ge&ccedil;</Link>
@@ -505,13 +502,7 @@ export default function HomePage() {
             Haftalık bilimsel bilgiler, pratik ipu&ccedil;ları ve topluluk haberleri doğrudan e-postanıza.
           </p>
 
-          <form className="mt-8 flex flex-col sm:flex-row items-stretch gap-3 max-w-md mx-auto">
-            <input type="email" placeholder="E-posta adresiniz" required className="flex-1 px-5 py-3.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-white/30 text-sm" />
-            <button type="submit" className="px-6 py-3.5 bg-white text-[#1A6B5A] rounded-xl font-semibold text-sm hover:bg-[#FAF7F2] transition-colors whitespace-nowrap">Abone Ol</button>
-          </form>
-          <p className="text-white/30 text-xs mt-3 flex items-center justify-center gap-1.5">
-            <Shield className="w-3 h-3" /> Bilgileriniz gizlidir. Spam yok.
-          </p>
+          <NewsletterForm />
         </div>
       </section>
 

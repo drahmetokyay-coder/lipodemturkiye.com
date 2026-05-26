@@ -50,7 +50,7 @@ const footerLinks = {
     title: "Araçlar",
     links: [
       { label: "Semptom Testi", href: "/araclar/semptom-testi" },
-      { label: "Klinik Bulucu", href: "/lipodem-turkiye-rehberi" },
+      { label: "Klinik Bulucu", href: "/klinikler" },
       { label: "Blog", href: "/blog" },
       { label: "Hikayeler", href: "/hikayeler" },
     ],
@@ -61,7 +61,7 @@ const footerLinks = {
       { label: "Hakkımızda", href: "/hakkimizda" },
       { label: "İletişim", href: "/iletisim" },
       { label: "Premium", href: "/premium" },
-      { label: "Doktorlar İçin", href: "/doktorlar" },
+      { label: "Kongre 2026", href: "/lipodem-kongresi-2026" },
     ],
   },
 };

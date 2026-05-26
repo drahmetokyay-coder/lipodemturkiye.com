@@ -13,10 +13,21 @@ export const metadata: Metadata = {
   description:
     "Türkiye'nin ilk kapsamlı lipödem hasta platformu. Semptom testi, tedavi rehberleri, uzman klinik bulucu ve topluluk desteği.",
   metadataBase: new URL("https://lipodemturkiye.com"),
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     type: "website",
     locale: "tr_TR",
     siteName: "Lipödem Türkiye",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Lipödem Türkiye" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.png"],
   },
 };
 
