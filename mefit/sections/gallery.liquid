@@ -1,0 +1,425 @@
+<div data-section-id="{{ section.id }}" data-section-type="gallery_page" class="gallery_page" >  
+   <div class="{% if section.settings.page_full_width %} page-full-width {% else %} page-width {% endif %} {% if section.settings.page_full_width_spacing %} page-full-width_spacing {% endif %} {{ section.settings.custom_class_name }} section-{{ section.id }}-padding"> 
+    <div class="row {{ section.settings.custom_class_name }}">  
+    <div class="wrapper">
+      {% render 'section-heading', class: section.id %}
+      <div class="banner-images">
+        {% if section.blocks.size > 0 %}      
+        {% case section.settings.grid %}
+        {% when '1' %}
+        {% when '2' %}
+        {%- assign column = 'two-column' -%}
+        {% when '3' %}
+        {%- assign column = 'three-column' -%}              
+        {% when '4' %}
+        {%- assign column = 'four-column' -%}              
+        {% when '5' %}
+        {%- assign column = 'five-column' -%}           
+        {% when '6' %}
+        {%- assign column = 'six-column' -%}              
+        {% endcase %} 
+        <div class="dt-sc-column {{ column }} img-gallery-magnific">
+        {% for block in section.blocks %}      
+          <div class="bg-effect-{{block.id }} gallery" style="position:relative;">
+            {% unless section.settings.use_overlay_icons %}
+            <a href="{% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 1000 }}{% endif %}" data-fancybox="images"  data-type="image" data-caption="{{block.settings.title}}">                
+              {% endunless %}
+          {%- unless block.settings.image == blank %}             
+
+             <img
+                      srcset="{%- if block.settings.image.width >= 375 -%}{{ block.settings.image | image_url: width: 375 }} 375w,{%- endif -%}
+                      {%- if block.settings.image.width >= 550 -%}{{ block.settings.image | image_url: width: 550 }} 550w,{%- endif -%}
+                      {%- if block.settings.image.width >= 750 -%}{{ block.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
+                      {%- if block.settings.image.width >= 1100 -%}{{ block.settings.image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                      {%- if block.settings.image.width >= 1500 -%}{{ block.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                      {%- if block.settings.image.width >= 1780 -%}{{ block.settings.image | image_url: width: 1780 }} 1780w,{%- endif -%}
+                      {%- if block.settings.image.width >= 2000 -%}{{ block.settings.image | image_url: width: 2000 }} 2000w,{%- endif -%}
+                      {%- if block.settings.image.width >= 3000 -%}{{ block.settings.image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                      {%- if block.settings.image.width >= 3840 -%}{{ block.settings.image | image_url: width: 3840 }} 3840w,{%- endif -%}
+                      {{ block.settings.image | image_url: width: 1500 }} {{ block.settings.image.width }}w"
+                      sizes="100vw"
+                      src="{{ block.settings.image | image_url: width: 1500 }}"
+                      loading="lazy"              
+                      alt="{{ block.settings.image.alt | escape }}"
+                      width="{{ block.settings.image.width }}"
+                      height="{{ block.settings.image.width | divided_by: block.settings.image.aspect_ratio | round }}"
+                    >
+            {% endunless %}
+              <div class="ovrly17"> 
+                {% if section.settings.use_overlay %}
+                <div class="image-overlay">  
+                  {% endif %}
+                  {% if section.settings.use_overlay_icons %}
+                    <div class="links">  
+                    <div class="magnific-img">
+                    <a class="image-popup-vertical-fit" href="{{ block.settings.image | image_url: width: 960 }}" title="9.jpg">					
+                    <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    </a>
+                    </div>
+                   
+<!--                     <a href="{% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 960  }}{% endif %}" data-fancybox="images" data-type="image" data-caption="{{block.settings.title}}"><i class="fa fa-search"></i></a>                 -->
+                    
+                    <a href="{{ block.settings.gallery_link }}" class="link"><i class="fa fa-link"></i></a>
+                  </div>
+                  {% endif %}
+                  {% if block.settings.gallery_title != blank or block.settings.category != blank %}
+                  <div class="image-overlay-details">
+                    {% if block.settings.gallery_title != blank %} <h4><a href="{{ block.settings.gallery_link }}">{{ block.settings.gallery_title }}</a></h4>{% endif %}
+                    {% if block.settings.category != blank %} <p>{{ block.settings.category }}</p>{% endif %}
+                  </div>
+                  {% endif %}
+                  {% if section.settings.use_overlay %}        
+                </div>
+                {% endif %}    
+              </div>
+
+              {% unless section.settings.use_overlay_icons %}
+            </a>
+            {% endunless %}   
+          </div>
+        {% endfor %}
+          </div>  
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+
+<style>
+  {% if section.settings.use_overlay %}
+
+  {% assign hex2rgb_hex = section.settings.img_overlay %}
+
+
+  .gallery_page .gallery .image-overlay { background:{{section.settings.img_overlay | color_modify: 'alpha', 0.7 }} }
+  {% endif %}
+  .gallery_page .gallery:hover .image-overlay {    opacity: 1;}
+  .gallery_page .gallery .links a { border:2px solid {{ section.settings.img_overlay_icon }};color:{{ section.settings.img_overlay_icon_txt }}; }
+  .gallery_page .gallery .links a:hover { border-color:{{ section.settings.img_overlay_icon_bg }};background:{{ section.settings.img_overlay_icon_bg }};color:{{ section.settings.img_overlay_icon_hover_txt }}; }
+  .gallery_page .gallery .image-overlay-details h4 a { color:{{ section.settings.img_overlay_title }};transition:var(--DTBaseTransition) }
+   .gallery_page .gallery .image-overlay-details h4 a:hover{color:var(--DTLinkHoverColor);}
+  .gallery_page .gallery .image-overlay-details p { color:{{ section.settings.img_overlay_catgry }}; }
+
+  .gallery_page .grid__item .gallery .image-overlay-details { background:{{section.settings.texthover_bg_color | color_modify: 'alpha', 0.7 }}!important;}
+  /* .gallery_page .collectionItems .ovrly17::after{background:{{section.settings.overlay_bg_color}};}*/
+
+  .gallery_page .grid__item:hover h2 {background:{{section.settings.texthover_bg_color | color_modify: 'alpha', 0.7 }}!important;color:{{section.settings.texthover_txt_color}}!important;}
+
+  .gallery_page .grid__item:hover h2 a{color:{{section.settings.texthover_txt_color}}!important;}
+  
+  .gallery_page .gallery { position: relative; width: 100%; float: left; }
+  .gallery_page .gallery img { width: 100%; }
+  .gallery_page .gallery .image-overlay { position: absolute; opacity: 0; display: block; bottom: 0; left: 0; right: 0; width: 100%; height: 100%; overflow: hidden;
+  -webkit-transition: all .5s; -moz-transition: all .5s; -ms-transition: all .5s; -o-transition: all .5s; transition: all .5s; }
+  
+  .gallery_page .gallery .image-overlay .links { left: 0; right: 0; top: 0; bottom: 0; margin: auto; position: absolute; width: 120px; height: 45px;display:flex; }
+   .gallery_page .gallery .image-overlay .links div,
+  .gallery_page .gallery .image-overlay .links a{ display: inline-block; height: 45px; width: 45px; font-size: 16px; line-height: 40px; border-radius: 50%;
+  margin: 0 5px; position: relative; bottom: 100%; z-index: 1; text-align: center; }
+
+  .gallery_page .gallery .image-overlay .links > div.magnific-img { right: 100%; bottom: 0; }
+  
+  .gallery_page .gallery .image-overlay .links > a.link { left: 100%; bottom: 0; }
+  
+  .gallery_page .gallery:hover .image-overlay .links > div.magnific-img { right: 0; bottom: 90%; }
+  
+  .gallery_page .gallery:hover .image-overlay .links > a.link { left: 0; bottom: 90%; }
+  
+  
+  .gallery_page .gallery .image-overlay .image-overlay-details { left: 0; bottom: -100px; right: inherit; width: 100%; text-align: center; padding: 20px 10px;
+  border: 0; position: absolute; -webkit-transition: all .4s ease-in-out; -moz-transition: all .4s ease-in-out; -ms-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out; transition: all .4s ease-in-out; }
+  
+  .gallery_page .gallery:hover .image-overlay .image-overlay-details { bottom: 15px; }
+  
+  .gallery_page .gallery .image-overlay .image-overlay-details h4 { margin: 0; }
+  
+  .gallery_page .gallery .image-overlay-details p { margin: 5px 0 0; }
+  
+  .gallery_page .banner-images .dt-sc-column { grid-gap: 0; }
+ .magnific-img img {
+    width: 100%;
+    height: auto;
+}
+
+</style>
+
+ 
+
+{% schema %}
+{
+"name": "Gallery Block",
+"class": "section gallery-Block",
+"max_blocks":100,
+"settings": [
+{
+      "type":"checkbox",
+      "id":"page_full_width",
+       "default": false,
+      "label": "t:sections.all.page_full_width.label"
+    },
+    {
+      "type":"checkbox",
+      "id":"page_full_width_spacing",
+       "default": false,
+      "label": "t:sections.all.page_full_width_spacing.label"
+    },
+{
+"type": "text",
+"id": "padding",
+"label": "Style value (Padding)",
+"default":"0,0",
+"info":"Top(px),Bottom(px)"
+},
+{
+"type": "text",
+"id": "margin",
+"label": "Style value (Margin)",
+"default":"0,0",
+"info":"Top(px),Bottom(px)"
+},
+{
+"type": "text",
+"id": "section_heading",
+"label": "Main Heading",
+"default": "Gallery"
+},
+{
+"type": "text",
+"id": "section_sub_heading",
+"label": "Sub Heading",
+"default": "Sub Heading"
+},
+{
+"type": "text",
+"id": "section_description",
+"label": "Description",
+"default": "Use this text to share the information which you like!."
+},
+{
+"type": "text",
+"id": "section_button_text",
+"label": "Link text"
+},
+{
+"type": "url",
+"id": "section_button_link",
+"label": "Link URL"
+},
+{
+"type": "header",
+"content": "Section Color settings"
+},
+{
+"type": "color",
+"id": "section_heading_color",
+"label": "Heading color"
+},    
+{
+"type": "color",
+"id": "section_sub_heading_color",
+"label": "Sub heading color"
+},   
+{
+"type": "color",
+"id": "section_description_color",
+"label": "Description color"
+},  
+{
+"type": "color",
+"id": "section_button_bg_color",
+"label": "Button bg color"
+},   
+{
+"type": "color",
+"id": "section_button_text_color",
+"label": "Button text color"
+},   
+{
+"type": "color",
+"id": "section_button_hover_bg_color",
+"label": "Button hover bg color"
+},   
+{
+"type": "color",
+"id": "section_button_hover_text_color",
+"label": "Button hover text color"
+},
+{
+"type": "select",
+"id": "heading_position",
+"label": "Heading Position",
+"options": [
+{
+"value": "text-center",
+"label": "Center"
+},
+{
+"value": "text-start",
+"label": "Left"
+},
+{
+"value": "text-end",
+"label": "right"
+}
+]
+},
+{
+"type": "checkbox",
+"id": "use_overlay",
+"label": "Use Overlay"
+},
+{
+"type": "color",
+"id": "img_overlay",
+"label": "Image Overlay",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "img_overlay_title",
+"label": "Overlay Title",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "img_overlay_catgry",
+"label": "Overlay Category",
+"default": "#000"
+},
+{
+"type": "checkbox",
+"id": "use_overlay_icons",
+"label": "Use Overlay Icons"
+},
+{
+"type": "color",
+"id": "img_overlay_icon",
+"label": "Overlay Icon Border",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "img_overlay_icon_txt",
+"label": "Overlay Icon Text",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "img_overlay_icon_bg",
+"label": "Overlay Icon Hover Bg",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "img_overlay_icon_hover_txt",
+"label": "Overlay Icon Hover Text",
+"default": "#000"
+},
+{
+"type": "color",
+"id": "texthover_bg_color",
+"label": "Text Hover Bg Color",
+"default":"#000"	
+},
+{
+"type": "color",
+"id": "texthover_txt_color",
+"label": "Text Hover Text Color",
+"default":"#000"	
+},
+{
+"type": "select",
+"id": "grid",
+"label": "Item per row",
+"default": "3",
+"options": [
+{
+"value": "1",
+"label": "1"
+},
+{
+"value": "2",
+"label": "2"
+},
+{
+"value": "3",
+"label": "3"
+},
+{
+"value": "4",
+"label": "4"
+},
+{
+"value": "5",
+"label": "5"
+},
+{
+"value": "6",
+"label": "6"
+}
+]
+}
+],
+"blocks": [
+{
+"type": "image",
+"name": "support block",
+"settings": [ 
+{
+"type": "image_picker",
+"id": "image",
+"label": "Image",
+"info": "Size: 650x760"
+},
+{
+"type": "text",
+"id": "title",
+"label": "Alt Text",
+"default": "Collection Name"	
+},
+{
+"type": "text",
+"id": "gallery_title",
+"label": "Title" 		  
+},  
+{
+"type": "text",
+"id": "category",
+"label": "Category" 		  
+},   
+{
+"type": "url",
+"id": "gallery_link",
+"label": "Link"          
+}
+]
+}
+],
+"presets": [
+{
+"name": "Gallery Block",
+"blocks": [
+{
+"type": "image"
+},
+{
+"type": "image"
+},
+{
+"type": "image"
+},
+{
+"type": "image"
+},
+{
+"type": "image"
+}
+]
+}
+]
+}
+{% endschema %}

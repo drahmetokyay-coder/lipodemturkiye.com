@@ -16,7 +16,7 @@ export default function Header() {
       className={cn(
         "sticky top-0 z-50",
         "bg-white/95 backdrop-blur-lg",
-        "border-b border-stone-100",
+        "border-b border-[#2D3B36]/8",
         "transition-all duration-300"
       )}
     >
@@ -24,7 +24,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            <img src="/logo.png" alt="Lipödem Türkiye" className="h-10 md:h-12 w-auto" />
+            <img src="/logo.png" alt="Lipödem Türkiye" className="h-9 md:h-10 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
@@ -34,9 +34,9 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "px-4 py-2 rounded-lg text-sm font-semibold",
-                  "text-[#2D3B36] hover:text-[#1A6B5A]",
-                  "transition-colors duration-200 uppercase tracking-wide"
+                  "px-3.5 py-2 rounded-lg text-sm font-medium",
+                  "text-[#2D3B36] hover:text-[#1A6B5A] hover:bg-[#1A6B5A]/5",
+                  "transition-colors duration-200"
                 )}
               >
                 {item.label}
@@ -49,11 +49,11 @@ export default function Header() {
             <Link
               href="/araclar/semptom-testi"
               className={cn(
-                "inline-flex items-center gap-2 px-6 py-2.5 rounded-lg",
-                "bg-[#1A6B5A] text-white text-sm font-bold",
+                "inline-flex items-center gap-2 px-5 py-2.5 rounded-full",
+                "bg-[#1A6B5A] text-white text-sm font-semibold",
                 "hover:bg-[#15594A]",
                 "shadow-sm hover:shadow-md",
-                "transition-all duration-200 uppercase tracking-wide"
+                "transition-all duration-200"
               )}
             >
               Semptom Testi

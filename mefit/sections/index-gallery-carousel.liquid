@@ -1,0 +1,465 @@
+<div data-section-id="{{ section.id }}" data-section-type="full-banner-blocks" class="full-banner-blocks block5">      
+
+  <div class="parallax-one section section-{{ section.id }}-block " id="section{{section.id }}" style="background-repeat:no-repeat;background-size:cover;background-color:{{section.settings.bg_color}}">  
+    <div class="page-width">
+      {% if section.settings.title != blank %}
+      <h2 style="color:{{ section.settings.title_color }}">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.blocks.size > 0 %}  
+
+
+      <div class="full-banner-block-wrapper">
+        <div class="full-banner-block slider-slick-init" style="margin:auto;"> 
+          {% for block in section.blocks %}
+          <div class="full-banner-content full-banner-content--{{ block.id }} content-center {{ section.settings.alignment }}">  
+            <div class="dt-sc-column two-column">
+              <div class="image-block">
+              {% if block.settings.large_img != blank %}            
+              <div class="icon">
+                <img src="{{ block.settings.large_img | image_url: width: 1000  }}" alt="{{ block.settings.sub_title }}"  style =""/>
+              </div>     
+              {% else %}
+              <div class="icon">
+                <img src="https://via.placeholder.com/600x600" />
+              </div>          
+              {% endif %}
+              </div>
+              <div class="content-block">
+              {% if block.settings.sub_title != blank %}
+              <div class="short-desc">
+                <h3 style="color:{{ section.settings.sub_title_color }}">{{ block.settings.sub_title }}</h3>
+              </div>
+              {% endif %}
+
+
+              {% if block.settings.text != blank %}
+              <div style="color:{{ section.settings.text_color }}" class="description-one">{{ block.settings.text }}</div>
+              {% endif %}   
+
+              {% if block.settings.button != blank %}
+              <a class="dt-sc-btn button button--primary" href="{{ block.settings.link }}" style="">{{ block.settings.button }}</a>
+              {% endif %}  
+              </div>
+            </div>          
+          </div>
+          {% endfor %}
+        </div>       
+
+        <div class="icon-section  slider-slick-nav" style="margin:auto;">   
+          {% for block in section.blocks %}
+          {% if block.settings.client_img != blank %}          
+          <div class="icon icon--{{ block.id }}">
+            <img src="{{ block.settings.client_img | image_url: width: 300  }}" alt="{{ block.settings.sub_title }}"  style =""/>
+          </div>            
+          {% else %}
+          <div class="icon">
+            <img src="https://via.placeholder.com/64x64" />
+          </div>
+          {% endif %}         
+          {% endfor %}
+        </div>         
+      </div>
+      {% endif %} 
+    </div>
+  </div>
+</div>
+
+
+  {% if section.settings.image != blank %} 
+  <style>    
+    
+    @media screen and (max-width: 150px) {
+      .section-{{ section.id }}-block {
+        background-image: url('{{ section.settings.image | image_url: width: 150 }}');
+          }
+    }
+
+    @media screen and (min-width: 151px) and (max-width: 300px) {
+      .section-{{ section.id }}-block {
+        background-image: url('{{ section.settings.image | image_url: width: 300 }}');
+          }
+    }
+
+    @media screen and (min-width: 301px) and (max-width: 600px) {
+      .section-{{ section.id }}-block {
+        background-image: url('{{ section.settings.image | image_url: width: 600 }}');
+          }
+    }
+
+    @media screen and (min-width: 601px) and (max-width: 800px) {
+      .section-{{ section.id }}-block {
+        background-image: url('{{ section.settings.image | image_url: width: 800 }}');
+          }
+    }
+
+    @media screen and (min-width: 801px) and (max-width: 1000px) {
+      .section-{{ section.id }}-block {
+        background-image: url('{{ section.settings.image | image_url: width: 1500 }}');
+          }
+    }
+
+    @media screen and (min-width: 1001px) {
+      .section-{{ section.id }}-block {
+        background-image: url('{{ section.settings.image | image_url: width: 2000 }}');
+          }
+    }
+
+    
+    
+
+  </style>
+
+<style>
+  
+ @media screen and (max-width: 1599px) {
+    .block5 .icon-section {
+      width: 500px; } }
+  
+  @media screen and (max-width: 1199px) {
+    .block5 .icon-section {
+      padding: 0px 20px; } }
+  
+  @media screen and (max-width: 767px) {
+    .block5 .icon-section {
+      width: 500px;
+      padding: 0px 20px; } }
+  
+  @media screen and (max-width: 567px) {
+    .block5 .icon-section {
+      width: 280px; } } 
+.full-banner-blocks  .slick-slider .slick-track {transform: translate3d(0, 0, 0) !important;}
+  
+  .full-banner-block-wrapper {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .full-banner-blocks.block5 h2, .full-banner-blocks.block5 .h2 { font-size: 90px; margin-top: 45px; }
+  
+  @media screen and (max-width: 1199px) {
+    .full-banner-blocks.block5 h2, .full-banner-blocks.block5 .h2 { font-size: 40px; }
+  
+    .full-banner-blocks.block2 .full-banner-content { width: 100%; }
+    
+    .full-banner-blocks .slick-prev,
+    .full-banner-blocks .slick-next { display: none !important; }
+  }
+
+.block5 .wide--one-half:nth-child(2n+1) {
+  clear: both; }
+
+.full-banner-blocks.block2 .full-banner-content {
+  width: 70%; }
+
+.block5 .full-banner-blocks .full-banner-content {
+  padding: 80px 0 40px 0; }
+
+.block5 .icon-section:hover .icon:before {
+  transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1); }
+
+.full-banner-block .full-banner-content h6, .full-banner-block .full-banner-content .h6 {
+  font-weight: normal;
+  font-size: 20px;
+  text-transform: uppercase; }
+
+.full-banner-blocks .slick-list { padding: 0px 0; }
+  
+.full-banner-blocks .parallax-one { padding: 120px 0; background-position: top center; }
+  
+.full-banner-block .full-banner-content.content-center.left {
+  text-align: left;
+}
+
+.full-banner-block .full-banner-content.content-center {
+  padding-top: 50px;
+}
+
+.full-banner-block .full-banner-content.content-center {
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+  
+  .full-banner-blocks .full-banner-content img { float: right; text-align: right; }
+  
+  .full-banner-block .full-banner-content.content-center .description-one { font-weight: 600; font-size: 20px; }
+  
+  
+ {% for block in section.blocks %}
+  
+      .block5 .icon-section .icon.slick-current.icon--{{ block.id }} img { box-shadow: 0 0 0px 5px {{block.settings.img_border_color}}; }
+      .block5 .slider-{{ section.id }}-init .icon-section .icon img:hover { box-shadow: 0 0 0px 5px {{block.settings.img_border_color}}; }
+
+  {% endfor %}
+  
+  .full-banner-content .dt-sc-btn { color:{{ section.settings.button_txt_color }};background-color:{{ section.settings.button_bg_color }}; }
+  .full-banner-content .dt-sc-btn:hover { color:{{ section.settings.button_hover_txt_color }};background-color:{{ section.settings.button_hover_bg_color }};
+  border-color:{{ section.settings.button_hover_bg_color }}; }
+
+  .full-banner-blocks.block5 .slick-prev:before,.full-banner-blocks.block5 .slick-next:before { color:{{ section.settings.text_color }}; }
+  
+  @media only screen and (min-width:320px) and (max-width:1199px) {
+
+    .full-banner-blocks.block5 .full-banner-content{background:{{ section.settings.mobile_bg_color | color_modify: 'alpha', 0.8 }}}
+
+  }
+  
+  
+  /* home-featured-products.liquid */  
+
+  .home-product-grid-type-2 .view_more_btn{margin: 50px 0 0;}
+  .full-banner-blocks .parallax-one { padding:120px 0; background-position:top center; }
+  .full-banner-blocks { position:relative;padding: 0; }
+  .full-banner-blocks .full-banner-content .image-block { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
+  .full-banner-blocks .full-banner-content .content-block { display: flex; align-items: center; justify-content: start; flex-wrap: wrap; width: 100%; }
+  .full-banner-blocks .full-banner-content .content-block h3 { margin: 0 0 15px; line-height: normal; }
+  .full-banner-blocks .full-banner-content .icon { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; width:100%;padding-right:80px; }
+  .full-banner-blocks .full-banner-content img { float:right;text-align:right; }
+  .full-banner-blocks .full-banner-content {width:100%;padding:0px 0;}
+  .full-banner-blocks .full-banner-content ul li { list-style: disc; list-style-position: inside; margin:15px 0; }
+  
+  .full-banner-blocks .full-banner-content.content-right { right:12%;left:auto;width:30%;text-align:right;}
+  .full-banner-blocks .full-banner-content.content-center { left:0;margin:auto;text-align:center; }
+  .full-banner-blocks .full-banner-content.content-center.left{text-align: left;}
+  .full-banner-blocks .full-banner-content.content-center { padding-top:50px; }
+  .full-banner-blocks .full-banner-content h2 { font-size:40px; }
+  .full-banner-blocks .full-banner-content.content-center h2 { font-size:24px;margin-bottom:25px;font-weight:normal; }
+  .full-banner-blocks .full-banner-content.content-center .short-desc { display: flex; align-items: center; justify-content: flex-start; flex-wrap: wrap; width: 100%; }
+  .full-banner-blocks .full-banner-content.content-center .description-one { font-weight:600;font-size:20px; display: flex; align-items: center;
+  justify-content: flex-start; flex-wrap: wrap; width: 100%; }
+  .full-banner-blocks .full-banner-content p {  }
+  .full-banner-blocks .full-banner-content h5 {font-size: 20px;font-weight: 600; font-family: var(--DTFontTypo_Body); width: 100%; margin: 0 0 15px; }
+
+  .filter-show .dt-sc-btn:before, .filter-show .dt-sc-btn:after{background:transparent;}
+
+  .newsletterwrapper .dt-sc-btn.close:after , .newsletterwrapper .dt-sc-btn.close:before {content: none;}
+
+  .block5 .icon-section { padding:30px 0; position: relative; display: inline-block; float: none; text-align: center; width:auto; margin-top: 40px; }
+
+  .block5 .icon-section .icon {display: inline-block; float: none; position: relative; margin:0; cursor:pointer; padding:5px; }
+
+  .block5 .icon-section .icon img{border-radius:50%;display:block;background:#fff;padding:5px;}
+
+  .block5 .icon-section span {padding: 0 10px 0;float: left;width: 70%;margin: 15px 0 0 10px;font-size:16px;}
+
+  .full-banner-blocks.block5 h2 { font-size:90px; margin-top:45px; }
+
+  .block5 .wide--one-half:nth-child(2n+1){clear: both;}
+  .full-banner-blocks.block2 .full-banner-content{width:70%;}
+  .block5 .full-banner-blocks .full-banner-content{padding:80px 0 40px 0;}
+
+  .block5 .icon-section:hover .icon:before{transform: scale(1); -moz-transform: scale(1);-ms-transform: scale(1);}
+
+  .full-banner-block .full-banner-content h6 { font-weight:normal;font-size:20px;text-transform:uppercase; }
+  .full-banner-blocks .slick-prev { left:0;}
+  .full-banner-blocks .slick-next { right:0;}
+  .full-banner-blocks .slick-list { padding:0px 0; }
+  
+  @media screen and (max-width: 1199px) {
+    
+  	.full-banner-blocks .full-banner-content.content-center { padding:50px 50px 0; }
+    
+  }
+
+  .full-banner-blocks .full-banner-content img {max-width: 335px;}
+<!--   .full-banner-blocks .full-banner-content .image-block
+  {       
+          justify-content: right;
+  } -->
+  @media screen and (max-width: 990px)
+  {
+    .full-banner-blocks .full-banner-content img {
+          max-width: 250px;
+      }
+    .full-banner-blocks .parallax-one {
+        padding: 60px 0;
+    }
+  }
+  @media screen and (max-width: 750px)
+  {
+    .full-banner-block-wrapper .dt-sc-column.two-column {grid-template-columns: 1fr;}
+    .full-banner-blocks .full-banner-content .icon {
+      justify-content: center;
+      padding-right: 0px;
+    }
+  }
+  .full-banner-content .dt-sc-btn.button:before,
+  .full-banner-content .dt-sc-btn.button:after{box-shadow:none;}
+  .index-gallery-carousel ul{padding:0;}
+  
+  @media screen and (min-width: 1100px)
+  {
+    
+    .full-banner-blocks .slick-list {
+        width: 1100px;
+        margin: 0 auto;
+      }
+  }
+    .full-banner-blocks  .slick-slider .slick-track {
+          min-width: 1100px !important;
+          min-width: 100% !important;
+      }
+ 
+  .block5 .icon-section {
+          display: block;
+      }
+  .block5 .icon-section .icon {
+      width: 65px !important;
+  }
+  
+</style>
+  {% endif %}
+
+  {% schema %}
+  {
+  "name":  "t:sections.index-gallery-carousel.name",
+  "class": "index-section index-gallery-carousel",
+  "settings": [
+  {
+  "type": "image_picker",
+  "id": "image",
+  "label": "t:sections.index-gallery-carousel.settings.image.label",
+   "info": "t:sections.index-gallery-carousel.settings.image.info"
+  },
+  {
+  "type": "color",
+  "id": "bg_color",
+  "label": "t:sections.index-gallery-carousel.settings.bg_color.label",
+  "default":"#000"
+  },
+  {
+  "type": "select",
+  "id": "alignment",
+  "label": "t:sections.index-gallery-carousel.settings.alignment.label",
+  "default": "left",
+  "options": [
+  {
+  "value": "left",
+  "label": "t:sections.index-gallery-carousel.settings.alignment.options__1.label"
+  },
+  {
+  "value": "center",
+  "label": "t:sections.index-gallery-carousel.settings.alignment.options__2.label"
+  }
+  ]
+  },
+  {
+  "type": "text",
+  "id": "title",
+  "label": "t:sections.index-gallery-carousel.settings.title.label"
+  },
+  {
+  "type": "color",
+  "id": "title_color",
+  "label": "t:sections.index-gallery-carousel.settings.title_color.label",
+  "default": "#000"
+  },  
+  {
+  "type": "color",
+  "id": "mobile_bg_color",
+  "label": "t:sections.index-gallery-carousel.settings.mobile_bg_color.label",
+  "default": "#000"
+  },
+
+{
+  "type": "color",
+  "id": "sub_title_color",
+  "label": "t:sections.index-gallery-carousel.settings.sub_title_color.label",
+  "default": "#000"
+  },
+  {
+  "type": "color",
+  "id": "text_color",
+  "label": "t:sections.index-gallery-carousel.settings.text_color.label",
+  "default": "#000"
+  },
+
+	{
+  "type": "color",
+  "id": "button_bg_color",
+  "label": "t:sections.index-gallery-carousel.settings.button_bg_color.label",
+  "default": "#fe5d8f"
+  },
+  {
+  "type": "color",
+  "id": "button_txt_color",
+  "label": "t:sections.index-gallery-carousel.settings.button_txt_color.label",
+  "default": "#fff"
+  },
+{
+  "type": "color",
+  "id": "button_hover_bg_color",
+  "label": "t:sections.index-gallery-carousel.settings.button_hover_bg_color.label",
+  "default": "#fe5d8f"
+  },
+  {
+  "type": "color",
+  "id": "button_hover_txt_color",
+  "label": "t:sections.index-gallery-carousel.settings.button_hover_txt_color.label",
+  "default": "#fff"
+  }
+  ],
+  "blocks": [
+  {
+  "type": "Image",
+  "name":"t:sections.index-gallery-carousel.blocks.Image.name",
+  "settings": [
+  {
+  "type": "image_picker",
+  "id": "client_img",
+  "label": "Image",
+  "info": "Size: 64x64"
+  },
+{
+  "type": "color",
+  "id": "img_border_color",
+  "label":"Border Color",
+  "default": "#fff"
+  },
+
+ {
+  "type": "image_picker",
+  "id": "large_img",
+  "label": "Large Image",
+  "info": "Size: 960x960"
+  },
+
+{
+  "type": "text",
+  "id": "sub_title",
+  "label": "Title"
+  },  
+  {
+  "type": "textarea",
+  "id": "text",
+  "label": "Description"
+  },
+  {
+  "type": "text",
+  "id": "button",
+  "label": "Button text"
+  },  
+  {
+  "type": "url",
+  "id": "link",
+  "label": "Link URL"
+  }
+  ]
+  }
+  ],
+  "presets": [
+  {
+  "name": "Gallery carousel",
+  "category": "Image",
+  "blocks": []
+  }
+  ]
+  }
+  {% endschema %}
+

@@ -215,8 +215,8 @@ body {
 }
 
 .card-hover:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
 }
 
 /* ============================================
@@ -230,17 +230,17 @@ body {
 }
 
 .btn-pill-primary {
-  border-radius: 40px;
+  border-radius: 9999px;
   background: #1A6B5A;
   color: #fff;
-  font-weight: 700;
+  font-weight: 600;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-pill-primary:hover {
   background: #15594A;
   transform: translateY(-1px);
-  box-shadow: 0 6px 24px rgba(26, 107, 90, 0.25);
+  box-shadow: 0 4px 16px rgba(26, 107, 90, 0.2);
 }
 
 .btn-pill-gradient {
