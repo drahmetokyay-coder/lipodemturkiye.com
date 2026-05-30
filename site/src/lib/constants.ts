@@ -27,7 +27,7 @@ export const NAV_ITEMS = [
   },
   {
     label: "Araçlar",
-    href: "/araclar/semptom-testi",
+    href: "/araclar/lipodem-semptom-testi",
   },
   {
     label: "Blog",

@@ -388,7 +388,7 @@ export default async function SehirPage({ params }: PageProps) {
             </p>
             <div className="mt-6">
               <Link
-                href="/araclar/semptom-testi"
+                href="/araclar/lipodem-semptom-testi"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg font-semibold text-white border-2 border-white/80 hover:bg-white hover:text-[#15594A] transition-all duration-300"
               >
                 Semptom Testini Coz

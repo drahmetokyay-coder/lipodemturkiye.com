@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { HeroBackgroundVideo } from "@/components/marketing/hero-video"
 import { ScrollReveal } from "@/components/marketing/scroll-reveal"
 import { ValueCards } from "@/components/marketing/value-cards"
@@ -80,7 +81,7 @@ export default function HomePage() {
 
             <div className="mt-10 flex flex-col sm:flex-row gap-3 animate-fade-in-up-d3">
               <Link
-                href="/araclar/semptom-testi"
+                href="/araclar/lipodem-semptom-testi"
                 className="group inline-flex items-center justify-center gap-2.5 bg-[#1A6B5A] text-white px-7 py-3.5 rounded-xl text-[15px] font-semibold hover:bg-[#15594A] shadow-md shadow-[#1A6B5A]/15 hover:shadow-lg hover:shadow-[#1A6B5A]/20 transition-all duration-300"
               >
                 <ClipboardCheck className="w-[18px] h-[18px]" />
@@ -118,7 +119,7 @@ export default function HomePage() {
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section className="bg-white py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <ScrollReveal>
               <span className="text-[13px] font-semibold text-[#1A6B5A] tracking-wider">
                 LİP&Ouml;DEM NEDİR?
@@ -126,15 +127,25 @@ export default function HomePage() {
               <h2 className="font-display text-3xl md:text-[2.5rem] font-bold text-[#163832] leading-tight mt-3">
                 Belirtileri, Evreleri ve Tedavi Se&ccedil;enekleri
               </h2>
-            </ScrollReveal>
-            <ScrollReveal delay={120}>
-              <p className="text-[#6B7B75] text-base md:text-[17px] leading-[1.75]">
+              <p className="text-[#6B7B75] text-base md:text-[17px] leading-[1.75] mt-5">
                 Lip&ouml;dem, v&uuml;cudun belirli b&ouml;lgelerinde &mdash;
                 &ouml;zellikle bacaklarda &mdash; yağ dokusunun anormal
                 biriktiği kronik bir hastalıktır. Diyetle ge&ccedil;mez,
                 genetik k&ouml;kenlidir ve neredeyse yalnızca kadınları
                 etkiler.
               </p>
+            </ScrollReveal>
+            <ScrollReveal delay={120}>
+              <div className="relative aspect-[4/5] sm:aspect-[3/2] lg:aspect-[4/5] rounded-[24px] overflow-hidden shadow-[0_20px_50px_-20px_rgba(22,56,50,0.3)] ring-1 ring-stone-200/70">
+                <Image
+                  src="/sections/bilgi.jpg"
+                  alt="Lip&ouml;dem hakkında bilimsel kaynaklar ve anatomi kitabı"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#163832]/15 to-transparent" />
+              </div>
             </ScrollReveal>
           </div>
 
@@ -195,16 +206,33 @@ export default function HomePage() {
          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section className="bg-white py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-10">
-          <ScrollReveal>
-            <div className="text-center mb-14">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-14">
+            <ScrollReveal>
+              <div className="relative aspect-[4/3] rounded-[24px] overflow-hidden shadow-[0_20px_50px_-20px_rgba(22,56,50,0.3)] ring-1 ring-stone-200/70">
+                <Image
+                  src="/sections/topluluk.jpg"
+                  alt="Lip&ouml;dem hastalarından oluşan destek topluluğu"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#163832]/20 to-transparent" />
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={120}>
               <span className="text-[13px] font-semibold text-[#1A6B5A] tracking-wider">
-                DENEYİMLER
+                DENEYİMLER &amp; TOPLULUK
               </span>
-              <h2 className="font-display text-3xl md:text-[2.5rem] font-bold text-[#163832] mt-3">
+              <h2 className="font-display text-3xl md:text-[2.5rem] font-bold text-[#163832] mt-3 leading-tight">
                 Yalnız değilsiniz
               </h2>
-            </div>
-          </ScrollReveal>
+              <p className="mt-4 text-[#6B7B75] text-base md:text-[17px] leading-[1.75]">
+                Binlerce Türk kadını aynı yolculuktan ge&ccedil;iyor. Deneyimleri
+                paylaşan, birbirini destekleyen bir topluluğun par&ccedil;ası
+                olun.
+              </p>
+            </ScrollReveal>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
@@ -260,7 +288,7 @@ export default function HomePage() {
                 3.000+ ki&#351;i semptom testini tamamladı.
               </p>
               <Link
-                href="/araclar/semptom-testi"
+                href="/araclar/lipodem-semptom-testi"
                 className="mt-5 inline-flex items-center gap-2 bg-[#1A6B5A] text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-[#15594A] transition-colors"
               >
                 Siz de ba&#351;layın <ArrowRight className="w-4 h-4" />
@@ -298,7 +326,7 @@ export default function HomePage() {
       {/* Sticky Mobile CTA */}
       <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white/95 backdrop-blur-lg px-4 py-3 border-t border-stone-200 shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
         <Link
-          href="/araclar/semptom-testi"
+          href="/araclar/lipodem-semptom-testi"
           className="flex items-center justify-center gap-2 w-full bg-[#1A6B5A] text-white py-3 rounded-xl font-semibold text-sm"
         >
           <ClipboardCheck className="w-4 h-4" /> Semptom Testini &Ccedil;&ouml;z

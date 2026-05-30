@@ -11,7 +11,7 @@ const mobileNavLinks = [
   { label: "Beslenme", href: "/lipodem-beslenme" },
   { label: "Egzersiz", href: "/lipodem-egzersiz" },
   { label: "Uzmanlar", href: "/uzmanlar" },
-  { label: "Araçlar", href: "/araclar/semptom-testi" },
+  { label: "Araçlar", href: "/araclar/lipodem-semptom-testi" },
 ];
 
 export default function MobileNav() {
@@ -85,7 +85,7 @@ export default function MobileNav() {
 
             <div className="p-4 border-t border-stone-100">
               <Link
-                href="/araclar/semptom-testi"
+                href="/araclar/lipodem-semptom-testi"
                 onClick={() => setIsOpen(false)}
                 className={cn(
                   "flex items-center justify-center w-full py-3.5 rounded-lg",

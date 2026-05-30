@@ -17,7 +17,7 @@ const values = [
     icon: FlaskConical,
     title: "Test",
     description: "Semptom analizi",
-    href: "/araclar/semptom-testi",
+    href: "/araclar/lipodem-semptom-testi",
     image:
       "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=75&auto=format&fit=crop",
     alt: "Laboratuvar — semptom analizi",

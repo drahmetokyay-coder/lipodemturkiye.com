@@ -271,7 +271,7 @@ export default function LipodemBeslenmePage() {
 
           <div className="mt-8">
             <Link
-              href="/araclar/semptom-testi"
+              href="/araclar/lipodem-semptom-testi"
               className="inline-flex items-center gap-2 bg-[#1A6B5A] text-white px-7 py-3 rounded-lg font-semibold hover:bg-[#15594A] transition-colors"
             >
               Semptom Testini Başlat
@@ -724,7 +724,7 @@ export default function LipodemBeslenmePage() {
             değerlendirmenize ve doğru uzmana yönlenmenize yardımcı olur.
           </p>
           <Link
-            href="/araclar/semptom-testi"
+            href="/araclar/lipodem-semptom-testi"
             className="inline-flex items-center gap-2 bg-[#1A6B5A] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#15594A] transition-colors shadow-lg shadow-[#1A6B5A]/20"
           >
             Ücretsiz Semptom Testini Başlat

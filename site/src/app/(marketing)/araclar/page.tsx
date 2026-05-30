@@ -16,7 +16,7 @@ const tools = [
     name: "Semptom Testi",
     description:
       "12 bilimsel kritere dayalı lipödem risk değerlendirmesi. 2 dakikada tamamlayın, sonucunuzu doktorunuza götürün.",
-    href: "/araclar/semptom-testi",
+    href: "/araclar/lipodem-semptom-testi",
     icon: ClipboardCheck,
     color: "bg-[#E8F5F0] text-[#1A6B5A]",
     badge: "Ücretsiz",
@@ -26,7 +26,7 @@ const tools = [
     name: "Evre Değerlendirme",
     description:
       "Lipödem evrenizi görsel ve klinik kriterlerle değerlendirin. Evrenize özel tedavi önerileri alın.",
-    href: "/araclar/evre-degerlendirme",
+    href: "/araclar/lipodem-evre-belirleme",
     icon: Activity,
     color: "bg-[#E8F5F0] text-[#1A6B5A]",
     badge: "Ücretsiz",

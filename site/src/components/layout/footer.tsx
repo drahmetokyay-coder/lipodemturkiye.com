@@ -49,7 +49,7 @@ const footerLinks = {
   araclar: {
     title: "Araçlar",
     links: [
-      { label: "Semptom Testi", href: "/araclar/semptom-testi" },
+      { label: "Semptom Testi", href: "/araclar/lipodem-semptom-testi" },
       { label: "Klinik Bulucu", href: "/klinikler" },
       { label: "Blog", href: "/blog" },
       { label: "Hikayeler", href: "/hikayeler" },

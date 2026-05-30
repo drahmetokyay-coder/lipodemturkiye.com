@@ -452,7 +452,7 @@ export default function AbdLipodemStandartBakimPage() {
                 değerlendirmenize yardımcı olur. Sonuçlarınız tamamen gizlidir.
               </p>
               <Link
-                href="/araclar/semptom-testi"
+                href="/araclar/lipodem-semptom-testi"
                 className="inline-flex items-center gap-2 bg-white text-[#15594A] px-7 py-3 rounded-lg font-semibold hover:bg-[#E8F5F0] transition-colors"
               >
                 Semptom Testini Başlat

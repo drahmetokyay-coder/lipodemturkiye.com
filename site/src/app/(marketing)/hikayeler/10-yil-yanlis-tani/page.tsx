@@ -255,7 +255,7 @@ export default function HikayeAKPage() {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Link
-                      href="/araclar/semptom-testi"
+                      href="/araclar/lipodem-semptom-testi"
                       className="inline-flex items-center justify-center gap-2 bg-white text-[#15594A] px-7 py-3 rounded-lg font-semibold hover:bg-[#E8F5F0] transition-colors"
                     >
                       Semptom Testini Başlat

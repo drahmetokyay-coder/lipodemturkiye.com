@@ -15,6 +15,7 @@ export type StageLevel = "STAGE_1" | "STAGE_2" | "STAGE_3";
 export interface StageResult {
   totalScore: number;
   maxScore: number;
+  percentage: number;
   stageLevel: StageLevel;
 }
 
@@ -121,7 +122,9 @@ export function calculateStageResult(
     stageLevel = "STAGE_3";
   }
 
-  return { totalScore, maxScore, stageLevel };
+  const percentage = Math.round((totalScore / maxScore) * 100);
+
+  return { totalScore, maxScore, percentage, stageLevel };
 }
 
 export const STAGE_RESULT_CONTENT: Record<

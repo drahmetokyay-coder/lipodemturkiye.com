@@ -76,12 +76,12 @@ const ilBazliFiyatlar = [
   {
     il: "Ankara",
     aralik: "60.000 - 180.000 TL",
-    not: "Üniversite hastaneleri ve özel klinikler. Hacettepe, GATA deneyimli cerrahlar.",
+    not: "Üniversite hastaneleri ve özel klinikler. Deneyimli cerrah seçeneği mevcut.",
   },
   {
     il: "İzmir",
     aralik: "55.000 - 160.000 TL",
-    not: "Ege bölgesinin merkezi. Dokuz Eylül ve Ege Üniversitesi deneyimli cerrahlar.",
+    not: "Ege bölgesinin merkezi. Üniversite hastaneleri ve deneyimli cerrahlar.",
   },
   {
     il: "Antalya",
@@ -91,7 +91,7 @@ const ilBazliFiyatlar = [
   {
     il: "Bursa",
     aralik: "50.000 - 140.000 TL",
-    not: "Uludağ Üniversitesi ve özel klinikler.",
+    not: "Üniversite hastanesi ve özel klinikler.",
   },
   {
     il: "Adana / Mersin",
@@ -102,26 +102,26 @@ const ilBazliFiyatlar = [
 
 const kompresyonRehberi = [
   {
-    marka: "Medi",
-    ulke: "Almanya",
+    marka: "Premium Avrupa Markası A",
+    ulke: "Almanya / Avusturya menşeli",
     bulunabilirlik: "Türkiye'de yaygın, medikal mağazalarda mevcut",
     fiyatAraligi: "2.500 - 5.000 TL (çift bacak, düz örgü)",
   },
   {
-    marka: "Juzo",
-    ulke: "Almanya",
+    marka: "Premium Avrupa Markası B",
+    ulke: "Almanya menşeli",
     bulunabilirlik: "Özel sipariş ile, bazı medikal mağazalarda",
     fiyatAraligi: "2.000 - 4.500 TL (çift bacak, düz örgü)",
   },
   {
-    marka: "Sigvaris",
-    ulke: "İsviçre",
+    marka: "Premium Avrupa Markası C",
+    ulke: "İsviçre menşeli",
     bulunabilirlik: "Türkiye distribütörü mevcut",
     fiyatAraligi: "2.000 - 4.000 TL (çift bacak, düz örgü)",
   },
   {
-    marka: "Bauerfeind",
-    ulke: "Almanya",
+    marka: "Premium Avrupa Markası D",
+    ulke: "Almanya menşeli",
     bulunabilirlik: "Online ve medikal mağazalarda",
     fiyatAraligi: "1.800 - 3.500 TL (çift bacak, düz örgü)",
   },
@@ -239,7 +239,7 @@ export default function LipodemTurkiyeRehberiPage() {
 
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
-              href="/araclar/semptom-testi"
+              href="/araclar/lipodem-semptom-testi"
               className="inline-flex items-center gap-2 bg-[#1A6B5A] text-white px-7 py-3 rounded-lg font-semibold hover:bg-[#15594A] transition-colors"
             >
               Semptom Testini Başlat
@@ -438,12 +438,12 @@ export default function LipodemTurkiyeRehberiPage() {
 
           <p className="text-base md:text-lg leading-relaxed text-stone-700 mb-2">
             <strong>
-              Lipödem için düz örgü (flat-knit) kompresyon giysileri Medi, Juzo,
-              Sigvaris ve Bauerfeind gibi markalardan temin edilebilir.
-              Türkiye&apos;de medikal malzeme mağazaları, online medikal satış
-              siteleri ve marka distribütörleri aracılığıyla ulaşılabilir. Doğru
-              ölçü ve basınç sınıfı için mutlaka bir uzman değerlendirmesi
-              gereklidir.
+              Lipödem için düz örgü (flat-knit) kompresyon giysileri Almanya,
+              Avusturya ve İsviçre menşeli premium Avrupa markalarından temin
+              edilebilir. Türkiye&apos;de medikal malzeme mağazaları, online
+              medikal satış siteleri ve marka distribütörleri aracılığıyla
+              ulaşılabilir. Doğru ölçü ve basınç sınıfı için mutlaka bir uzman
+              değerlendirmesi gereklidir.
             </strong>
           </p>
 
@@ -769,7 +769,7 @@ export default function LipodemTurkiyeRehberiPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/araclar/semptom-testi"
+              href="/araclar/lipodem-semptom-testi"
               className="inline-flex items-center justify-center gap-2 bg-[#1A6B5A] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#15594A] transition-colors shadow-lg shadow-[#1A6B5A]/20"
             >
               Ücretsiz Semptom Testini Başlat

@@ -5,6 +5,7 @@ import { QUESTIONS, calculateResult, type TestResult } from "@/data/symptom-ques
 import { QuestionStep } from "./question-step";
 import { ProgressBar } from "./progress-bar";
 import { ResultDisplay } from "./result-display";
+import { LastResultBadge } from "@/components/tools/shared/last-result-badge";
 import { ArrowLeft } from "lucide-react";
 
 export function SymptomWizard() {
@@ -51,6 +52,7 @@ export function SymptomWizard() {
     return (
       <div className="max-w-xl mx-auto">
         <div className="bg-white rounded-3xl shadow-lg border border-stone-100 p-10 md:p-14 text-center">
+          <LastResultBadge slug="lipodem-semptom-testi" />
           <div className="w-20 h-20 bg-[#E8F5F0] rounded-full flex items-center justify-center mx-auto mb-8">
             <svg className="w-10 h-10 text-[#1A6B5A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />

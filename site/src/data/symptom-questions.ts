@@ -18,6 +18,7 @@ export interface TestResult {
   percentage: number;
   riskLevel: RiskLevel;
   goldenTriangleBonus: boolean;
+  flags: string[];
 }
 
 export const QUESTIONS: Question[] = [
@@ -160,15 +161,19 @@ export function calculateResult(answers: Record<number, number>): TestResult {
     totalScore += 2;
   }
 
+  const flags: string[] = [];
+
   // Soru 7 C seçeneği (tek taraflı) = score 0, negatif gösterge
   if (q7 === 0 && answers[7] !== undefined) {
     totalScore = Math.max(totalScore - 3, 0);
+    flags.push("unilateral");
   }
 
   // Soru 11 C seçeneği (belirgin pitting) = score 0, negatif gösterge
   const q11 = answers[11] ?? 0;
   if (q11 === 0 && answers[11] !== undefined) {
     totalScore = Math.max(totalScore - 2, 0);
+    flags.push("pitting-edema");
   }
 
   const maxScore = 45;
@@ -183,7 +188,7 @@ export function calculateResult(answers: Record<number, number>): TestResult {
     riskLevel = "HIGH";
   }
 
-  return { totalScore, maxScore, percentage, riskLevel, goldenTriangleBonus };
+  return { totalScore, maxScore, percentage, riskLevel, goldenTriangleBonus, flags };
 }
 
 export const RESULT_CONTENT: Record<

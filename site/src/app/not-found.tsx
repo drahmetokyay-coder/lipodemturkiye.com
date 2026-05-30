@@ -19,7 +19,7 @@ export default function NotFound() {
             Ana Sayfaya Dön
           </Link>
           <Link
-            href="/araclar/semptom-testi"
+            href="/araclar/lipodem-semptom-testi"
             className="border border-[#C5E8DC] text-[#1A6B5A] px-6 py-3 rounded-lg font-semibold hover:bg-[#E8F5F0] transition-colors"
           >
             Semptom Testini Çöz

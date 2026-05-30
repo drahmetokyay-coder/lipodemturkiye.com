@@ -18,6 +18,8 @@ const nextConfig: NextConfig = {
       { source: "/lipedema", destination: "/lipodem-nedir", permanent: true },
       { source: "/lipodem-ameliyat", destination: "/lipodem-tedavisi", permanent: true },
       { source: "/lipodem-diyet", destination: "/lipodem-beslenme", permanent: true },
+      { source: "/araclar/semptom-testi", destination: "/araclar/lipodem-semptom-testi", permanent: true },
+      { source: "/araclar/evre-degerlendirme", destination: "/araclar/lipodem-evre-belirleme", permanent: true },
     ];
   },
 

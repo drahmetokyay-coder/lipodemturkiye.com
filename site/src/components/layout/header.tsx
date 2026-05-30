@@ -8,7 +8,7 @@ const navLinks = [
   { label: "Beslenme", href: "/lipodem-beslenme" },
   { label: "Egzersiz", href: "/lipodem-egzersiz" },
   { label: "Uzmanlar", href: "/uzmanlar" },
-  { label: "Araçlar", href: "/araclar/semptom-testi" },
+  { label: "Araçlar", href: "/araclar/lipodem-semptom-testi" },
 ];
 
 export default function Header() {
@@ -48,7 +48,7 @@ export default function Header() {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center">
             <Link
-              href="/araclar/semptom-testi"
+              href="/araclar/lipodem-semptom-testi"
               className={cn(
                 "inline-flex items-center gap-2 px-5 py-2.5 rounded-lg",
                 "bg-[#1A6B5A] text-white text-sm font-semibold",

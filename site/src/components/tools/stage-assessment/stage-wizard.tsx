@@ -5,6 +5,7 @@ import { STAGE_QUESTIONS, calculateStageResult, type StageResult } from "@/data/
 import { StageQuestionStep } from "./stage-question";
 import { StageProgress } from "./stage-progress";
 import { StageResultDisplay } from "./stage-result";
+import { LastResultBadge } from "@/components/tools/shared/last-result-badge";
 import { ArrowLeft } from "lucide-react";
 
 export function StageWizard() {
@@ -51,6 +52,7 @@ export function StageWizard() {
     return (
       <div className="max-w-xl mx-auto">
         <div className="bg-white rounded-3xl shadow-lg border border-stone-100 p-10 md:p-14 text-center">
+          <LastResultBadge slug="lipodem-evre-belirleme" />
           <div className="w-20 h-20 bg-[#E8F5F0] rounded-full flex items-center justify-center mx-auto mb-8">
             <svg className="w-10 h-10 text-[#1A6B5A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />

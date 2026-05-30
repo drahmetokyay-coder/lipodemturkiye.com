@@ -127,7 +127,7 @@ const sorular = [
   {
     soru: "Kompresyon çorabını nereden alabilirim?",
     cevap:
-      "Lipödem için düz örgü (flat-knit) kompresyon çorapları medikal malzeme mağazalarından veya online medikal satış sitelerinden temin edilebilir. Medi, Juzo, Sigvaris gibi markalar Türkiye'de bulunmaktadır. Doğru basınç sınıfı ve ölçü için mutlaka bir fizyoterapist veya uzman doktor tarafından değerlendirme yapılmalıdır.",
+      "Lipödem için düz örgü (flat-knit) kompresyon çorapları medikal malzeme mağazalarından veya online medikal satış sitelerinden temin edilebilir. Almanya, Avusturya ve İsviçre menşeli premium Avrupa markaları Türkiye'de bulunmaktadır. Doğru basınç sınıfı ve ölçü için mutlaka bir fizyoterapist veya uzman doktor tarafından değerlendirme yapılmalıdır.",
   },
 ];
 
@@ -181,7 +181,7 @@ export default function LipodemTedavisiPage() {
 
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
-              href="/araclar/semptom-testi"
+              href="/araclar/lipodem-semptom-testi"
               className="inline-flex items-center gap-2 bg-[#1A6B5A] text-white px-7 py-3 rounded-lg font-semibold hover:bg-[#15594A] transition-colors"
             >
               Semptom Testini Başlat
@@ -689,7 +689,7 @@ export default function LipodemTedavisiPage() {
             tedavi seçeneklerini keşfedin. Sonuçlarınız tamamen gizlidir.
           </p>
           <Link
-            href="/araclar/semptom-testi"
+            href="/araclar/lipodem-semptom-testi"
             className="inline-flex items-center gap-2 bg-[#1A6B5A] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#15594A] transition-colors shadow-lg shadow-[#1A6B5A]/20"
           >
             Ücretsiz Semptom Testini Başlat
