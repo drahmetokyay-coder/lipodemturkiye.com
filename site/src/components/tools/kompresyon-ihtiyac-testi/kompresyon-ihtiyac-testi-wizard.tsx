@@ -1,16 +1,25 @@
 "use client";
 
-import { useState, useCallback } from "react";
-import { Shirt, ArrowLeft } from "lucide-react";
+import { useState, useCallback, useEffect } from "react";
 import {
   QUESTIONS,
   calculateResult,
   type TestResult,
 } from "@/data/tests/kompresyon-ihtiyac-testi";
-import { KompresyonIhtiyacTestiQuestion } from "./kompresyon-ihtiyac-testi-question";
-import { KompresyonIhtiyacTestiProgress } from "./kompresyon-ihtiyac-testi-progress";
 import { KompresyonIhtiyacTestiResult } from "./kompresyon-ihtiyac-testi-result";
 import { LastResultBadge } from "@/components/tools/shared/last-result-badge";
+import { Shirt } from "lucide-react";
+import styles from "@/components/tools/shared/quiz.module.css";
+
+const ACCENT = "#6B7B99";
+const ACCENT_DARK = "#54627F";
+const ACCENT_BG = "#EEF1F7";
+
+const accentVars = {
+  ["--accent" as string]: ACCENT,
+  ["--accent-d" as string]: ACCENT_DARK,
+  ["--accent-bg" as string]: ACCENT_BG,
+} as React.CSSProperties;
 
 export function KompresyonIhtiyacTestiWizard() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -21,74 +30,71 @@ export function KompresyonIhtiyacTestiWizard() {
 
   const handleAnswer = useCallback(
     (questionId: number, score: number) => {
-      setAnswers((prev) => ({ ...prev, [questionId]: score }));
-      if (currentStep < totalSteps) {
-        setCurrentStep((prev) => prev + 1);
+      const nextAnswers = { ...answers, [questionId]: score };
+      setAnswers(nextAnswers);
+      if (currentStep >= totalSteps) {
+        setResult(calculateResult(nextAnswers));
+      } else {
+        window.setTimeout(() => setCurrentStep((prev) => prev + 1), 420);
       }
     },
-    [currentStep, totalSteps]
+    [answers, currentStep, totalSteps],
   );
 
   const handleBack = useCallback(() => {
-    if (currentStep > 1) {
-      setCurrentStep((prev) => prev - 1);
-    } else if (currentStep === 1) {
-      setCurrentStep(0);
-    }
+    if (currentStep > 1) setCurrentStep((prev) => prev - 1);
+    else if (currentStep === 1) setCurrentStep(0);
   }, [currentStep]);
 
-  const handleStart = useCallback(() => {
-    setCurrentStep(1);
-  }, []);
-
+  const handleStart = useCallback(() => setCurrentStep(1), []);
   const handleRestart = useCallback(() => {
     setCurrentStep(0);
     setAnswers({});
     setResult(null);
   }, []);
 
-  if (currentStep > totalSteps && !result) {
-    setResult(calculateResult(answers));
-  }
+  useEffect(() => {
+    if (currentStep < 1 || result) return;
+    const q = QUESTIONS[currentStep - 1];
+    const onKey = (e: KeyboardEvent) => {
+      const n = parseInt(e.key, 10);
+      if (n >= 1 && n <= q.options.length) handleAnswer(q.id, q.options[n - 1].score);
+      else if (e.key === "Backspace") handleBack();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [currentStep, result, handleAnswer, handleBack]);
 
+  // ---------- INTRO ----------
   if (currentStep === 0) {
     return (
-      <div className="max-w-xl mx-auto">
-        <div className="bg-white rounded-3xl shadow-lg border border-stone-100 p-10 md:p-14 text-center">
+      <div className={styles.wrap} style={accentVars}>
+        <div className={styles.introCard}>
           <LastResultBadge slug="kompresyon-ihtiyac-testi" />
-          <div className="w-20 h-20 bg-[#EEF1F7] rounded-full flex items-center justify-center mx-auto mb-8">
-            <Shirt className="w-10 h-10 text-[#6B7B99]" />
+          <div className={styles.introIcon}>
+            <Shirt className="w-9 h-9" style={{ color: ACCENT }} />
           </div>
-
-          <h2 className="text-2xl md:text-3xl font-bold text-[#2D3B36] mb-4">
-            Kompresyon İhtiyaç Testi
-          </h2>
-          <p className="text-[#2D3B36]/60 text-base mb-1">
-            7 soru &middot; yaklaşık 90 saniye
-          </p>
-          <p className="text-[#2D3B36]/50 mb-10 max-w-md mx-auto leading-relaxed">
-            Bacak şişliği, aktivite ve venöz tablonuza göre size standart round-knit mi yoksa
-            lipödeme özel flat-knit mi gerektiğini değerlendirin.
-          </p>
-
+          <h2 className={styles.introTitle}>Kompresyon İhtiyaç Testi</h2>
+          <p className={styles.introMeta}>7 soru · yaklaşık 90 saniye</p>
+          <p className={styles.introDesc}>Kompresyon (basınçlı çorap) ihtiyacınızı ve uygunluğunuzu değerlendirir.</p>
           <button
+            className={styles.cta}
             onClick={handleStart}
-            className="bg-[#6B7B99] hover:bg-[#54627F] text-white px-10 py-4 rounded-2xl font-semibold text-lg transition-all duration-200 shadow-md hover:shadow-lg"
+            onMouseEnter={(e) => (e.currentTarget.style.background = ACCENT_DARK)}
+            onMouseLeave={(e) => (e.currentTarget.style.background = ACCENT)}
           >
-            Teste Başla
+            Teste Başla →
           </button>
-
-          <div className="mt-10 flex flex-col gap-1.5 text-sm text-[#2D3B36]/40">
-            <p>Bu test bir tanı veya reçete aracı değildir.</p>
-            <p>
-              Kompresyon ürün seçimi yalnızca bireysel ölçüm ile uzman tarafından yapılır.
-            </p>
+          <div className={styles.disc}>
+            <p>Bu test bir tanı aracı değildir.</p>
+            <p>Kesin tanı yalnızca bir sağlık profesyoneli tarafından konulabilir.</p>
           </div>
         </div>
       </div>
     );
   }
 
+  // ---------- RESULT ----------
   if (result) {
     return (
       <div className="max-w-xl mx-auto">
@@ -97,35 +103,77 @@ export function KompresyonIhtiyacTestiWizard() {
     );
   }
 
+  // ---------- QUESTION ----------
   const question = QUESTIONS[currentStep - 1];
+  const helpText = (question as { helpText?: string }).helpText;
 
   return (
-    <div className="max-w-xl mx-auto">
-      <div className="bg-white rounded-3xl shadow-lg border border-stone-100 p-8 md:p-12">
-        <div className="mb-6">
-          <KompresyonIhtiyacTestiProgress current={currentStep} total={totalSteps} />
+    <div className={styles.wrap} style={accentVars}>
+      <div className={styles.head}>
+        <button className={styles.back} onClick={handleBack} aria-label="Geri">
+          ←
+        </button>
+        <div className={styles.prog}>
+          <div className={styles.seg}>
+            {QUESTIONS.map((q, i) => (
+              <i
+                key={q.id}
+                className={
+                  i < currentStep - 1 ? styles.on : i === currentStep - 1 ? styles.cur : ""
+                }
+              />
+            ))}
+          </div>
+          <div className={styles.pcount}>
+            <b>{currentStep}</b>/{totalSteps}
+          </div>
+        </div>
+      </div>
+
+      <div className={`${styles.card} ${styles.cardPop}`} key={question.id}>
+        <div className={styles.chip}>
+          <span className="ci">◆</span>
+          <span className="ct">{question.title.toLocaleUpperCase("tr")}</span>
+          <span className="cn">· {currentStep}/{totalSteps}</span>
         </div>
 
-        <div className="mb-6">
-          <button
-            onClick={handleBack}
-            className="flex items-center gap-1.5 text-[#2D3B36]/50 hover:text-[#2D3B36]/80 text-sm transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Geri
-          </button>
+        <div className={styles.qtext}>
+          {question.text.split(" ").map((w, i) => (
+            <span key={i} className="w" style={{ animationDelay: `${i * 0.04}s` }}>
+              {w + " "}
+            </span>
+          ))}
         </div>
 
-        <KompresyonIhtiyacTestiQuestion
-          key={question.id}
-          question={question}
-          selectedScore={answers[question.id]}
-          onAnswer={(score) => handleAnswer(question.id, score)}
-        />
+        {helpText ? (
+          <p style={{ fontSize: 12, color: "#8a9690", lineHeight: 1.5, margin: "-6px 0 14px" }}>
+            {helpText}
+          </p>
+        ) : null}
 
-        <p className="mt-8 text-xs text-[#2D3B36]/40 text-center">
-          Soru {currentStep} / {totalSteps}
-        </p>
+        <div className={styles.opts}>
+          {question.options.map((opt, i) => {
+            const selected = answers[question.id] === opt.score;
+            return (
+              <button
+                key={i}
+                className={`${styles.ocard} ${selected ? styles.sel : ""}`}
+                style={{ animationDelay: `${0.1 + i * 0.06}s` }}
+                onClick={() => handleAnswer(question.id, opt.score)}
+              >
+                <span className="shine" />
+                <span className="obadge">{i + 1}</span>
+                <span className="otx">{opt.label}</span>
+                <span className="ochk">✓</span>
+              </button>
+            );
+          })}
+        </div>
+
+        <div className={styles.kbHint}>
+          <span className={styles.kbd}>1</span>…<span className={styles.kbd}>{Math.min(9, question.options.length)}</span>{" "}
+          tuşlarıyla da seçebilirsiniz
+        </div>
       </div>
     </div>
   );

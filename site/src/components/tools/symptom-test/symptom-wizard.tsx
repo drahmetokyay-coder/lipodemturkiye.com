@@ -1,83 +1,97 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useMemo } from "react";
 import { QUESTIONS, calculateResult, type TestResult } from "@/data/symptom-questions";
-import { QuestionStep } from "./question-step";
-import { ProgressBar } from "./progress-bar";
 import { ResultDisplay } from "./result-display";
 import { LastResultBadge } from "@/components/tools/shared/last-result-badge";
-import { ArrowLeft } from "lucide-react";
+import { ScoreMeter } from "@/components/tools/shared/score-meter";
+import { ClipboardCheck } from "lucide-react";
+import styles from "@/components/tools/shared/quiz.module.css";
+
+const ACCENT = "#1A6B5A";
+const ACCENT_DARK = "#15594B";
+const ACCENT_BG = "#E8F5F0";
+
+const accentVars = {
+  ["--accent" as string]: ACCENT,
+  ["--accent-d" as string]: ACCENT_DARK,
+  ["--accent-bg" as string]: ACCENT_BG,
+} as React.CSSProperties;
 
 export function SymptomWizard() {
-  const [currentStep, setCurrentStep] = useState(0); // 0 = intro
+  const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [result, setResult] = useState<TestResult | null>(null);
 
   const totalSteps = QUESTIONS.length;
 
+  const maxPossible = useMemo(
+    () => QUESTIONS.reduce((s, q) => s + Math.max(...q.options.map((o) => o.score)), 0),
+    [],
+  );
+
   const handleAnswer = useCallback(
     (questionId: number, score: number) => {
-      setAnswers((prev) => ({ ...prev, [questionId]: score }));
-
-      if (currentStep < totalSteps) {
-        setCurrentStep((prev) => prev + 1);
+      const nextAnswers = { ...answers, [questionId]: score };
+      setAnswers(nextAnswers);
+      if (currentStep >= totalSteps) {
+        setResult(calculateResult(nextAnswers));
+      } else {
+        window.setTimeout(() => setCurrentStep((prev) => prev + 1), 420);
       }
     },
-    [currentStep, totalSteps]
+    [answers, currentStep, totalSteps],
   );
 
   const handleBack = useCallback(() => {
-    if (currentStep > 1) {
-      setCurrentStep((prev) => prev - 1);
-    } else if (currentStep === 1) {
-      setCurrentStep(0);
-    }
+    if (currentStep > 1) setCurrentStep((prev) => prev - 1);
+    else if (currentStep === 1) setCurrentStep(0);
   }, [currentStep]);
 
-  const handleStart = useCallback(() => {
-    setCurrentStep(1);
-  }, []);
-
+  const handleStart = useCallback(() => setCurrentStep(1), []);
   const handleRestart = useCallback(() => {
     setCurrentStep(0);
     setAnswers({});
     setResult(null);
   }, []);
 
-  if (currentStep > totalSteps && !result) {
-    setResult(calculateResult(answers));
-  }
+  useEffect(() => {
+    if (currentStep < 1 || result) return;
+    const q = QUESTIONS[currentStep - 1];
+    const onKey = (e: KeyboardEvent) => {
+      const n = parseInt(e.key, 10);
+      if (n >= 1 && n <= q.options.length) handleAnswer(q.id, q.options[n - 1].score);
+      else if (e.key === "Backspace") handleBack();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [currentStep, result, handleAnswer, handleBack]);
 
+  // ---------- INTRO ----------
   if (currentStep === 0) {
     return (
-      <div className="max-w-xl mx-auto">
-        <div className="bg-white rounded-3xl shadow-lg border border-stone-100 p-10 md:p-14 text-center">
+      <div className={styles.wrap} style={accentVars}>
+        <div className={styles.introCard}>
           <LastResultBadge slug="lipodem-semptom-testi" />
-          <div className="w-20 h-20 bg-[#E8F5F0] rounded-full flex items-center justify-center mx-auto mb-8">
-            <svg className="w-10 h-10 text-[#1A6B5A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
+          <div className={styles.introIcon}>
+            <ClipboardCheck className="w-9 h-9" style={{ color: ACCENT }} />
           </div>
-
-          <h2 className="text-2xl md:text-3xl font-bold text-[#2D3B36] mb-4">
-            Lipödem Semptom Testi
-          </h2>
-          <p className="text-[#2D3B36]/60 text-base mb-1">
-            12 soru &middot; yaklaşık 2 dakika
+          <h2 className={styles.introTitle}>Lipödem Semptom Testi</h2>
+          <p className={styles.introMeta}>{totalSteps} soru · yaklaşık 3 dakika</p>
+          <p className={styles.introDesc}>
+            Bilimsel kriterlere dayalı bu test, lipödem belirtilerinizi değerlendirir
+            ve size kişiselleştirilmiş bir yol haritası sunar.
           </p>
-          <p className="text-[#2D3B36]/50 mb-10 max-w-md mx-auto leading-relaxed">
-            Belirtilerinizi bilimsel kriterlere göre değerlendirin. Sonucunuzu
-            yazdırıp doktorunuza götürebilirsiniz.
-          </p>
-
+          <p className={styles.introRef}>{totalSteps} bilimsel kriter · Anonim</p>
           <button
+            className={styles.cta}
             onClick={handleStart}
-            className="bg-[#1A6B5A] hover:bg-[#15594B] text-white px-10 py-4 rounded-2xl font-semibold text-lg transition-all duration-200 shadow-md hover:shadow-lg"
+            onMouseEnter={(e) => (e.currentTarget.style.background = ACCENT_DARK)}
+            onMouseLeave={(e) => (e.currentTarget.style.background = ACCENT)}
           >
-            Teste Başla
+            Teste Başla →
           </button>
-
-          <div className="mt-10 flex flex-col gap-1.5 text-sm text-[#2D3B36]/40">
+          <div className={styles.disc}>
             <p>Bu test bir tanı aracı değildir.</p>
             <p>Kesin tanı yalnızca bir sağlık profesyoneli tarafından konulabilir.</p>
           </div>
@@ -86,6 +100,7 @@ export function SymptomWizard() {
     );
   }
 
+  // ---------- RESULT ----------
   if (result) {
     return (
       <div className="max-w-xl mx-auto">
@@ -94,35 +109,73 @@ export function SymptomWizard() {
     );
   }
 
+  // ---------- QUESTION ----------
   const question = QUESTIONS[currentStep - 1];
+  const running = QUESTIONS.reduce((s, q) => s + (answers[q.id] ?? 0), 0);
+  const pct = maxPossible ? (running / maxPossible) * 100 : 0;
+  const tone = pct < 33 ? "low" : pct < 66 ? "mid" : "high";
+  const answeredCount = Object.keys(answers).length;
+  const label =
+    answeredCount === 0 ? null : tone === "low" ? "Düşük uyum" : tone === "mid" ? "Orta uyum" : "Yüksek uyum";
 
   return (
-    <div className="max-w-xl mx-auto">
-      <div className="bg-white rounded-3xl shadow-lg border border-stone-100 p-8 md:p-12">
-        <div className="mb-6">
-          <ProgressBar current={currentStep} total={totalSteps} />
+    <div className={styles.wrap} style={accentVars}>
+      <div className={styles.head}>
+        <button className={styles.back} onClick={handleBack} aria-label="Geri">
+          ←
+        </button>
+        <div className={styles.prog}>
+          <div className={styles.seg}>
+            {QUESTIONS.map((q, i) => (
+              <i key={q.id} className={i < currentStep - 1 ? styles.on : i === currentStep - 1 ? styles.cur : ""} />
+            ))}
+          </div>
+          <div className={styles.pcount}>
+            <b>{currentStep}</b>/{totalSteps}
+          </div>
+        </div>
+      </div>
+
+      <ScoreMeter pct={pct} label={label} tone={answeredCount === 0 ? "none" : tone} caption="LİPÖDEM UYUMU" />
+
+      <div className={`${styles.card} ${styles.cardPop}`} key={question.id}>
+        <div className={styles.chip}>
+          <span className="ci">◆</span>
+          <span className="ct">{question.title.toLocaleUpperCase("tr")}</span>
+          <span className="cn">· {currentStep}/{totalSteps}</span>
         </div>
 
-        <div className="mb-6">
-          <button
-            onClick={handleBack}
-            className="flex items-center gap-1.5 text-[#2D3B36]/50 hover:text-[#2D3B36]/80 text-sm transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Geri
-          </button>
+        <div className={styles.qtext}>
+          {question.text.split(" ").map((w, i) => (
+            <span key={i} className="w" style={{ animationDelay: `${i * 0.04}s` }}>
+              {w + " "}
+            </span>
+          ))}
         </div>
 
-        <QuestionStep
-          key={question.id}
-          question={question}
-          selectedScore={answers[question.id]}
-          onAnswer={(score) => handleAnswer(question.id, score)}
-        />
+        <div className={styles.opts}>
+          {question.options.map((opt, i) => {
+            const selected = answers[question.id] === opt.score;
+            return (
+              <button
+                key={i}
+                className={`${styles.ocard} ${selected ? styles.sel : ""}`}
+                style={{ animationDelay: `${0.1 + i * 0.06}s` }}
+                onClick={() => handleAnswer(question.id, opt.score)}
+              >
+                <span className="shine" />
+                <span className="obadge">{i + 1}</span>
+                <span className="otx">{opt.label}</span>
+                <span className="ochk">✓</span>
+              </button>
+            );
+          })}
+        </div>
 
-        <p className="mt-8 text-xs text-[#2D3B36]/40 text-center">
-          Soru {currentStep} / {totalSteps}
-        </p>
+        <div className={styles.kbHint}>
+          <span className={styles.kbd}>1</span>…<span className={styles.kbd}>{Math.min(9, question.options.length)}</span>{" "}
+          tuşlarıyla da seçebilirsiniz
+        </div>
       </div>
     </div>
   );

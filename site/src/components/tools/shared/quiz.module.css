@@ -1,0 +1,475 @@
+/* Paylaşılan test deneyimi stilleri — accent CSS değişkenleriyle sürülür.
+   Kullanım: .wrap'a inline olarak --accent / --accent-d / --accent-bg verilir. */
+.wrap {
+  --line: #ece7df;
+  --ink: #2d3b36;
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+/* ---------- intro ---------- */
+.introCard {
+  background: #fff;
+  border: 1px solid #f0ece4;
+  border-radius: 28px;
+  box-shadow: 0 30px 70px -40px rgba(20, 30, 40, 0.45);
+  padding: 40px 28px;
+  text-align: center;
+}
+.introIcon {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 22px;
+  background: var(--accent-bg);
+  animation: introPop 0.6s cubic-bezier(0.2, 1.3, 0.4, 1);
+}
+@keyframes introPop {
+  0% { transform: scale(0.6) translateY(8px); opacity: 0; }
+  100% { transform: none; opacity: 1; }
+}
+.introTitle {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.introMeta {
+  font-size: 13px;
+  color: rgba(45, 59, 54, 0.55);
+  margin-bottom: 6px;
+}
+.introDesc {
+  font-size: 14px;
+  color: rgba(45, 59, 54, 0.55);
+  line-height: 1.6;
+  max-width: 26rem;
+  margin: 0 auto 8px;
+}
+.introRef {
+  font-size: 11px;
+  color: rgba(45, 59, 54, 0.4);
+  margin-bottom: 26px;
+}
+.cta {
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 15px 40px;
+  border-radius: 16px;
+  background: var(--accent);
+  box-shadow: 0 14px 30px -12px var(--accent);
+  transition: transform 0.18s, box-shadow 0.2s, filter 0.2s;
+}
+.cta:hover {
+  transform: translateY(-2px);
+  filter: brightness(0.95);
+  box-shadow: 0 20px 38px -12px var(--accent);
+}
+.cta:active {
+  transform: translateY(0) scale(0.98);
+}
+.disc {
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12.5px;
+  color: rgba(45, 59, 54, 0.4);
+}
+
+/* ---------- progress header ---------- */
+.head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.back {
+  width: 36px;
+  height: 36px;
+  flex: none;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: #7a857f;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.16s;
+}
+.back:hover {
+  border-color: #cfd6df;
+  color: var(--ink);
+  transform: translateX(-2px);
+}
+.prog {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.seg {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+.seg i {
+  flex: 1;
+  height: 7px;
+  border-radius: 99px;
+  background: #e9e4db;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.seg i.on {
+  background: var(--accent);
+}
+.seg i.cur {
+  background: var(--accent);
+}
+.seg i.cur::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
+  animation: segsh 1.5s linear infinite;
+}
+@keyframes segsh {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.pcount {
+  font-size: 11px;
+  font-weight: 900;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.pcount b {
+  font-size: 15px;
+}
+
+/* ---------- progress ring (single-axis live feedback) ---------- */
+.meter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.meterLabel {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: rgba(45, 59, 54, 0.4);
+  margin-top: 6px;
+}
+
+/* ---------- pain faces meter (VAS) ---------- */
+.painMeter {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 16px 16px 14px;
+  margin-bottom: 14px;
+  box-shadow: 0 10px 28px -22px rgba(20, 30, 40, 0.4);
+}
+.painTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.painTitle {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  color: #9aa39d;
+}
+.painVal {
+  font-size: 13px;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.4s;
+}
+.faces {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+.face {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #f6f4ef;
+  opacity: 0.4;
+  filter: grayscale(0.7);
+  transform: scale(0.85);
+  transition: transform 0.4s cubic-bezier(0.34, 1.5, 0.5, 1), opacity 0.4s, filter 0.4s,
+    background 0.4s, box-shadow 0.4s;
+}
+.face img {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+}
+.face.active {
+  opacity: 1;
+  filter: none;
+  transform: scale(1.18);
+  box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.3);
+}
+.painTrack {
+  position: relative;
+  height: 8px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #10b981, #f59e0b 55%, #e11d48);
+}
+.painDot {
+  position: absolute;
+  top: -4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--accent);
+  transform: translateX(-50%);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  transition: left 0.5s cubic-bezier(0.34, 1.3, 0.5, 1), border-color 0.4s;
+}
+.painScaleEnds {
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  font-weight: 700;
+  color: #b6bdb8;
+  margin-top: 5px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .face,
+  .painDot {
+    transition: none !important;
+  }
+}
+
+/* ---------- question card ---------- */
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 20px 18px;
+  box-shadow: 0 22px 50px -32px rgba(20, 30, 40, 0.42);
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 1.5px;
+  pointer-events: none;
+  background: linear-gradient(135deg, var(--accent), rgba(255, 255, 255, 0.04) 55%, var(--accent));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.35;
+}
+.cardPop {
+  animation: qpop 0.5s cubic-bezier(0.2, 1.3, 0.4, 1);
+}
+@keyframes qpop {
+  0% { transform: translateY(12px) scale(0.98); opacity: 0.4; }
+  100% { transform: none; opacity: 1; }
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-bg);
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+  border-radius: 99px;
+  padding: 5px 13px 5px 6px;
+  margin-bottom: 12px;
+}
+.chip :global(.ci) {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex: none;
+}
+.chip :global(.ct) {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  color: var(--accent-d);
+}
+.chip :global(.cn) {
+  font-size: 9px;
+  font-weight: 800;
+  color: #9aa39d;
+}
+.qtext {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.22;
+  letter-spacing: -0.015em;
+  margin-bottom: 16px;
+  min-height: 52px;
+}
+.qtext :global(.w) {
+  display: inline-block;
+  white-space: pre;
+  opacity: 0;
+  transform: translateY(9px);
+  animation: wrise 0.5s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+}
+@keyframes wrise {
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- option cards ---------- */
+.opts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ocard {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  text-align: left;
+  border: 1.5px solid var(--line);
+  background: #fff;
+  border-radius: 16px;
+  padding: 14px;
+  cursor: pointer;
+  color: var(--ink);
+  opacity: 0;
+  transform: translateY(12px);
+  animation: optin 0.45s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+  box-shadow: 0 2px 8px -4px rgba(20, 30, 40, 0.1);
+  transition: border-color 0.18s, box-shadow 0.2s, transform 0.2s cubic-bezier(0.34, 1.5, 0.5, 1), background 0.2s;
+}
+@keyframes optin {
+  to { opacity: 1; transform: none; }
+}
+.ocard:hover {
+  transform: translateY(-3px) scale(1.015);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
+  box-shadow: 0 16px 30px -16px rgba(20, 30, 40, 0.4);
+}
+.ocard:active {
+  transform: scale(0.98);
+}
+.ocard :global(.obadge) {
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 900;
+  background: #f3f2ed;
+  color: #aab2bb;
+  transition: 0.2s;
+}
+.ocard :global(.otx) {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.ocard :global(.ochk) {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: #fff;
+  background: #d9d4cb;
+  transition: 0.25s;
+  flex: none;
+}
+.ocard :global(.shine) {
+  position: absolute;
+  top: 0;
+  left: -70%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(110deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transform: skewX(-18deg);
+  transition: left 0.5s;
+  pointer-events: none;
+}
+.ocard:hover :global(.shine) {
+  left: 130%;
+}
+.ocard.sel {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+  box-shadow: 0 14px 30px -16px var(--accent);
+}
+.ocard.sel :global(.obadge) {
+  background: var(--accent);
+  color: #fff;
+  transform: scale(1.05);
+}
+.ocard.sel :global(.ochk) {
+  background: var(--accent);
+}
+.kbHint {
+  text-align: center;
+  font-size: 9px;
+  color: #bcc3bf;
+  margin-top: 12px;
+}
+.kbd {
+  font-weight: 800;
+  color: #9aa39d;
+  border: 1px solid #e2e0d8;
+  border-radius: 5px;
+  padding: 0 5px;
+  background: #fafafa;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seg i.cur::after,
+  .ocard,
+  .qtext :global(.w),
+  .cardPop,
+  .introIcon {
+    animation: none !important;
+  }
+  .ocard {
+    opacity: 1;
+    transform: none;
+  }
+  .qtext :global(.w) {
+    opacity: 1;
+    transform: none;
+  }
+}

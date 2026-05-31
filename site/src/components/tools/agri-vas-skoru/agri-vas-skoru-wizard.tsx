@@ -1,21 +1,38 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import {
   QUESTIONS,
   calculateResult,
   SCALE_REFERENCE,
   type TestResult,
 } from "@/data/tests/agri-vas-skoru";
-import { VasQuestion } from "./agri-vas-skoru-question";
-import { VasProgress } from "./agri-vas-skoru-progress";
 import { VasResult } from "./agri-vas-skoru-result";
 import { LastResultBadge } from "@/components/tools/shared/last-result-badge";
-import { ArrowLeft, HeartPulse } from "lucide-react";
+import { PainFace } from "@/components/tools/shared/pain-face";
+import { HeartPulse } from "lucide-react";
+import styles from "@/components/tools/shared/quiz.module.css";
 
 const ACCENT = "#C46B3D";
 const ACCENT_DARK = "#A55530";
 const ACCENT_BG = "#FEF3E6";
+
+const CATEGORY_ICON: Record<string, string> = {
+  "Son 24 Saatte En Şiddetli Ağrı": "🔥",
+  "Ortalama Ağrı Şiddeti": "📊",
+  "Dokunma / Basınç Ağrısı": "✋",
+  "Ağrının Günlük Yaşama Etkisi": "🚶",
+  "Uyku ve Ruh Hali Üzerine Etki": "🌙",
+  "Ağrı Dağılımı": "⇄",
+};
+
+const FACE_LEVELS = [0, 0.3, 0.55, 0.78, 1]; // ölçek üzerindeki 5 yüz
+
+const accentVars = {
+  ["--accent" as string]: ACCENT,
+  ["--accent-d" as string]: ACCENT_DARK,
+  ["--accent-bg" as string]: ACCENT_BG,
+} as React.CSSProperties;
 
 export function VasWizard() {
   const [currentStep, setCurrentStep] = useState(0); // 0 = intro
@@ -26,73 +43,67 @@ export function VasWizard() {
 
   const handleAnswer = useCallback(
     (questionId: number, score: number) => {
-      setAnswers((prev) => ({ ...prev, [questionId]: score }));
-      if (currentStep < totalSteps) {
-        setCurrentStep((prev) => prev + 1);
+      const nextAnswers = { ...answers, [questionId]: score };
+      setAnswers(nextAnswers);
+      if (currentStep >= totalSteps) {
+        setResult(calculateResult(nextAnswers));
+      } else {
+        window.setTimeout(() => setCurrentStep((prev) => prev + 1), 420);
       }
     },
-    [currentStep, totalSteps]
+    [answers, currentStep, totalSteps],
   );
 
   const handleBack = useCallback(() => {
-    if (currentStep > 1) {
-      setCurrentStep((prev) => prev - 1);
-    } else if (currentStep === 1) {
-      setCurrentStep(0);
-    }
+    if (currentStep > 1) setCurrentStep((prev) => prev - 1);
+    else if (currentStep === 1) setCurrentStep(0);
   }, [currentStep]);
 
-  const handleStart = useCallback(() => {
-    setCurrentStep(1);
-  }, []);
-
+  const handleStart = useCallback(() => setCurrentStep(1), []);
   const handleRestart = useCallback(() => {
     setCurrentStep(0);
     setAnswers({});
     setResult(null);
   }, []);
 
-  if (currentStep > totalSteps && !result) {
-    setResult(calculateResult(answers));
-  }
+  // klavye 1..N + Backspace
+  useEffect(() => {
+    if (currentStep < 1 || result) return;
+    const q = QUESTIONS[currentStep - 1];
+    const onKey = (e: KeyboardEvent) => {
+      const n = parseInt(e.key, 10);
+      if (n >= 1 && n <= q.options.length) handleAnswer(q.id, q.options[n - 1].score);
+      else if (e.key === "Backspace") handleBack();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [currentStep, result, handleAnswer, handleBack]);
 
+  // ---------- INTRO ----------
   if (currentStep === 0) {
     return (
-      <div className="max-w-xl mx-auto">
-        <div className="bg-white rounded-3xl shadow-lg border border-stone-100 p-10 md:p-14 text-center">
+      <div className={styles.wrap} style={accentVars}>
+        <div className={styles.introCard}>
           <LastResultBadge slug="agri-vas-skoru" />
-          <div
-            className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-8"
-            style={{ backgroundColor: ACCENT_BG }}
-          >
-            <HeartPulse className="w-10 h-10" style={{ color: ACCENT }} />
+          <div className={styles.introIcon}>
+            <HeartPulse className="w-9 h-9" style={{ color: ACCENT }} />
           </div>
-
-          <h2 className="text-2xl md:text-3xl font-bold text-[#2D3B36] mb-4">
-            Ağrı VAS Skoru
-          </h2>
-          <p className="text-[#2D3B36]/60 text-base mb-1">
-            6 soru &middot; yaklaşık 90 saniye
+          <h2 className={styles.introTitle}>Ağrı VAS Skoru</h2>
+          <p className={styles.introMeta}>6 soru · yaklaşık 90 saniye</p>
+          <p className={styles.introDesc}>
+            Lipödemde ağrı şiddetini ve günlük yaşam üzerindeki etkisini ölçer.
+            Sonucu uzmanınızla paylaşın.
           </p>
-          <p className="text-[#2D3B36]/50 mb-2 max-w-md mx-auto leading-relaxed">
-            Lipödemde ağrı şiddetini ve günlük yaşam üzerindeki etkisini
-            yapılandırılmış olarak ölçer. Sonucu uzmanınızla paylaşın.
-          </p>
-          <p className="text-xs text-[#2D3B36]/40 mb-10">
-            Klinik referans: {SCALE_REFERENCE.name}
-          </p>
-
+          <p className={styles.introRef}>Klinik referans: {SCALE_REFERENCE.name}</p>
           <button
+            className={styles.cta}
             onClick={handleStart}
-            className="text-white px-10 py-4 rounded-2xl font-semibold text-lg transition-all duration-200 shadow-md hover:shadow-lg"
-            style={{ backgroundColor: ACCENT }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = ACCENT_DARK)}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = ACCENT)}
+            onMouseEnter={(e) => (e.currentTarget.style.background = ACCENT_DARK)}
+            onMouseLeave={(e) => (e.currentTarget.style.background = ACCENT)}
           >
-            Teste Başla
+            Teste Başla →
           </button>
-
-          <div className="mt-10 flex flex-col gap-1.5 text-sm text-[#2D3B36]/40">
+          <div className={styles.disc}>
             <p>Bu test bir tanı aracı değildir.</p>
             <p>Kesin tanı yalnızca bir sağlık profesyoneli tarafından konulabilir.</p>
           </div>
@@ -101,6 +112,7 @@ export function VasWizard() {
     );
   }
 
+  // ---------- RESULT ----------
   if (result) {
     return (
       <div className="max-w-xl mx-auto">
@@ -109,35 +121,130 @@ export function VasWizard() {
     );
   }
 
+  // ---------- QUESTION ----------
   const question = QUESTIONS[currentStep - 1];
+  const icon = CATEGORY_ICON[question.title] ?? "◆";
+
+  // canlı ağrı ölçeği: bu sorudaki seçili cevabın 0-10 düzeyi
+  const selectedScore = answers[question.id];
+  const painLevel = selectedScore === undefined ? null : Math.max(0, Math.min(1, selectedScore / 10));
+  const activeFace =
+    painLevel === null
+      ? -1
+      : FACE_LEVELS.reduce(
+          (best, lv, i) => (Math.abs(lv - painLevel) < Math.abs(FACE_LEVELS[best] - painLevel) ? i : best),
+          0,
+        );
+  const painColor =
+    painLevel === null
+      ? "#9aa39d"
+      : painLevel < 0.5
+        ? "#10b981"
+        : painLevel < 0.78
+          ? "#f59e0b"
+          : "#e11d48";
+  const painText =
+    painLevel === null
+      ? "—"
+      : painLevel < 0.3
+        ? "Hafif"
+        : painLevel < 0.6
+          ? "Orta"
+          : painLevel < 0.85
+            ? "Şiddetli"
+            : "Çok şiddetli";
 
   return (
-    <div className="max-w-xl mx-auto">
-      <div className="bg-white rounded-3xl shadow-lg border border-stone-100 p-8 md:p-12">
-        <div className="mb-6">
-          <VasProgress current={currentStep} total={totalSteps} />
+    <div className={styles.wrap} style={accentVars}>
+      <div className={styles.head}>
+        <button className={styles.back} onClick={handleBack} aria-label="Geri">
+          ←
+        </button>
+        <div className={styles.prog}>
+          <div className={styles.seg}>
+            {QUESTIONS.map((q, i) => (
+              <i
+                key={q.id}
+                className={
+                  i < currentStep - 1 ? styles.on : i === currentStep - 1 ? styles.cur : ""
+                }
+              />
+            ))}
+          </div>
+          <div className={styles.pcount}>
+            <b>{currentStep}</b>/{totalSteps}
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.painMeter}>
+        <div className={styles.painTop}>
+          <span className={styles.painTitle}>AĞRI ÖLÇEĞİ</span>
+          <span className={styles.painVal} style={{ color: painColor }}>
+            {painText}
+          </span>
+        </div>
+        <div className={styles.faces}>
+          {FACE_LEVELS.map((lv, i) => (
+            <span key={i} className={`${styles.face} ${i === activeFace ? styles.active : ""}`}>
+              <PainFace level={lv} size={34} />
+            </span>
+          ))}
+        </div>
+        <div className={styles.painTrack}>
+          <span
+            className={styles.painDot}
+            style={{
+              left: `${(painLevel ?? 0) * 100}%`,
+              borderColor: painColor,
+              opacity: painLevel === null ? 0.5 : 1,
+            }}
+          />
+        </div>
+        <div className={styles.painScaleEnds}>
+          <span>0 · Ağrı yok</span>
+          <span>10 · Dayanılmaz</span>
+        </div>
+      </div>
+
+      <div className={`${styles.card} ${styles.cardPop}`} key={question.id}>
+        <div className={styles.chip}>
+          <span className="ci">{icon}</span>
+          <span className="ct">{question.title.toLocaleUpperCase("tr")}</span>
+          <span className="cn">· {currentStep}/{totalSteps}</span>
         </div>
 
-        <div className="mb-6">
-          <button
-            onClick={handleBack}
-            className="flex items-center gap-1.5 text-[#2D3B36]/50 hover:text-[#2D3B36]/80 text-sm transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Geri
-          </button>
+        <div className={styles.qtext}>
+          {question.text.split(" ").map((w, i) => (
+            <span key={i} className="w" style={{ animationDelay: `${i * 0.04}s` }}>
+              {w + " "}
+            </span>
+          ))}
         </div>
 
-        <VasQuestion
-          key={question.id}
-          question={question}
-          selectedScore={answers[question.id]}
-          onAnswer={(score) => handleAnswer(question.id, score)}
-        />
+        <div className={styles.opts}>
+          {question.options.map((opt, i) => {
+            const selected = answers[question.id] === opt.score;
+            return (
+              <button
+                key={i}
+                className={`${styles.ocard} ${selected ? styles.sel : ""}`}
+                style={{ animationDelay: `${0.1 + i * 0.07}s` }}
+                onClick={() => handleAnswer(question.id, opt.score)}
+              >
+                <span className="shine" />
+                <span className="obadge">{i + 1}</span>
+                <span className="otx">{opt.label}</span>
+                <span className="ochk">✓</span>
+              </button>
+            );
+          })}
+        </div>
 
-        <p className="mt-8 text-xs text-[#2D3B36]/40 text-center">
-          Soru {currentStep} / {totalSteps}
-        </p>
+        <div className={styles.kbHint}>
+          <span className={styles.kbd}>1</span>…<span className={styles.kbd}>{Math.min(9, question.options.length)}</span>{" "}
+          tuşlarıyla da seçebilirsiniz
+        </div>
       </div>
     </div>
   );

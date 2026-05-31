@@ -1,15 +1,28 @@
 "use client";
 
-import { useState, useCallback } from "react";
-import { STAGE_QUESTIONS, calculateStageResult, type StageResult } from "@/data/stage-questions";
-import { StageQuestionStep } from "./stage-question";
-import { StageProgress } from "./stage-progress";
+import { useState, useCallback, useEffect } from "react";
+import {
+  STAGE_QUESTIONS,
+  calculateStageResult,
+  type StageResult,
+} from "@/data/stage-questions";
 import { StageResultDisplay } from "./stage-result";
 import { LastResultBadge } from "@/components/tools/shared/last-result-badge";
-import { ArrowLeft } from "lucide-react";
+import { Layers } from "lucide-react";
+import styles from "@/components/tools/shared/quiz.module.css";
+
+const ACCENT = "#1A6B5A";
+const ACCENT_DARK = "#15594B";
+const ACCENT_BG = "#E8F5F0";
+
+const accentVars = {
+  ["--accent" as string]: ACCENT,
+  ["--accent-d" as string]: ACCENT_DARK,
+  ["--accent-bg" as string]: ACCENT_BG,
+} as React.CSSProperties;
 
 export function StageWizard() {
-  const [currentStep, setCurrentStep] = useState(0); // 0 = intro
+  const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [result, setResult] = useState<StageResult | null>(null);
 
@@ -17,75 +30,74 @@ export function StageWizard() {
 
   const handleAnswer = useCallback(
     (questionId: number, score: number) => {
-      setAnswers((prev) => ({ ...prev, [questionId]: score }));
-
-      if (currentStep < totalSteps) {
-        setCurrentStep((prev) => prev + 1);
+      const nextAnswers = { ...answers, [questionId]: score };
+      setAnswers(nextAnswers);
+      if (currentStep >= totalSteps) {
+        setResult(calculateStageResult(nextAnswers));
+      } else {
+        window.setTimeout(() => setCurrentStep((prev) => prev + 1), 420);
       }
     },
-    [currentStep, totalSteps]
+    [answers, currentStep, totalSteps],
   );
 
   const handleBack = useCallback(() => {
-    if (currentStep > 1) {
-      setCurrentStep((prev) => prev - 1);
-    } else if (currentStep === 1) {
-      setCurrentStep(0);
-    }
+    if (currentStep > 1) setCurrentStep((prev) => prev - 1);
+    else if (currentStep === 1) setCurrentStep(0);
   }, [currentStep]);
 
-  const handleStart = useCallback(() => {
-    setCurrentStep(1);
-  }, []);
-
+  const handleStart = useCallback(() => setCurrentStep(1), []);
   const handleRestart = useCallback(() => {
     setCurrentStep(0);
     setAnswers({});
     setResult(null);
   }, []);
 
-  if (currentStep > totalSteps && !result) {
-    setResult(calculateStageResult(answers));
-  }
+  useEffect(() => {
+    if (currentStep < 1 || result) return;
+    const q = STAGE_QUESTIONS[currentStep - 1];
+    const onKey = (e: KeyboardEvent) => {
+      const n = parseInt(e.key, 10);
+      if (n >= 1 && n <= q.options.length) handleAnswer(q.id, q.options[n - 1].score);
+      else if (e.key === "Backspace") handleBack();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [currentStep, result, handleAnswer, handleBack]);
 
+  // ---------- INTRO ----------
   if (currentStep === 0) {
     return (
-      <div className="max-w-xl mx-auto">
-        <div className="bg-white rounded-3xl shadow-lg border border-stone-100 p-10 md:p-14 text-center">
+      <div className={styles.wrap} style={accentVars}>
+        <div className={styles.introCard}>
           <LastResultBadge slug="lipodem-evre-belirleme" />
-          <div className="w-20 h-20 bg-[#E8F5F0] rounded-full flex items-center justify-center mx-auto mb-8">
-            <svg className="w-10 h-10 text-[#1A6B5A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-            </svg>
+          <div className={styles.introIcon}>
+            <Layers className="w-9 h-9" style={{ color: ACCENT }} />
           </div>
-
-          <h2 className="text-2xl md:text-3xl font-bold text-[#2D3B36] mb-4">
-            Lipödem Evre Değerlendirme
-          </h2>
-          <p className="text-[#2D3B36]/60 text-base mb-1">
-            8 soru &middot; yaklaşık 2 dakika
+          <h2 className={styles.introTitle}>Lipödem Evre Belirleme</h2>
+          <p className={styles.introMeta}>{totalSteps} soru · yaklaşık 2 dakika</p>
+          <p className={styles.introDesc}>
+            Cilt yüzeyi, doku yapısı ve şişlik bulgularıyla lipödemin hangi evrede
+            olabileceğini değerlendirir.
           </p>
-          <p className="text-[#2D3B36]/50 mb-10 max-w-md mx-auto leading-relaxed">
-            Mevcut durumunuzu klinik kriterlere göre değerlendirin ve evrenize
-            özel tedavi önerileri alın.
-          </p>
-
           <button
+            className={styles.cta}
             onClick={handleStart}
-            className="bg-[#1A6B5A] hover:bg-[#15594B] text-white px-10 py-4 rounded-2xl font-semibold text-lg transition-all duration-200 shadow-md hover:shadow-lg"
+            onMouseEnter={(e) => (e.currentTarget.style.background = ACCENT_DARK)}
+            onMouseLeave={(e) => (e.currentTarget.style.background = ACCENT)}
           >
-            Değerlendirmeye Başla
+            Teste Başla →
           </button>
-
-          <div className="mt-10 flex flex-col gap-1.5 text-sm text-[#2D3B36]/40">
-            <p>Bu araç bir tanı aracı değildir.</p>
-            <p>Kesin evre belirleme yalnızca bir sağlık profesyoneli tarafından yapılabilir.</p>
+          <div className={styles.disc}>
+            <p>Bu test bir tanı aracı değildir.</p>
+            <p>Kesin evre yalnızca bir sağlık profesyoneli tarafından belirlenir.</p>
           </div>
         </div>
       </div>
     );
   }
 
+  // ---------- RESULT ----------
   if (result) {
     return (
       <div className="max-w-xl mx-auto">
@@ -94,35 +106,70 @@ export function StageWizard() {
     );
   }
 
+  // ---------- QUESTION ----------
   const question = STAGE_QUESTIONS[currentStep - 1];
+  const helpText = (question as { helpText?: string }).helpText;
 
   return (
-    <div className="max-w-xl mx-auto">
-      <div className="bg-white rounded-3xl shadow-lg border border-stone-100 p-8 md:p-12">
-        <div className="mb-6">
-          <StageProgress current={currentStep} total={totalSteps} />
+    <div className={styles.wrap} style={accentVars}>
+      <div className={styles.head}>
+        <button className={styles.back} onClick={handleBack} aria-label="Geri">
+          ←
+        </button>
+        <div className={styles.prog}>
+          <div className={styles.seg}>
+            {STAGE_QUESTIONS.map((q, i) => (
+              <i key={q.id} className={i < currentStep - 1 ? styles.on : i === currentStep - 1 ? styles.cur : ""} />
+            ))}
+          </div>
+          <div className={styles.pcount}>
+            <b>{currentStep}</b>/{totalSteps}
+          </div>
+        </div>
+      </div>
+
+      <div className={`${styles.card} ${styles.cardPop}`} key={question.id}>
+        <div className={styles.chip}>
+          <span className="ci">◆</span>
+          <span className="ct">{question.title.toLocaleUpperCase("tr")}</span>
+          <span className="cn">· {currentStep}/{totalSteps}</span>
         </div>
 
-        <div className="mb-6">
-          <button
-            onClick={handleBack}
-            className="flex items-center gap-1.5 text-[#2D3B36]/50 hover:text-[#2D3B36]/80 text-sm transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Geri
-          </button>
+        <div className={styles.qtext}>
+          {question.text.split(" ").map((w, i) => (
+            <span key={i} className="w" style={{ animationDelay: `${i * 0.04}s` }}>
+              {w + " "}
+            </span>
+          ))}
         </div>
 
-        <StageQuestionStep
-          key={question.id}
-          question={question}
-          selectedScore={answers[question.id]}
-          onAnswer={(score) => handleAnswer(question.id, score)}
-        />
+        {helpText ? (
+          <p style={{ fontSize: 12, color: "#8a9690", lineHeight: 1.5, margin: "-6px 0 14px" }}>{helpText}</p>
+        ) : null}
 
-        <p className="mt-8 text-xs text-[#2D3B36]/40 text-center">
-          Soru {currentStep} / {totalSteps}
-        </p>
+        <div className={styles.opts}>
+          {question.options.map((opt, i) => {
+            const selected = answers[question.id] === opt.score;
+            return (
+              <button
+                key={i}
+                className={`${styles.ocard} ${selected ? styles.sel : ""}`}
+                style={{ animationDelay: `${0.1 + i * 0.06}s` }}
+                onClick={() => handleAnswer(question.id, opt.score)}
+              >
+                <span className="shine" />
+                <span className="obadge">{i + 1}</span>
+                <span className="otx">{opt.label}</span>
+                <span className="ochk">✓</span>
+              </button>
+            );
+          })}
+        </div>
+
+        <div className={styles.kbHint}>
+          <span className={styles.kbd}>1</span>…<span className={styles.kbd}>{Math.min(9, question.options.length)}</span>{" "}
+          tuşlarıyla da seçebilirsiniz
+        </div>
       </div>
     </div>
   );

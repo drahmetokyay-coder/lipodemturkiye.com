@@ -1,16 +1,25 @@
 "use client";
 
-import { useState, useCallback } from "react";
-import { Ruler, ArrowLeft } from "lucide-react";
+import { useState, useCallback, useEffect } from "react";
 import {
   QUESTIONS,
   calculateResult,
   type TestResult,
 } from "@/data/tests/bel-kalca-orani-whr";
-import { LastResultBadge } from "@/components/tools/shared/last-result-badge";
-import { BelKalcaOraniWhrQuestion } from "./bel-kalca-orani-whr-question";
-import { BelKalcaOraniWhrProgress } from "./bel-kalca-orani-whr-progress";
 import { BelKalcaOraniWhrResult } from "./bel-kalca-orani-whr-result";
+import { LastResultBadge } from "@/components/tools/shared/last-result-badge";
+import { Ruler } from "lucide-react";
+import styles from "@/components/tools/shared/quiz.module.css";
+
+const ACCENT = "#8B6B3D";
+const ACCENT_DARK = "#6F542E";
+const ACCENT_BG = "#FAF3E6";
+
+const accentVars = {
+  ["--accent" as string]: ACCENT,
+  ["--accent-d" as string]: ACCENT_DARK,
+  ["--accent-bg" as string]: ACCENT_BG,
+} as React.CSSProperties;
 
 export function BelKalcaOraniWhrWizard() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -21,84 +30,71 @@ export function BelKalcaOraniWhrWizard() {
 
   const handleAnswer = useCallback(
     (questionId: number, score: number) => {
-      setAnswers((prev) => ({ ...prev, [questionId]: score }));
-      if (currentStep < totalSteps) {
-        setCurrentStep((prev) => prev + 1);
+      const nextAnswers = { ...answers, [questionId]: score };
+      setAnswers(nextAnswers);
+      if (currentStep >= totalSteps) {
+        setResult(calculateResult(nextAnswers));
+      } else {
+        window.setTimeout(() => setCurrentStep((prev) => prev + 1), 420);
       }
     },
-    [currentStep, totalSteps]
+    [answers, currentStep, totalSteps],
   );
 
   const handleBack = useCallback(() => {
-    if (currentStep > 1) {
-      setCurrentStep((prev) => prev - 1);
-    } else if (currentStep === 1) {
-      setCurrentStep(0);
-    }
+    if (currentStep > 1) setCurrentStep((prev) => prev - 1);
+    else if (currentStep === 1) setCurrentStep(0);
   }, [currentStep]);
 
-  const handleStart = useCallback(() => {
-    setCurrentStep(1);
-  }, []);
-
+  const handleStart = useCallback(() => setCurrentStep(1), []);
   const handleRestart = useCallback(() => {
     setCurrentStep(0);
     setAnswers({});
     setResult(null);
   }, []);
 
-  if (currentStep > totalSteps && !result) {
-    setResult(calculateResult(answers));
-  }
+  useEffect(() => {
+    if (currentStep < 1 || result) return;
+    const q = QUESTIONS[currentStep - 1];
+    const onKey = (e: KeyboardEvent) => {
+      const n = parseInt(e.key, 10);
+      if (n >= 1 && n <= q.options.length) handleAnswer(q.id, q.options[n - 1].score);
+      else if (e.key === "Backspace") handleBack();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [currentStep, result, handleAnswer, handleBack]);
 
+  // ---------- INTRO ----------
   if (currentStep === 0) {
     return (
-      <div className="max-w-xl mx-auto">
-        <div className="bg-white rounded-3xl shadow-lg border border-stone-100 p-10 md:p-14 text-center">
+      <div className={styles.wrap} style={accentVars}>
+        <div className={styles.introCard}>
           <LastResultBadge slug="bel-kalca-orani-whr" />
-          <div className="w-20 h-20 bg-[#F5EBDB] rounded-full flex items-center justify-center mx-auto mb-8">
-            <Ruler className="w-10 h-10 text-[#8B6B3D]" />
+          <div className={styles.introIcon}>
+            <Ruler className="w-9 h-9" style={{ color: ACCENT }} />
           </div>
-
-          <h2 className="text-2xl md:text-3xl font-bold text-[#2D3B36] mb-4">
-            Bel-Kalça Oranı (WHR) Testi
-          </h2>
-          <p className="text-[#2D3B36]/60 text-base mb-1">
-            3 soru &middot; 1 dakikadan az
-          </p>
-          <p className="text-[#2D3B36]/50 mb-8 max-w-md mx-auto leading-relaxed">
-            Üst-alt vücut orantınızı ve antropometrik patern uyumunuzu lipödemin
-            klasik bulgularıyla karşılaştırın. Mezurayla ölçüm idealdir; yoksa size en
-            yakın aralığı seçin.
-          </p>
-
-          <div className="bg-[#FAF3E6] border border-[#8B6B3D]/15 rounded-2xl px-5 py-3 mb-8 inline-flex flex-col text-left">
-            <span className="text-[10px] font-bold tracking-wider text-[#8B6B3D]">
-              KLİNİK REFERANS
-            </span>
-            <span className="text-xs text-[#2D3B36]/70 mt-0.5">
-              WHO WHR + Allen-Hines lipödem patern kriteri
-            </span>
-          </div>
-
-          <div>
-            <button
-              onClick={handleStart}
-              className="bg-[#8B6B3D] hover:bg-[#6F542E] text-white px-10 py-4 rounded-2xl font-semibold text-lg transition-all duration-200 shadow-md hover:shadow-lg"
-            >
-              Teste Başla
-            </button>
-          </div>
-
-          <div className="mt-10 flex flex-col gap-1.5 text-sm text-[#2D3B36]/40">
+          <h2 className={styles.introTitle}>Bel-Kalça Oranı (WHR)</h2>
+          <p className={styles.introMeta}>3 soru · 1 dakikadan az</p>
+          <p className={styles.introDesc}>Bel ve kalça ölçülerinizle vücut yağ dağılımı oranınızı (WHR) hesaplar.</p>
+          <button
+            className={styles.cta}
+            onClick={handleStart}
+            onMouseEnter={(e) => (e.currentTarget.style.background = ACCENT_DARK)}
+            onMouseLeave={(e) => (e.currentTarget.style.background = ACCENT)}
+          >
+            Teste Başla →
+          </button>
+          <div className={styles.disc}>
             <p>Bu test bir tanı aracı değildir.</p>
-            <p>Antropometrik ölçüm tek başına lipödem tanısı koyamaz.</p>
+            <p>Kesin tanı yalnızca bir sağlık profesyoneli tarafından konulabilir.</p>
           </div>
         </div>
       </div>
     );
   }
 
+  // ---------- RESULT ----------
   if (result) {
     return (
       <div className="max-w-xl mx-auto">
@@ -107,35 +103,77 @@ export function BelKalcaOraniWhrWizard() {
     );
   }
 
+  // ---------- QUESTION ----------
   const question = QUESTIONS[currentStep - 1];
+  const helpText = (question as { helpText?: string }).helpText;
 
   return (
-    <div className="max-w-xl mx-auto">
-      <div className="bg-white rounded-3xl shadow-lg border border-stone-100 p-8 md:p-12">
-        <div className="mb-6">
-          <BelKalcaOraniWhrProgress current={currentStep} total={totalSteps} />
+    <div className={styles.wrap} style={accentVars}>
+      <div className={styles.head}>
+        <button className={styles.back} onClick={handleBack} aria-label="Geri">
+          ←
+        </button>
+        <div className={styles.prog}>
+          <div className={styles.seg}>
+            {QUESTIONS.map((q, i) => (
+              <i
+                key={q.id}
+                className={
+                  i < currentStep - 1 ? styles.on : i === currentStep - 1 ? styles.cur : ""
+                }
+              />
+            ))}
+          </div>
+          <div className={styles.pcount}>
+            <b>{currentStep}</b>/{totalSteps}
+          </div>
+        </div>
+      </div>
+
+      <div className={`${styles.card} ${styles.cardPop}`} key={question.id}>
+        <div className={styles.chip}>
+          <span className="ci">◆</span>
+          <span className="ct">{question.title.toLocaleUpperCase("tr")}</span>
+          <span className="cn">· {currentStep}/{totalSteps}</span>
         </div>
 
-        <div className="mb-6">
-          <button
-            onClick={handleBack}
-            className="flex items-center gap-1.5 text-[#2D3B36]/50 hover:text-[#2D3B36]/80 text-sm transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Geri
-          </button>
+        <div className={styles.qtext}>
+          {question.text.split(" ").map((w, i) => (
+            <span key={i} className="w" style={{ animationDelay: `${i * 0.04}s` }}>
+              {w + " "}
+            </span>
+          ))}
         </div>
 
-        <BelKalcaOraniWhrQuestion
-          key={question.id}
-          question={question}
-          selectedScore={answers[question.id]}
-          onAnswer={(score) => handleAnswer(question.id, score)}
-        />
+        {helpText ? (
+          <p style={{ fontSize: 12, color: "#8a9690", lineHeight: 1.5, margin: "-6px 0 14px" }}>
+            {helpText}
+          </p>
+        ) : null}
 
-        <p className="mt-8 text-xs text-[#2D3B36]/40 text-center">
-          Soru {currentStep} / {totalSteps}
-        </p>
+        <div className={styles.opts}>
+          {question.options.map((opt, i) => {
+            const selected = answers[question.id] === opt.score;
+            return (
+              <button
+                key={i}
+                className={`${styles.ocard} ${selected ? styles.sel : ""}`}
+                style={{ animationDelay: `${0.1 + i * 0.06}s` }}
+                onClick={() => handleAnswer(question.id, opt.score)}
+              >
+                <span className="shine" />
+                <span className="obadge">{i + 1}</span>
+                <span className="otx">{opt.label}</span>
+                <span className="ochk">✓</span>
+              </button>
+            );
+          })}
+        </div>
+
+        <div className={styles.kbHint}>
+          <span className={styles.kbd}>1</span>…<span className={styles.kbd}>{Math.min(9, question.options.length)}</span>{" "}
+          tuşlarıyla da seçebilirsiniz
+        </div>
       </div>
     </div>
   );
